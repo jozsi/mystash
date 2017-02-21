@@ -1,0 +1,29 @@
+{
+  "name": "wealthor",
+  "version": "0.1.0",
+  "description": "Personal finance app",
+  "main": "index.js",
+  "engines": {
+    "node": "7.6.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jozsi/wealthor.git"
+  },
+  "keywords": [
+    "personal",
+    "finance"
+  ],
+  "author": "Jozsi Gergely & Radu Lucaciu",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jozsi/wealthor/issues"
+  },
+  "homepage": "https://github.com/jozsi/wealthor#readme",
+  "dependencies": {
+    "koa": "^2.0.0"
+  }
+}
