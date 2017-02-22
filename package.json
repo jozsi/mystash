@@ -27,7 +27,10 @@
   },
   "homepage": "https://github.com/jozsi/wealthor#readme",
   "dependencies": {
-    "koa": "^2.0.0"
+    "isemail": "^2.2.0",
+    "koa": "^2.0.0",
+    "mongoose": "^4.8.0",
+    "object.omit": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^3.16.0",
