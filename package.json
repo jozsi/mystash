@@ -7,6 +7,7 @@
     "node": "7.6.0"
   },
   "scripts": {
+    "lint": "eslint .",
     "start": "node index.js",
     "test": "jest"
   },
@@ -28,6 +29,10 @@
     "koa": "^2.0.0"
   },
   "devDependencies": {
+    "eslint": "^3.16.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.0",
     "jest": "^19.0.0",
     "supertest": "^3.0.0"
   }
