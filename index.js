@@ -1,6 +1,10 @@
 const app = require('./app');
-const config = require('./config');
+const CONFIG = require('./config');
+const db = require('./db');
+const routes = require('./routes');
 
-app.listen(config.HTTP_PORT, () => {
-  console.log(`Server running on port ${config.HTTP_PORT}`);  // eslint-disable-line no-console
+app.listen(CONFIG.HTTP_PORT, async function onListening() {
+  await db.connect(CONFIG.DB_URI);
+  console.log(`Running [DB:${db.connection.name}] [HTTP:${this.address().port}]`);  // eslint-disable-line no-console
+  app.use(routes.routes());
 });

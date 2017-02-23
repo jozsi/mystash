@@ -1,8 +1,8 @@
 const bcrypt = require('bcryptjs');
 const isemail = require('isemail');
-const mongoose = require('mongoose');
+const db = require('../db');
 
-const userSchema = new mongoose.Schema({
+const userSchema = new db.Schema({
   email: {
     type: String,
     required: true,
@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    select: false,
   },
   firstName: {
     type: String,
@@ -43,6 +44,6 @@ userSchema.methods.preSave = async function preSave(next) {
 
 userSchema.pre('save', userSchema.methods.preSave);
 
-const User = mongoose.model('User', userSchema);
+const User = db.model('User', userSchema);
 
 module.exports = User;

@@ -1,14 +1,8 @@
 const omit = require('object.omit');
+const DATA = require('./factories').user;
 const User = require('../models/user');
 
 describe('User', () => {
-  const DATA = Object.freeze({
-    email: 'git@Jozsi.ro',
-    password: 'H3110',
-    firstName: 'Jozsi',
-    lastName: 'Gergely',
-  });
-
   const expectError = async (key, value) => {
     const testData = omit(DATA, key);
     if (value !== undefined) {
