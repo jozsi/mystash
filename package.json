@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/jozsi/wealthor#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.0",
     "isemail": "^2.2.0",
     "koa": "^2.0.0",
     "mongoose": "^4.8.0",

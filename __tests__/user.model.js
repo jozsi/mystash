@@ -2,15 +2,15 @@ const omit = require('object.omit');
 const User = require('../models/user');
 
 describe('User', () => {
-  const data = Object.freeze({
-    email: 'git@jozsi.ro',
+  const DATA = Object.freeze({
+    email: 'git@Jozsi.ro',
     password: 'H3110',
     firstName: 'Jozsi',
     lastName: 'Gergely',
   });
 
   const expectError = async (key, value) => {
-    const testData = omit(data, key);
+    const testData = omit(DATA, key);
     if (value !== undefined) {
       testData[key] = value;
     }
@@ -31,12 +31,30 @@ describe('User', () => {
     await expectError('email', 'I am not an email address');
   });
 
+  it('should lowercase the email field', () => {
+    const user = new User(DATA);
+    expect(user.email).toBe(DATA.email.toLowerCase());
+  });
+
   it('should throw error if password is missing', async () => {
     await expectError('password');
   });
 
   it('should throw error if password is empty', async () => {
     await expectError('password', ' ');
+  });
+
+  it('should hash password', async () => {
+    const user = new User(DATA);
+    await user.preSave();
+    expect(user.password).not.toEqual(DATA.password);
+  });
+
+  it('should compare hashed passwords', async () => {
+    const user = new User(DATA);
+    await user.preSave();
+    const comparison = await user.comparePassword(DATA.password);
+    expect(comparison).toEqual(true);
   });
 
   it('should throw error if firstName is missing', async () => {
@@ -56,7 +74,7 @@ describe('User', () => {
   });
 
   it('should be valid', async () => {
-    const user = new User(data);
+    const user = new User(DATA);
     const errors = await user.validate();
     expect(errors).toBeUndefined();
   });
