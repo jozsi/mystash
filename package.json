@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node index.js",
-    "test": "jest",
+    "test": "jest --runInBand",
     "watch": "nodemon index.js"
   },
   "repository": {
@@ -29,11 +29,12 @@
   "dependencies": {
     "bcryptjs": "^2.4.0",
     "isemail": "^2.2.0",
+    "jsonwebtoken": "^7.3.0",
     "koa": "^2.0.0",
     "koa-bodyparser": "^3.2.0",
+    "koa-jwt": "^2.2.0",
     "koa-router": "^7.0.0",
-    "mongoose": "^4.8.0",
-    "object.omit": "^2.0.0"
+    "mongoose": "^4.8.0"
   },
   "devDependencies": {
     "eslint": "^3.16.0",
@@ -42,6 +43,7 @@
     "eslint-plugin-jest": "^19.0.0",
     "jest": "^19.0.0",
     "nodemon": "^1.11.0",
+    "object.omit": "^2.0.0",
     "supertest": "^3.0.0"
   }
 }

@@ -4,9 +4,8 @@ const User = require('../models/user');
 const router = new Router();
 
 router.post('/', async (ctx) => {
-  const user = await new User(ctx.request.body);
-  const saved = await user.save();
-  ctx.body = saved;
+  const user = await new User(ctx.request.body).save();
+  ctx.body = user;
 });
 
 router.get('/', async (ctx) => {
