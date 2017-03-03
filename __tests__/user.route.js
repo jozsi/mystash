@@ -29,13 +29,12 @@ describe('user', () => {
     list.push(user);
   });
 
-  // TODO: mongoose doesn't seem to create the unique index on the `email` field when running tests
-  // it('should error if user already exists', async () => {
-  //   await request
-  //     .post('/')
-  //     .send(DATA)
-  //     .expect(500);
-  // });
+  it('should error if user already exists', async () => {
+    await request
+      .post('/')
+      .send(DATA)
+      .expect(500);
+  });
 
   it('should read all users', async () => {
     const response = await request

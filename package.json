@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node index.js",
-    "test": "jest --runInBand",
+    "test": "jest --env=node --runInBand",
     "watch": "nodemon index.js"
   },
   "repository": {
