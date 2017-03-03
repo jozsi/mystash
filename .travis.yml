@@ -3,3 +3,5 @@ node_js:
   - "7"
 services:
   - mongodb
+before_script:
+  - ln -s config.sample.js config.js
