@@ -7,10 +7,11 @@
     "node": "7.6.0"
   },
   "scripts": {
+    "dev": "nodemon index.js",
     "lint": "eslint .",
+    "jest": "jest --env=node --runInBand",
     "start": "node index.js",
-    "test": "jest --env=node --runInBand",
-    "watch": "nodemon index.js"
+    "test": "npm run lint && npm run jest"
   },
   "repository": {
     "type": "git",
