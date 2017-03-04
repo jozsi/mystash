@@ -6,10 +6,12 @@ const db = require('../db');
 const User = require('../models/user');
 const router = require('../routes/user');
 
+const ROUTE = '/user';
+
 describe('user', () => {
   let server;
   let request;
-  const list = [];
+  let user;
 
   beforeAll(async () => {
     await db.connect(CONFIG.TEST_DB_URI);
@@ -21,54 +23,65 @@ describe('user', () => {
 
   it('should create a user', async () => {
     const response = await request
-      .post('/')
+      .post(ROUTE)
       .send(DATA)
       .expect(200);
-    const user = response.body;
+    user = response.body;
     expect(user.id).toHaveLength(24);
-    list.push(user);
   });
 
-  it('should error if user already exists', async () => {
+  it('should error creation if user already exists', async () => {
     await request
-      .post('/')
+      .post(ROUTE)
       .send(DATA)
       .expect(500);
   });
 
-  it('should read all users', async () => {
-    const response = await request
-      .get('/')
-      .expect(200);
-    expect(response.body).toEqual(list);
+  it('should login a valid user', async () => {
+    const { email, password } = DATA;
+    await request
+      .post(`${ROUTE}/login`)
+      .send({ email, password })
+      .expect(200)
+      .expect(user);
   });
 
-  it('should read a user', async () => {
-    const user = list[0];
-    const response = await request
-      .get(`/${user.id}`)
-      .expect(200);
-    expect(response.body).toEqual(user);
+  it('should reject an invalid user login', async () => {
+    const { email } = DATA;
+    await request
+      .post(`${ROUTE}/login`)
+      .send({ email, password: 'wrong password' })
+      .expect(401);
   });
 
-  it('should update a user', async () => {
-    const user = list[0];
-    user.lastName = 'Roe';
-    const response = await request
-      .put(`/${user.id}`)
-      .send(user)
-      .expect(200);
-    expect(response.body).toEqual(user);
+  it('should read user', async () => {
+    await request
+      .get(ROUTE)
+      .set('Authorization', `Bearer ${user.token}`)
+      .expect(200)
+      .expect(user);
   });
 
-  it('should delete a user', async () => {
-    const user = list[0];
-    const response = await request
-      .delete(`/${user.id}`)
-      .expect(200);
-    expect(response.body).toEqual(user);
-    const listResponse = await request.get('/');
-    expect(listResponse.body).toEqual([]);
+  it('should require authorization to read', async () => {
+    await request
+      .get(ROUTE)
+      .expect(401);
+  });
+
+  it('should update user', async () => {
+    const updatedUser = Object.assign({}, user, { lastName: 'Roe' });
+    await request
+      .put(ROUTE)
+      .set('Authorization', `Bearer ${user.token}`)
+      .send(updatedUser)
+      .expect(200)
+      .expect(updatedUser);
+  });
+
+  it('should require authorization to update', async () => {
+    await request
+      .put(ROUTE)
+      .expect(401);
   });
 
   afterAll(async () => {
