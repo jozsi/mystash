@@ -8,10 +8,10 @@ describe('Wallet', () => {
     if (value !== undefined) {
       testData[key] = value;
     }
-    const user = new Wallet(testData);
+    const wallet = new Wallet(testData);
     expect.assertions(1);
     try {
-      await user.validate();
+      await wallet.validate();
     } catch (err) {
       expect(err.errors[key]).toBeDefined();
     }
@@ -52,13 +52,13 @@ describe('Wallet', () => {
     await expectError('currency', 'LOL');
   });
 
-  it('should default value to 0', async () => {
-    const wallet = new Wallet(omit(DATA, 'value'));
-    expect(wallet.value).toBe(0);
+  it('should default balance to 0', async () => {
+    const wallet = new Wallet(omit(DATA, 'balance'));
+    expect(wallet.balance).toBe(0);
   });
 
-  it('should format value', async () => {
+  it('should format balance', async () => {
     const wallet = new Wallet(DATA);
-    expect(wallet.formattedValue).toBe(`${DATA.value},00 €`);  // eslint-disable-line no-irregular-whitespace
+    expect(wallet.formattedBalance).toBe(`${DATA.balance},00 €`);  // eslint-disable-line no-irregular-whitespace
   });
 });

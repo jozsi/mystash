@@ -16,7 +16,7 @@ const walletSchema = new db.Schema({
     required: true,
     trim: true,
   },
-  value: {
+  balance: {
     type: Number,
     default: 0,
   },
@@ -25,7 +25,7 @@ const walletSchema = new db.Schema({
     default: 'USD',
     enum: currencyFormatter.currencies.map(currency => currency.code),
   },
-  owner: {
+  user: {
     type: db.Schema.Types.ObjectId,
     ref: 'User',
     required: true,
@@ -35,8 +35,8 @@ const walletSchema = new db.Schema({
   toObject: transformer,
 });
 
-walletSchema.virtual('formattedValue').get(function formatValue() {
-  return currencyFormatter.format(this.value, { code: this.currency });
+walletSchema.virtual('formattedBalance').get(function formatValue() {
+  return currencyFormatter.format(this.balance, { code: this.currency });
 });
 
 const Wallet = db.model('Wallet', walletSchema);
