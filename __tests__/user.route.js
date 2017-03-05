@@ -4,7 +4,6 @@ const app = require('../app');
 const CONFIG = require('../config');
 const db = require('../db');
 const User = require('../models/user');
-const router = require('../routes/user');
 
 const ROUTE = '/user';
 
@@ -16,7 +15,6 @@ describe('user', () => {
   beforeAll(async () => {
     await db.connect(CONFIG.TEST_DB_URI);
     await User.remove({});
-    app.use(router.routes());
     server = app.listen();
     request = supertest(server);
   });

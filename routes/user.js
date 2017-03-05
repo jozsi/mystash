@@ -1,5 +1,4 @@
 const Router = require('koa-router');
-const jwt = require('./jwt');
 const User = require('../models/user');
 
 const router = new Router();
@@ -19,8 +18,6 @@ router.post('/login', async (ctx) => {
   }
   ctx.body = user;
 });
-
-router.use(jwt);
 
 router.get('/', async (ctx) => {
   const user = await User.findById(ctx.state.user.id);
