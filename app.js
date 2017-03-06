@@ -4,6 +4,7 @@ const router = require('./routes');
 
 const app = new Koa();
 
+app.context.router = router;
 app.use(bodyParser());
 app.use(async (ctx, next) => {
   try {

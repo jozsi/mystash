@@ -7,11 +7,12 @@
     "node": "7.6.0"
   },
   "scripts": {
+    "coverage": "codecov",
     "dev": "nodemon index.js",
-    "lint": "eslint .",
+    "lint": "eslint --ignore-path=.gitignore .",
     "jest": "jest --env=node --runInBand --coverage",
     "start": "node index.js",
-    "test": "npm run lint && npm run jest && codecov"
+    "test": "npm run lint && npm run jest && npm run coverage"
   },
   "repository": {
     "type": "git",
