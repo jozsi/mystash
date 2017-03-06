@@ -1,4 +1,6 @@
 # wealthor
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/jozsi/wealthor.svg)](https://greenkeeper.io/)
 Personal finance app
 
 ### Requirements
