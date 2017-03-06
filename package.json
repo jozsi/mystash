@@ -9,9 +9,9 @@
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint .",
-    "jest": "jest --env=node --runInBand",
+    "jest": "jest --env=node --runInBand --coverage",
     "start": "node index.js",
-    "test": "npm run lint && npm run jest"
+    "test": "npm run lint && npm run jest && codecov"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "mongoose": "^4.8.0"
   },
   "devDependencies": {
+    "codecov": "^1.0.0",
     "eslint": "^3.16.0",
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-import": "^2.2.0",
