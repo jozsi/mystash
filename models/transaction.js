@@ -1,3 +1,4 @@
+const Wallet = require('./wallet');
 const db = require('../db');
 
 const transformer = {
@@ -35,6 +36,23 @@ const transactionSchema = new db.Schema({
 }, {
   toJSON: transformer,
   toObject: transformer,
+});
+
+transactionSchema.post('save', async (doc, next) => {
+  try {
+    const wallet = await Wallet.findOneAndUpdate({
+      _id: doc.wallet,
+      user: doc.user,
+    }, {
+      $inc: { balance: doc.amount },
+    }, { new: true });
+    if (!wallet) {
+      throw new Error('Wallet not found.');
+    }
+    next();
+  } catch (err) {
+    next(err);
+  }
 });
 
 const Transaction = db.model('Transaction', transactionSchema);

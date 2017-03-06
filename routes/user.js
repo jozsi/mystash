@@ -11,8 +11,13 @@ router.post('/', async (ctx) => {
 router.post('/login', async (ctx) => {
   const { email, password } = ctx.request.body;
   const user = await User.findOne({ email: email.toLowerCase() });
-  if (!user || !await user.comparePassword(password)) {
-    const error = new Error('Login failed');
+  if (!user) {
+    const error = new Error('User does not exist.');
+    error.status = 404;
+    throw error;
+  }
+  if (!await user.comparePassword(password)) {
+    const error = new Error('Wrong password.');
     error.status = 401;
     throw error;
   }

@@ -29,6 +29,14 @@ describe('wallet', () => {
     expect(wallet.id).toHaveLength(24);
   });
 
+  it('should read wallets', async () => {
+    await request
+      .get(`${ROUTE}`)
+      .set('Authorization', `Bearer ${DATA.$token}`)
+      .expect(200)
+      .expect([wallet]);
+  });
+
   it('should read wallet', async () => {
     await request
       .get(`${ROUTE}/${wallet.id}`)

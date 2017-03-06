@@ -44,12 +44,20 @@ describe('user', () => {
       .expect(user);
   });
 
-  it('should reject an invalid user login', async () => {
+  it('should reject an invalid password', async () => {
     const { email } = DATA;
     await request
       .post(`${ROUTE}/login`)
       .send({ email, password: 'wrong password' })
       .expect(401);
+  });
+
+  it('should reject an inexisting user', async () => {
+    const { password } = DATA;
+    await request
+      .post(`${ROUTE}/login`)
+      .send({ email: 'ET@calling.eath', password })
+      .expect(404);
   });
 
   it('should read user', async () => {
