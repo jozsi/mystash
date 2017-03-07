@@ -1,8 +1,9 @@
 {
-  "extends": "airbnb-base",
+  "extends": "airbnb",
   "rules": {
     "no-param-reassign": ["error", { "props": false }],
     "comma-dangle": ["error", "always-multiline"],
-    "camelcase": ["error", { "properties": "always" }]
+    "camelcase": ["error", { "properties": "always" }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   }
 }
