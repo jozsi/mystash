@@ -1,12 +1,18 @@
-import { USER_LOAD, USER_LOGIN, USER_LOGOUT } from '../actions';
-import { createReducer } from './utils';
+import { USER_LOGIN, USER_LOGOUT } from '../actions';
 
-const initialState = {};
-
-const handlers = {
-  [USER_LOAD]: (state, action) => action.payload,
-  [USER_LOGIN]: (state, action) => Object.assign({}, state, action.payload),
-  [USER_LOGOUT]: () => ({}),
+const initialState = {
+  isLoading: false,
 };
 
-export default createReducer(initialState, handlers);
+const reducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case USER_LOGIN:
+      return { state, ...payload };
+    case USER_LOGOUT:
+      return initialState;
+    default:
+      return state;
+  }
+};
+
+export default reducer;

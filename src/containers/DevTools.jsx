@@ -13,4 +13,6 @@ const DevTools = createDevTools(
   </DockMonitor>
 );
 
+DevTools.enabled = process.env.NODE_ENV === 'development';
+
 export default DevTools;
