@@ -64,6 +64,7 @@
     "redux-devtools": "^3.3.0",
     "redux-devtools-dock-monitor": "^1.1.0",
     "redux-devtools-log-monitor": "^1.2.0",
+    "redux-persist": "^4.4.0",
     "redux-thunk": "^2.2.0",
     "supertest": "^3.0.0"
   },
