@@ -6,7 +6,7 @@ import Login from './containers/Login';
 
 const UserIsAuthenticated = UserAuthWrapper({
   authSelector: state => state.user,
-  authenticatingSelector: state => !state.user.rehydrated,
+  authenticatingSelector: state => !state.hydrated,
   predicate: user => user.token,
   redirectAction: routerActions.replace,
   allowRedirectBack: false,
@@ -14,10 +14,11 @@ const UserIsAuthenticated = UserAuthWrapper({
 
 const UserIsNotAuthenticated = UserAuthWrapper({
   authSelector: state => state.user,
-  redirectAction: routerActions.replace,
+  authenticatingSelector: state => !state.hydrated,
   predicate: user => !user.token,
-  failureRedirectPath: '/',
+  redirectAction: routerActions.replace,
   allowRedirectBack: false,
+  failureRedirectPath: '/',
 });
 
 const routes = {

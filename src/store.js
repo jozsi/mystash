@@ -1,7 +1,8 @@
 import { applyMiddleware, compose, createStore } from 'redux';
+import { apiMiddleware } from 'redux-api-middleware';
 import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
-import { persistStore, autoRehydrate } from 'redux-persist';
+import { persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import DevTools from './containers/DevTools';
 import reducers from './reducers';
@@ -9,9 +10,9 @@ import reducers from './reducers';
 const middlewares = [
   applyMiddleware(
     thunk,
-    routerMiddleware(browserHistory)
+    routerMiddleware(browserHistory),
+    apiMiddleware,
   ),
-  autoRehydrate(),
 ];
 
 if (DevTools.enabled) {
@@ -23,6 +24,6 @@ const store = createStore(
   compose(...middlewares),
 );
 
-persistStore(store);
+persistStore(store, { whitelist: ['user'] });
 
 export default store;
