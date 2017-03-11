@@ -4,7 +4,9 @@ const Wallet = require('../models/wallet');
 const router = new Router();
 
 router.post('/', async (ctx) => {
-  const wallet = await new Wallet(ctx.request.body).save();
+  const body = ctx.request.body;
+  body.user = ctx.state.user.id;
+  const wallet = await new Wallet(body).save();
   ctx.body = wallet;
 });
 
