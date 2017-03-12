@@ -5,14 +5,13 @@ import Article from 'grommet/components/Article';
 import Box from 'grommet/components/Box';
 import Header from 'grommet/components/Header';
 import Heading from 'grommet/components/Heading';
-import List from 'grommet/components/List';
-import ListItem from 'grommet/components/ListItem';
 import Section from 'grommet/components/Section';
 import Title from 'grommet/components/Title';
 import Pulse from 'grommet/components/icons/Pulse';
 import Logout from 'grommet/components/icons/base/Logout';
 import { logout } from '../actions/user';
 import { read, create } from '../actions/wallet';
+import WalletsList from '../components/WalletsList';
 
 class Home extends Component {
   componentDidMount() {
@@ -57,14 +56,10 @@ class Home extends Component {
               })}
             />
           </Box>
-          <List selectable>
-            {wallet.map(item => (
-              <ListItem justify="between" key={item.id}>
-                <span>{item.name}</span>
-                <span className="secondary">{item.formattedBalance}</span>
-              </ListItem>
-            ))}
-          </List>
+          <WalletsList
+            list={wallet.list}
+            isLoading={wallet.isLoading}
+          />
         </Section>
       </Article>
     );
@@ -75,7 +70,9 @@ Home.propTypes = {
   user: React.PropTypes.shape({
     firstName: React.PropTypes.string,
   }).isRequired,
-  wallet: React.PropTypes.arrayOf(React.PropTypes.object),
+  wallet: React.PropTypes.shape({
+    list: React.PropTypes.array,
+  }),
   logoutUser: React.PropTypes.func.isRequired,
   readWallet: React.PropTypes.func.isRequired,
   createWallet: React.PropTypes.func.isRequired,
