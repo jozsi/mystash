@@ -49,6 +49,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "grommet": "^1.2.0",
+    "grommet-addons": "^0.3.0",
     "jest": "^19.0.0",
     "nodemon": "^1.11.0",
     "object.omit": "^2.0.0",
