@@ -3,14 +3,12 @@ import { connect } from 'react-redux';
 import Anchor from 'grommet/components/Anchor';
 import Article from 'grommet/components/Article';
 import Box from 'grommet/components/Box';
-import Header from 'grommet/components/Header';
 import Heading from 'grommet/components/Heading';
 import Section from 'grommet/components/Section';
-import Title from 'grommet/components/Title';
 import Pulse from 'grommet/components/icons/Pulse';
-import Logout from 'grommet/components/icons/base/Logout';
 import { logout } from '../actions/user';
 import { read, create } from '../actions/wallet';
+import Header from '../components/Header';
 import WalletsList from '../components/WalletsList';
 
 class Home extends Component {
@@ -23,26 +21,11 @@ class Home extends Component {
 
     return (
       <Article>
-        <Header fixed>
-          <Title>
-            {`Hello, ${user.firstName}!`}
-          </Title>
-          <Box
-            flex
-            justify="end"
-            direction="row"
-            responsive={false}
-          >
-            <Anchor
-              onClick={logoutUser}
-              icon={<Logout />}
-              label="Sign out"
-              reverse
-              primary
-            />
-          </Box>
-        </Header>
-        <Section>
+        <Header
+          user={user}
+          logout={logoutUser}
+        />
+        <Section pad="small">
           <Box
             direction="row"
             justify="between"
