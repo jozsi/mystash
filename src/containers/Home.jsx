@@ -56,7 +56,10 @@ class Home extends Component {
               })}
             />
           </Box>
-          <WalletsList list={wallet} />
+          <WalletsList
+            list={wallet.list}
+            isLoading={wallet.isLoading}
+          />
         </Section>
       </Article>
     );
@@ -67,7 +70,9 @@ Home.propTypes = {
   user: React.PropTypes.shape({
     firstName: React.PropTypes.string,
   }).isRequired,
-  wallet: React.PropTypes.arrayOf(React.PropTypes.object),
+  wallet: React.PropTypes.shape({
+    list: React.PropTypes.array,
+  }),
   logoutUser: React.PropTypes.func.isRequired,
   readWallet: React.PropTypes.func.isRequired,
   createWallet: React.PropTypes.func.isRequired,
