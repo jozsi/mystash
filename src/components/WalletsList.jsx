@@ -4,7 +4,7 @@ import ListItem from 'grommet/components/ListItem';
 import ListPlaceholder from 'grommet-addons/components/ListPlaceholder';
 
 const WalletsList = ({ list, isLoading }) => (
-  <List>
+  <List selectable>
     {list.map(item => (
       <ListItem justify="between" key={item.id}>
         <span>{item.name}</span>

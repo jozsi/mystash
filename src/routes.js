@@ -1,7 +1,7 @@
 import { UserAuthWrapper } from 'redux-auth-wrapper';
 import { routerActions } from 'react-router-redux';
-import Main from './components/Main';
 import Home from './containers/Home';
+import Layout from './containers/Layout';
 import Login from './containers/Login';
 
 const UserIsAuthenticated = UserAuthWrapper({
@@ -23,7 +23,7 @@ const UserIsNotAuthenticated = UserAuthWrapper({
 
 const routes = {
   path: '/',
-  component: Main,
+  component: Layout,
   childRoutes: [
     { path: 'login', component: UserIsNotAuthenticated(Login) },
   ],
