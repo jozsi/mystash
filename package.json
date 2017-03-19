@@ -71,6 +71,11 @@
     "supertest": "^3.0.0"
   },
   "proxy": "http://localhost:3000",
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
   "jest": {
     "testURL": "http://localhost",
     "moduleNameMapper": {
