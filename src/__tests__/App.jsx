@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../../src/App';
+import App from '../App';
+import configureStore from '../store';
 
-it('renders without crashing', () => {
+it('renders without crashing', async () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  const store = await configureStore;
+
+  ReactDOM.render(<App store={store} />, div);
 });

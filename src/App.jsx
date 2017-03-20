@@ -1,24 +1,32 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import 'grommet/grommet.min.css';
-import routes from './routes';
 import DevTools from './containers/DevTools';
-import store from './store';
+import Home from './containers/Home';
+import Layout from './containers/Layout';
+import Login from './containers/Login';
+import PrivateRoute from './containers/PrivateRoute';
 
-const history = syncHistoryWithStore(browserHistory, store);
-
-const App = () => (
+const App = ({ store }) => (
   <Provider store={store}>
-    <div>
-      <Router
-        routes={routes}
-        history={history}
-      />
-      {DevTools.enabled && <DevTools />}
-    </div>
+    <Router>
+      <Layout>
+        <Switch>
+          <PrivateRoute exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Redirect to="/" />
+        </Switch>
+        {DevTools.enabled && <DevTools />}
+      </Layout>
+    </Router>
   </Provider>
 );
+
+App.propTypes = {
+  store: React.PropTypes.shape({
+    dispatch: React.PropTypes.func,
+  }).isRequired,
+};
 
 export default App;

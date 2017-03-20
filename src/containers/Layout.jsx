@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Article from 'grommet/components/Article';
 import App from 'grommet/components/App';
 import Section from 'grommet/components/Section';
@@ -32,4 +33,4 @@ Layout.defaultProps = {
 const mapStateToProps = ({ user }) => ({ user });
 const mapDispatchToProps = { onLogout: logout };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Layout));

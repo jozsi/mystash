@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
+import { Redirect } from 'react-router-dom';
 import Split from 'grommet/components/Split';
 import Sidebar from 'grommet/components/Sidebar';
 import LoginForm from 'grommet/components/LoginForm';
@@ -9,11 +9,9 @@ import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
 import Footer from 'grommet/components/Footer';
-
 import { login } from '../actions/user';
 
 class Login extends Component {
-
   constructor() {
     super();
     this.onSubmit = this.onSubmit.bind(this);
@@ -25,9 +23,9 @@ class Login extends Component {
   }
 
   render() {
-    const { user: { error } } = this.props;
+    const { user } = this.props;
 
-    return (
+    return user.token ? <Redirect to="/" /> : (
       <Split flex="left" separator>
 
         <Article>
@@ -45,7 +43,7 @@ class Login extends Component {
             align="start"
             title="Welcome!"
             onSubmit={this.onSubmit}
-            errors={[error]}
+            errors={[user.error]}
             usernameType="text"
           />
           <Footer
@@ -66,15 +64,10 @@ Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
   user: PropTypes.shape({
     error: PropTypes.string,
-  }),
+    token: PropTypes.string,
+  }).isRequired,
 };
 
-Login.defaultProps = {
-  user: {},
-};
-
-const select = state => ({
-  user: state.user,
-});
+const select = ({ user }) => ({ user });
 
 export default connect(select)(Login);
