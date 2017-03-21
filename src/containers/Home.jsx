@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Animate from 'grommet/components/Animate';
 import Box from 'grommet/components/Box';
 import Button from 'grommet/components/Button';
 import Heading from 'grommet/components/Heading';
+import Quote from 'grommet/components/Quote';
 import Add from 'grommet/components/icons/base/Add';
 import { logout } from '../actions/user';
 import { read, create } from '../actions/wallet';
 import WalletsList from '../components/WalletsList';
+import WalletAdd from '../containers/WalletAdd';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      addVisible: false,
+    };
+  }
   componentDidMount() {
     this.props.readWallet();
   }
 
+  toggleAdd = () => this.setState({ addVisible: !this.state.addVisible });
+
+  walletAdded = (wallet) => {
+    this.props.createWallet(wallet);
+    this.toggleAdd();
+  }
+
   render() {
-    const { wallet, createWallet } = this.props;
+    const { wallet } = this.props;
+    const { addVisible } = this.state;
 
     return (
       <Box>
@@ -28,12 +46,17 @@ class Home extends Component {
             icon={<Add />}
             label="Add"
             secondary
-            onClick={() => createWallet({
-              name: `Random ${Date.now()}`,
-              balance: Math.round(Math.random() * 1000),
-            })}
+            onClick={this.toggleAdd}
           />
         </Box>
+        <Animate
+          enter={{ animation: 'slide-down', duration: 300 }}
+          visible={addVisible}
+        >
+          <Quote borderColorIndex="neutral-4" size="full" align="center">
+            <WalletAdd onAdd={this.walletAdded} />
+          </Quote>
+        </Animate>
         <WalletsList
           list={wallet.list}
           isLoading={wallet.isLoading}
