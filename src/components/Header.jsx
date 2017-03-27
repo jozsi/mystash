@@ -19,6 +19,7 @@ const Header = ({ onLogout, user }) => (
       justify="end"
       direction="row"
       responsive={false}
+      pad={{ horizontal: 'small' }}
     >
       <Anchor
         onClick={onLogout}
