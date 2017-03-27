@@ -4,6 +4,7 @@
     "no-param-reassign": ["error", { "props": false }],
     "comma-dangle": ["error", "always-multiline"],
     "camelcase": ["error", { "properties": "always" }],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "react/no-array-index-key": 0
   }
 }

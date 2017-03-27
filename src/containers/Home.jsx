@@ -8,8 +8,13 @@ import Quote from 'grommet/components/Quote';
 import Add from 'grommet/components/icons/base/Add';
 import { logout } from '../actions/user';
 import { read, create } from '../actions/wallet';
-import WalletsList from '../components/WalletsList';
+import Table from '../components/Table';
 import WalletAdd from '../containers/WalletAdd';
+
+const WALLET_TABLE = new Map([
+  ['name', 'Name'],
+  ['formattedBalance', 'Balance'],
+]);
 
 class Home extends Component {
   constructor(props) {
@@ -57,9 +62,9 @@ class Home extends Component {
             <WalletAdd onAdd={this.walletAdded} />
           </Quote>
         </Animate>
-        <WalletsList
-          list={wallet.list}
-          isLoading={wallet.isLoading}
+        <Table
+          rows={wallet.list}
+          columns={WALLET_TABLE}
         />
       </Box>
     );
