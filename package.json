@@ -38,7 +38,7 @@
     "koa-bodyparser": "^4.2.0",
     "koa-jwt": "^3.0.1",
     "koa-router": "^7.1.0",
-    "mongoose": "^4.9.1"
+    "mongoose": "^4.9.2"
   },
   "devDependencies": {
     "codecov": "^2.1.0",
