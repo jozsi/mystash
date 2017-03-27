@@ -36,7 +36,7 @@ class Home extends Component {
   }
 
   render() {
-    const { wallet } = this.props;
+    const { wallet, history } = this.props;
     const { addVisible } = this.state;
 
     return (
@@ -65,6 +65,7 @@ class Home extends Component {
         <Table
           rows={wallet.list}
           columns={WALLET_TABLE}
+          onSelect={i => history.push(`/wallet/${wallet.list[i].id}`)}
         />
       </Box>
     );
@@ -77,6 +78,9 @@ Home.propTypes = {
   }),
   readWallet: React.PropTypes.func.isRequired,
   createWallet: React.PropTypes.func.isRequired,
+  history: React.PropTypes.shape({
+    push: React.PropTypes.func,
+  }).isRequired,
 };
 
 Home.defaultProps = {
