@@ -3,6 +3,8 @@ const CONFIG = Object.freeze({
   DB_URI: 'mongodb://localhost/wealthor',
   TEST_DB_URI: 'mongodb://localhost/wealthor-test',
   JWT_SECRET: '@Ab(IQ]PfD:O~Kkx{7akQEt$/!ue=ow"yKZ^}wt<[rcIIqtA>`X@qC5lO<=<]+/1',
+  LOGGING_LEVEL: 'debug',
+  LOG_FILE: 'mystash.log',
 });
 
 module.exports = CONFIG;
