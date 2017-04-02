@@ -12,8 +12,8 @@ import Table from '../components/Table';
 import WalletAdd from '../containers/WalletAdd';
 
 const WALLET_TABLE = new Map([
-  ['name', 'Name'],
-  ['formattedBalance', 'Balance'],
+  ['Name', row => row.name],
+  ['Balance', row => row.formattedBalance],
 ]);
 
 class Home extends Component {

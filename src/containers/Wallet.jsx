@@ -1,12 +1,14 @@
+import moment from 'moment';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { read } from '../actions/transaction';
 import Table from '../components/Table';
+import currencyValue from '../../isomorphic/currencyValue';
 
 const TRANSACTION_TABLE = new Map([
-  ['date', 'Date'],
-  ['details', 'Details'],
-  ['amount', 'Amount'],
+  ['Date', row => moment(row.date).format('L')],
+  ['Details', row => row.details],
+  ['Amount', row => currencyValue(row.amount, 'USD')],  // TODO: remove hardcoded currency
 ]);
 
 class Wallet extends Component {

@@ -1,5 +1,6 @@
 const currencyFormatter = require('currency-formatter');
 const db = require('../db');
+const currencyValue = require('../isomorphic/currencyValue');
 
 const transformer = {
   getters: true,
@@ -36,7 +37,7 @@ const walletSchema = new db.Schema({
 });
 
 walletSchema.virtual('formattedBalance').get(function formatValue() {
-  return currencyFormatter.format(this.balance, { code: this.currency });
+  return currencyValue(this.balance, this.currency);
 });
 
 const Wallet = db.model('Wallet', walletSchema);

@@ -53,6 +53,7 @@
     "grommet-addons": "^0.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
+    "moment": "^2.18.1",
     "nodemon": "^1.11.0",
     "object.omit": "^2.0.1",
     "react": "^15.4.2",
