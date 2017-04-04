@@ -9,7 +9,7 @@ import Add from 'grommet/components/icons/base/Add';
 import { logout } from '../actions/user';
 import { read, create } from '../actions/wallet';
 import Table from '../components/Table';
-import WalletAdd from '../containers/WalletAdd';
+import WalletAdd from '../components/WalletAdd';
 
 const WALLET_TABLE = new Map([
   ['Name', row => row.name],
@@ -17,13 +17,10 @@ const WALLET_TABLE = new Map([
 ]);
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    addVisible: false,
+  };
 
-    this.state = {
-      addVisible: false,
-    };
-  }
   componentDidMount() {
     this.props.readWallet();
   }

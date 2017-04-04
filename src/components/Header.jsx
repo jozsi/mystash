@@ -12,7 +12,10 @@ const Header = ({ onLogout, user }) => (
     pad="small"
   >
     <Title>
-      {`Hello, ${user.firstName}!`}
+      <Anchor
+        path="/"
+        label={`Hello, ${user.firstName}!`}
+      />
     </Title>
     <Box
       flex
