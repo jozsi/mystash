@@ -44,7 +44,7 @@ class Login extends Component {
             title="Welcome!"
             onSubmit={this.onSubmit}
             errors={[user.error]}
-            usernameType="text"
+            usernameType="email"
           />
           <Footer
             direction="row"
