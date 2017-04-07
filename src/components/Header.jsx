@@ -4,6 +4,7 @@ import Box from 'grommet/components/Box';
 import GrommHeader from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
 import Logout from 'grommet/components/icons/base/Logout';
+import Logo from './Logo';
 
 const Header = ({ onLogout, user }) => (
   <GrommHeader
@@ -12,6 +13,7 @@ const Header = ({ onLogout, user }) => (
     pad="small"
   >
     <Title>
+      <Logo />
       <Anchor
         path="/"
         label={`Hello, ${user.firstName}!`}

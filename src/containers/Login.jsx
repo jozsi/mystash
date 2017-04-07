@@ -10,6 +10,7 @@ import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
 import Footer from 'grommet/components/Footer';
 import { login } from '../actions/user';
+import Logo from '../components/Logo';
 
 class Login extends Component {
   constructor() {
@@ -41,10 +42,10 @@ class Login extends Component {
           <span />
           <LoginForm
             align="start"
-            title="Welcome!"
             onSubmit={this.onSubmit}
             errors={[user.error]}
             usernameType="email"
+            logo={<Logo colorIndex="brand" />}
           />
           <Footer
             direction="row"
