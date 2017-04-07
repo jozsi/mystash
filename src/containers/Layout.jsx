@@ -11,7 +11,7 @@ const Layout = ({ children, onLogout, user }) => (
   <App centered={false}>
     <Article>
       {user.token && <Header user={user} onLogout={onLogout} />}
-      <Section pad="small">
+      <Section pad={user.token ? 'small' : 'none'}>
         {children}
       </Section>
     </Article>
