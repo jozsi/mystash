@@ -31,14 +31,14 @@
   "homepage": "https://github.com/jozsi/wealthor#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "currency-formatter": "^1.2.0",
+    "currency-formatter": "^1.2.1",
     "isemail": "^2.2.1",
     "jsonwebtoken": "^7.3.0",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
     "koa-jwt": "^3.2.1",
     "koa-router": "^7.1.1",
-    "mongoose": "^4.9.3"
+    "mongoose": "^4.9.5"
   },
   "devDependencies": {
     "codecov": "^2.1.0",
@@ -58,8 +58,8 @@
     "object.omit": "^2.0.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
-    "react-router-dom": "^4.0.0",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
     "react-scripts": "0.9.5",
     "redux": "^3.6.0",
     "redux-api-middleware": "^1.0.2",
