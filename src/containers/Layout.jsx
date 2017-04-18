@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -19,11 +20,11 @@ const Layout = ({ children, onLogout, user }) => (
 );
 
 Layout.propTypes = {
-  children: React.PropTypes.node,
-  user: React.PropTypes.shape({
-    token: React.PropTypes.string,
+  children: PropTypes.node,
+  user: PropTypes.shape({
+    token: PropTypes.string,
   }).isRequired,
-  onLogout: React.PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
 };
 
 Layout.defaultProps = {

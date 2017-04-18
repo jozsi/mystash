@@ -1,5 +1,6 @@
 import currencies from 'currency-formatter/currencies';
 import escapeStringRegexp from 'escape-string-regexp';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Button from 'grommet/components/Button';
 import Footer from 'grommet/components/Footer';
@@ -19,7 +20,7 @@ const currencyList = currencies.map(currency => ({
 
 class WalletAdd extends Component {
   static propTypes = {
-    onAdd: React.PropTypes.func.isRequired,
+    onAdd: PropTypes.func.isRequired,
   }
 
   constructor(props) {

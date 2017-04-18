@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
@@ -21,8 +22,8 @@ const WalletsList = ({ list, isLoading }) => (
 );
 
 WalletsList.propTypes = {
-  list: React.PropTypes.arrayOf(React.PropTypes.object),
-  isLoading: React.PropTypes.bool,
+  list: PropTypes.arrayOf(PropTypes.object),
+  isLoading: PropTypes.bool,
 };
 
 WalletsList.defaultProps = {

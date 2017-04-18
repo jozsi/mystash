@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Button from 'grommet/components/Button';
 import DateTime from 'grommet/components/DateTime';
@@ -12,7 +13,7 @@ import TextInput from 'grommet/components/TextInput';
 
 class TransactionAdd extends Component {
   static propTypes = {
-    onAdd: React.PropTypes.func,
+    onAdd: PropTypes.func,
   }
 
   static defaultProps = {

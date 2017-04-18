@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Animate from 'grommet/components/Animate';
@@ -70,13 +71,13 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  wallet: React.PropTypes.shape({
-    list: React.PropTypes.array,
+  wallet: PropTypes.shape({
+    list: PropTypes.array,
   }),
-  readWallet: React.PropTypes.func.isRequired,
-  createWallet: React.PropTypes.func.isRequired,
-  history: React.PropTypes.shape({
-    push: React.PropTypes.func,
+  readWallet: PropTypes.func.isRequired,
+  createWallet: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
   }).isRequired,
 };
 

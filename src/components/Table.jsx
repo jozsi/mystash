@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import GrommetTable from 'grommet/components/Table';
 import TableHeader from 'grommet/components/TableHeader';
@@ -24,9 +25,9 @@ const Table = ({ columns, rows, onSelect }) => {
 };
 
 Table.propTypes = {
-  columns: React.PropTypes.shape({}),
-  rows: React.PropTypes.arrayOf(React.PropTypes.shape({})),
-  onSelect: React.PropTypes.func,
+  columns: PropTypes.shape({}),
+  rows: PropTypes.arrayOf(PropTypes.shape({})),
+  onSelect: PropTypes.func,
 };
 
 Table.defaultProps = {

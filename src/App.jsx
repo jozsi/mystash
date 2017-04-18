@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
@@ -26,8 +27,8 @@ const App = ({ store }) => (
 );
 
 App.propTypes = {
-  store: React.PropTypes.shape({
-    dispatch: React.PropTypes.func,
+  store: PropTypes.shape({
+    dispatch: PropTypes.func,
   }).isRequired,
 };
 

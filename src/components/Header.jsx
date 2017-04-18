@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Anchor from 'grommet/components/Anchor';
 import Box from 'grommet/components/Box';
@@ -38,10 +39,10 @@ const Header = ({ onLogout, user }) => (
 );
 
 Header.propTypes = {
-  user: React.PropTypes.shape({
-    firstName: React.PropTypes.string,
+  user: PropTypes.shape({
+    firstName: PropTypes.string,
   }).isRequired,
-  onLogout: React.PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
 };
 
 export default Header;

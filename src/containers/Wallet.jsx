@@ -5,6 +5,7 @@ import Heading from 'grommet/components/Heading';
 import Quote from 'grommet/components/Quote';
 import Add from 'grommet/components/icons/base/Add';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { read as readTransaction, create } from '../actions/transaction';
@@ -80,19 +81,19 @@ class Wallet extends Component {
 }
 
 Wallet.propTypes = {
-  transactionList: React.PropTypes.arrayOf(React.PropTypes.shape({
-    amount: React.PropTypes.number,
-    date: React.PropTypes.string,
-    details: React.PropTypes.string,
+  transactionList: PropTypes.arrayOf(PropTypes.shape({
+    amount: PropTypes.number,
+    date: PropTypes.string,
+    details: PropTypes.string,
   })),
-  wallet: React.PropTypes.shape({
-    currency: React.PropTypes.string,
+  wallet: PropTypes.shape({
+    currency: PropTypes.string,
   }),
-  create: React.PropTypes.func.isRequired,
-  readTransaction: React.PropTypes.func.isRequired,
-  readWallet: React.PropTypes.func.isRequired,
-  match: React.PropTypes.shape({
-    params: React.PropTypes.object,
+  create: PropTypes.func.isRequired,
+  readTransaction: PropTypes.func.isRequired,
+  readWallet: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.object,
   }).isRequired,
 };
 
