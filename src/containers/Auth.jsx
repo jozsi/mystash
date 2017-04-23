@@ -1,31 +1,34 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import Split from 'grommet/components/Split';
-import Sidebar from 'grommet/components/Sidebar';
-import LoginForm from 'grommet/components/LoginForm';
+import { Link, Redirect } from 'react-router-dom';
 import Article from 'grommet/components/Article';
-import Section from 'grommet/components/Section';
+import Footer from 'grommet/components/Footer';
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
-import Footer from 'grommet/components/Footer';
-import { login } from '../actions/user';
+import Sidebar from 'grommet/components/Sidebar';
+import Section from 'grommet/components/Section';
+import Split from 'grommet/components/Split';
+import { login, signup } from '../actions/user';
+import AuthForm from '../components/AuthForm';
 import Logo from '../components/Logo';
 
-class Login extends Component {
-  constructor() {
-    super();
-    this.onSubmit = this.onSubmit.bind(this);
+class Auth extends Component {
+  onSubmit = (fields) => {
+    const { dispatch } = this.props;
+    const action = this.isSignup() ? signup : login;
+    dispatch(action(fields.username, fields.password, fields.firstName, fields.lastName));
   }
 
-  onSubmit(fields) {
-    const { dispatch } = this.props;
-    dispatch(login(fields.username, fields.password));
-  }
+  isSignup = () => this.props.match.path === '/signup';
 
   render() {
     const { user } = this.props;
+    const signupLink = <Link to="/signup">Need an account?</Link>;
+    const loginLink = <Link to="/login">Have an account?</Link>;
+    const signupForm = this.isSignup();
+    const link = signupForm ? loginLink : signupLink;
+    const label = signupForm ? 'Sign Up' : 'Log In';
 
     return user.token ? <Redirect to="/" /> : (
       <Split flex="left" separator>
@@ -41,12 +44,15 @@ class Login extends Component {
 
         <Sidebar justify="between" align="center" pad="none" size="large">
           <span />
-          <LoginForm
+          <AuthForm
             align="start"
             onSubmit={this.onSubmit}
             errors={[user.error]}
             usernameType="email"
             logo={<Logo colorIndex="brand" />}
+            label={label}
+            link={link}
+            extraFields={signupForm}
           />
           <Footer
             direction="row"
@@ -62,8 +68,11 @@ class Login extends Component {
   }
 }
 
-Login.propTypes = {
+Auth.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   user: PropTypes.shape({
     error: PropTypes.string,
     token: PropTypes.string,
@@ -72,4 +81,4 @@ Login.propTypes = {
 
 const select = ({ user }) => ({ user });
 
-export default connect(select)(Login);
+export default connect(select)(Auth);
