@@ -33,12 +33,12 @@
     "bcryptjs": "^2.4.3",
     "currency-formatter": "^1.2.1",
     "isemail": "^2.2.1",
-    "jsonwebtoken": "^7.3.0",
+    "jsonwebtoken": "^7.4.0",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
     "koa-jwt": "^3.2.1",
     "koa-router": "^7.1.1",
-    "mongoose": "^4.9.5"
+    "mongoose": "^4.9.6"
   },
   "devDependencies": {
     "codecov": "^2.1.0",
