@@ -74,6 +74,7 @@ class Wallet extends Component {
         <Table
           rows={transactionList}
           columns={this.TRANSACTION_TABLE}
+          emptyMessage="Let's add a transaction, shall we?"
         />
       </Box>
     );
