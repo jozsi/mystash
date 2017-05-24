@@ -11,7 +11,7 @@
     "dev": "nodemon index.js & PORT=3001 react-scripts start",
     "lint": "eslint --ignore-path=.gitignore --ext .js,.jsx .",
     "start": "node index.js",
-    "test": "npm run lint && react-scripts test --coverage"
+    "test": "npm run lint && react-scripts test --coverage --runInBand"
   },
   "repository": {
     "type": "git",
