@@ -1,7 +1,6 @@
 const supertest = require('supertest');
 const DATA = require('./wallet.json');
 const app = require('../app');
-const CONFIG = require('../config');
 const db = require('../db');
 const Wallet = require('../models/wallet');
 
@@ -13,7 +12,7 @@ describe('wallet', () => {
   let wallet;
 
   beforeAll(async () => {
-    await db.connect(CONFIG.TEST_DB_URI);
+    await db.connect(process.env.DB_URI);
     await Wallet.remove({});
     server = app.listen();
     request = supertest(server);

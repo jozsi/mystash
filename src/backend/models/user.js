@@ -1,7 +1,6 @@
 const bcrypt = require('bcryptjs');
 const isemail = require('isemail');
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require('../config');
 const db = require('../db');
 
 const transformer = {
@@ -43,7 +42,7 @@ const userSchema = new db.Schema({
 });
 
 userSchema.virtual('token').get(function getToken() {
-  return jwt.sign({ id: this.id }, JWT_SECRET, { noTimestamp: true });
+  return jwt.sign({ id: this.id }, process.env.JWT_SECRET, { noTimestamp: true });
 });
 
 userSchema.methods.comparePassword = function comparePassword(password) {

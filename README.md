@@ -13,7 +13,7 @@ Personal finance app
 ### Installation Steps
 - Make sure that NodeJS v.7.6.0 (or higher) is installed
 - Clone (or download) the repository locally.
-- Copy the `config.sample.js` file, renaming it to `config.js`. Edit the new file (`config.js`) filling in the necessary information for your local machine (e.g. the local connection to MongoDB)
+- Optionally, create a new file called `.env.local` filling in the necessary information for your local machine (e.g. the local connection to MongoDB), only for the fields you need to overwrite from the default `.env`
 - Run `npm install` in the project's folder to install dependencies
 - Run `npm start` to start the server
 - Visit the project in your browser (usually the address will be http://localhost:3000 if you have configured NodeJS otherwise)

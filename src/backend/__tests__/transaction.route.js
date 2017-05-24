@@ -3,7 +3,6 @@ const DATA = require('./transaction.json');
 const USER = require('./user.json');
 const WALLET = require('./wallet.json');
 const app = require('../app');
-const CONFIG = require('../config');
 const db = require('../db');
 const Transaction = require('../models/transaction');
 const User = require('../models/user');
@@ -20,7 +19,7 @@ describe('transaction', () => {
   let wallet;
 
   beforeAll(async () => {
-    await db.connect(CONFIG.TEST_DB_URI);
+    await db.connect(process.env.DB_URI);
     await Transaction.remove({});
     await User.remove({});
     await Wallet.remove({});
