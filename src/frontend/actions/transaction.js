@@ -1,4 +1,4 @@
-import { CALL_API } from 'redux-api-middleware';
+import { RSAA } from 'redux-api-middleware';
 import {
   TRANSACTION_READ_REQUEST,
   TRANSACTION_READ_SUCCESS,
@@ -9,7 +9,7 @@ import {
 } from '../actions';
 
 export const read = walletId => ({
-  [CALL_API]: {
+  [RSAA]: {
     endpoint: `/transaction/${walletId}`,
     method: 'GET',
     headers: state => ({
@@ -24,7 +24,7 @@ export const read = walletId => ({
 });
 
 export const create = transaction => ({
-  [CALL_API]: {
+  [RSAA]: {
     endpoint: '/transaction',
     method: 'POST',
     headers: state => ({

@@ -1,4 +1,4 @@
-import { CALL_API } from 'redux-api-middleware';
+import { RSAA } from 'redux-api-middleware';
 import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
@@ -10,7 +10,7 @@ import {
 } from '../actions';
 
 export const login = (email, password) => ({
-  [CALL_API]: {
+  [RSAA]: {
     endpoint: '/user/login',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -23,7 +23,7 @@ export const login = (email, password) => ({
 });
 
 export const signup = (email, password, firstName, lastName) => ({
-  [CALL_API]: {
+  [RSAA]: {
     endpoint: '/user',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

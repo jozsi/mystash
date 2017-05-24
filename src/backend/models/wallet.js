@@ -1,6 +1,6 @@
 const currencyFormatter = require('currency-formatter');
 const db = require('../db');
-const currencyValue = require('../isomorphic/currencyValue');
+const currencyValue = require('../../isomorphic/currencyValue');
 
 const transformer = {
   getters: true,
