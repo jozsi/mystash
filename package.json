@@ -36,7 +36,7 @@
     "koa-bodyparser": "^4.2.0",
     "koa-jwt": "^3.2.2",
     "koa-router": "^7.2.0",
-    "mongoose": "^4.10.2"
+    "mongoose": "^4.10.3"
   },
   "devDependencies": {
     "escape-string-regexp": "^1.0.5",
@@ -55,7 +55,7 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "react-scripts": "1.0.6",
+    "react-scripts": "1.0.7",
     "redux": "^3.6.0",
     "redux-api-middleware": "^2.0.0-beta.1",
     "redux-devtools": "^3.4.0",
