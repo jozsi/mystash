@@ -36,7 +36,7 @@
     "koa-bodyparser": "^4.2.0",
     "koa-jwt": "^3.2.2",
     "koa-router": "^7.2.0",
-    "mongoose": "^4.10.3"
+    "mongoose": "^4.10.4"
   },
   "devDependencies": {
     "escape-string-regexp": "^1.0.5",
