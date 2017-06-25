@@ -7,11 +7,15 @@
     "node": "7.6.0"
   },
   "scripts": {
-    "build": "react-scripts build",
-    "dev": "nodemon index.js & PORT=3001 react-scripts start",
+    "build": "npm run rs:build",
+    "dev": "npm-run-all --print-label --parallel --race watch:api rs:start",
     "lint": "eslint --ignore-path=.gitignore --ext .js,.jsx .",
+    "rs:build": "react-scripts build",
+    "rs:start": "PORT=3001 FORCE_COLOR=1 react-scripts start",
+    "rs:test": "react-scripts test --coverage --runInBand",
     "start": "node index.js",
-    "test": "npm run lint && react-scripts test --coverage --runInBand"
+    "test": "npm-run-all lint rs:test",
+    "watch:api": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +40,8 @@
     "koa-bodyparser": "^4.2.0",
     "koa-jwt": "^3.2.2",
     "koa-router": "^7.2.1",
-    "mongoose": "^4.10.8"
+    "mongoose": "^4.10.8",
+    "npm-run-all": "^4.0.2"
   },
   "devDependencies": {
     "escape-string-regexp": "^1.0.5",
