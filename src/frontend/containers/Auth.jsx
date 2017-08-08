@@ -35,7 +35,7 @@ class Auth extends Component {
 
         <Article>
           <Section full colorIndex="brand" pad="large" justify="center" align="center">
-            <Heading tag="h1"><strong>Wealthor</strong></Heading>
+            <Heading tag="h1"><strong>myStash</strong></Heading>
             <Paragraph align="center" size="large">
               Personal finance app
             </Paragraph>
@@ -59,7 +59,7 @@ class Auth extends Component {
             size="small"
             pad={{ horizontal: 'medium', vertical: 'small' }}
           >
-            <span className="secondary">Star me on <a href="https://github.com/jozsi/wealthor">GitHub</a></span>
+            <span className="secondary">Star me on <a href="https://github.com/jozsi/mystash">GitHub</a></span>
           </Footer>
         </Sidebar>
 
