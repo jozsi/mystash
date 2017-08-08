@@ -30,7 +30,6 @@
   "bugs": {
     "url": "https://github.com/jozsi/wealthor/issues"
   },
-  "homepage": "https://github.com/jozsi/wealthor#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "currency-formatter": "^1.2.1",
@@ -72,6 +71,5 @@
     "redux-thunk": "^2.2.0",
     "supertest": "^3.0.0"
   },
-  "proxy": "http://localhost:3000",
-  "homepage": "/"
+  "proxy": "http://localhost:3000"
 }
