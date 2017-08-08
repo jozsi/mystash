@@ -38,8 +38,10 @@
     "jsonwebtoken": "^7.4.1",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-connect-history-api-fallback": "^0.3.1",
     "koa-jwt": "^3.2.2",
     "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
     "mongoose": "^4.11.3",
     "npm-run-all": "^4.0.2"
   },
@@ -70,5 +72,6 @@
     "redux-thunk": "^2.2.0",
     "supertest": "^3.0.0"
   },
-  "proxy": "http://localhost:3000"
+  "proxy": "http://localhost:3000",
+  "homepage": "/"
 }
