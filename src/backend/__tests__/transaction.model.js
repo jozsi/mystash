@@ -20,14 +20,14 @@ describe('Transaction', () => {
   it('should expose _id as id', async () => {
     const transaction = new Transaction(DATA);
     const transformed = transaction.toObject();
-    expect(transformed._id).toBeUndefined();  // eslint-disable-line no-underscore-dangle
+    expect(transformed._id).toBeUndefined(); // eslint-disable-line no-underscore-dangle
     expect(transformed.id)
-      .toBe(transaction._id.toString());  // eslint-disable-line no-underscore-dangle
+      .toBe(transaction._id.toString()); // eslint-disable-line no-underscore-dangle
   });
 
   it('should not expose __v', async () => {
     const transaction = new Transaction(DATA).toObject();
-    expect(transaction.__v).toBeUndefined();  // eslint-disable-line no-underscore-dangle
+    expect(transaction.__v).toBeUndefined(); // eslint-disable-line no-underscore-dangle
   });
 
   it('should throw error if amount is missing', async () => {

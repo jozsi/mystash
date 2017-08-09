@@ -5,11 +5,11 @@ const db = require('./db');
 const { API_PORT, DB_URI } = process.env;
 
 const onInit = () => {
-  console.log(`Running [DB:${db.connection.name}] [HTTP:${API_PORT}]`);  // eslint-disable-line no-console
+  console.log(`Running [DB:${db.connection.name}] [HTTP:${API_PORT}]`); // eslint-disable-line no-console
 };
 
 const onError = ({ message }) => {
-  console.error(`Error: ${message}`);  // eslint-disable-line no-console
+  console.error(`Error: ${message}`); // eslint-disable-line no-console
   process.exit(1);
 };
 

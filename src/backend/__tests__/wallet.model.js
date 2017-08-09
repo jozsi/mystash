@@ -20,13 +20,13 @@ describe('Wallet', () => {
   it('should expose _id as id', async () => {
     const wallet = new Wallet(DATA);
     const transformed = wallet.toObject();
-    expect(transformed._id).toBeUndefined();  // eslint-disable-line no-underscore-dangle
-    expect(transformed.id).toBe(wallet._id.toString());  // eslint-disable-line no-underscore-dangle
+    expect(transformed._id).toBeUndefined(); // eslint-disable-line no-underscore-dangle
+    expect(transformed.id).toBe(wallet._id.toString()); // eslint-disable-line no-underscore-dangle
   });
 
   it('should not expose __v', async () => {
     const wallet = new Wallet(DATA).toObject();
-    expect(wallet.__v).toBeUndefined();  // eslint-disable-line no-underscore-dangle
+    expect(wallet.__v).toBeUndefined(); // eslint-disable-line no-underscore-dangle
   });
 
   it('should throw error if name is missing', async () => {
@@ -59,6 +59,6 @@ describe('Wallet', () => {
 
   it('should format balance', async () => {
     const wallet = new Wallet(DATA);
-    expect(wallet.formattedBalance).toBe(`${DATA.balance},00 €`);  // eslint-disable-line no-irregular-whitespace
+    expect(wallet.formattedBalance).toBe(`${DATA.balance},00 €`); // eslint-disable-line no-irregular-whitespace
   });
 });

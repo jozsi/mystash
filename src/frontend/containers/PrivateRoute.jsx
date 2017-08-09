@@ -8,8 +8,8 @@ const PrivateRoute = ({ component, isAuthenticated, ...rest }) => (
     {...rest}
     render={props => (
       isAuthenticated
-      ? React.createElement(component, props)
-      : <Redirect to="/login" />
+        ? React.createElement(component, props)
+        : <Redirect to="/login" />
     )}
   />
 );

@@ -126,7 +126,6 @@ class AuthForm extends Component {
       </Form>
     );
   }
-
 }
 
 AuthForm.propTypes = {
