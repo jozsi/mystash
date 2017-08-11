@@ -9,6 +9,7 @@ import FormFields from 'grommet/components/FormFields';
 import Header from 'grommet/components/Header';
 import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
+import RadioButton from 'grommet/components/RadioButton';
 import TextInput from 'grommet/components/TextInput';
 
 class TransactionAdd extends Component {
@@ -24,18 +25,24 @@ class TransactionAdd extends Component {
     amount: 0,
     date: undefined,
     details: '',
+    expense: true,
   };
 
   onSubmit = (event) => {
     event.preventDefault();
-    this.props.onAdd(this.state);
+    const { expense, ...transaction } = this.state;
+    if (expense) {
+      transaction.amount *= -1;
+    }
+    this.props.onAdd(transaction);
   };
 
   fieldChanged = (event, field) => this.setState({ [field]: event.target.value });
   dateChanged = date => this.setState({ date });
+  toggleType = () => this.setState({ expense: !this.state.expense });
 
   render() {
-    const { amount, date, details } = this.state;
+    const { amount, date, details, expense } = this.state;
 
     return (
       <Form onSubmit={this.onSubmit}>
@@ -45,6 +52,18 @@ class TransactionAdd extends Component {
           </Heading>
         </Header>
         <FormFields>
+          <FormField>
+            <RadioButton
+              label="Expense"
+              checked={expense}
+              onChange={this.toggleType}
+            />
+            <RadioButton
+              label="Income"
+              checked={!expense}
+              onChange={this.toggleType}
+            />
+          </FormField>
           <FormField label="Amount">
             <NumberInput
               onChange={ev => this.fieldChanged(ev, 'amount')}
