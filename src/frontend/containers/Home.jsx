@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Animate from 'grommet/components/Animate';
 import Box from 'grommet/components/Box';
 import Button from 'grommet/components/Button';
+import Distribution from 'grommet/components/Distribution';
 import Heading from 'grommet/components/Heading';
 import Quote from 'grommet/components/Quote';
 import Add from 'grommet/components/icons/base/Add';
@@ -16,6 +17,12 @@ const WALLET_TABLE = new Map([
   ['Name', row => row.name],
   ['Balance', row => row.formattedBalance],
 ]);
+
+const getWalletDistribution = walletList => walletList.map(x => ({
+  value: x.balance,
+  labelValue: x.formattedBalance,
+  label: x.name,
+}));
 
 class Home extends Component {
   state = {
@@ -66,6 +73,10 @@ class Home extends Component {
           onSelect={i => history.push(`/wallet/${wallet.list[i].id}`)}
           emptyMessage="Oh, I see we don't have any data yet. Don't worry, we'll be on the path to saving money in no time! Let's create a wallet..."
           isLoading={wallet.isLoading}
+        />
+        <Distribution
+          series={getWalletDistribution(wallet.list)}
+          size="small"
         />
       </Box>
     );
