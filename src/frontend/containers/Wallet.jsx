@@ -4,6 +4,8 @@ import Button from 'grommet/components/Button';
 import Heading from 'grommet/components/Heading';
 import Quote from 'grommet/components/Quote';
 import Add from 'grommet/components/icons/base/Add';
+import Down from 'grommet/components/icons/base/Down';
+import Up from 'grommet/components/icons/base/Up';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
@@ -29,6 +31,7 @@ class Wallet extends Component {
   }
 
   TRANSACTION_TABLE = new Map([
+    ['', row => (row.amount < 0 ? <Down colorIndex="critical" /> : <Up colorIndex="ok" />)],
     ['Date', row => moment(row.date).format('L')],
     ['Details', row => row.details],
     ['Amount', row => currencyValue(row.amount, this.props.wallet.currency)],

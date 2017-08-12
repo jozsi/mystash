@@ -54,11 +54,13 @@ class TransactionAdd extends Component {
         <FormFields>
           <FormField>
             <RadioButton
+              id="expense-true"
               label="Expense"
               checked={expense}
               onChange={this.toggleType}
             />
             <RadioButton
+              id="expense-false"
               label="Income"
               checked={!expense}
               onChange={this.toggleType}
