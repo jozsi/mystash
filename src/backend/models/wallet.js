@@ -21,6 +21,9 @@ const walletSchema = new db.Schema({
     type: Number,
     default: 0,
   },
+  initialBalance: {
+    type: Number,
+  },
   currency: {
     type: String,
     default: 'USD',
@@ -38,6 +41,11 @@ const walletSchema = new db.Schema({
 
 walletSchema.virtual('formattedBalance').get(function formatValue() {
   return currencyValue(this.balance, this.currency);
+});
+
+walletSchema.pre('save', function preSave(next) {
+  this.initialBalance = this.get('balance');
+  next();
 });
 
 const Wallet = db.model('Wallet', walletSchema);

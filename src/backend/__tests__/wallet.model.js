@@ -17,6 +17,11 @@ describe('Wallet', () => {
     }
   };
 
+  // Mock database save/insert
+  beforeAll(() => {
+    Wallet.prototype.collection.insert = (docs, options, callback) => callback(null, docs);
+  });
+
   it('should expose _id as id', async () => {
     const wallet = new Wallet(DATA);
     const transformed = wallet.toObject();
@@ -60,5 +65,11 @@ describe('Wallet', () => {
   it('should format balance', async () => {
     const wallet = new Wallet(DATA);
     expect(wallet.formattedBalance).toBe(`${DATA.balance},00 €`); // eslint-disable-line no-irregular-whitespace
+  });
+
+  it('should default initialBalance to value of balance', async () => {
+    const wallet = new Wallet(omit(DATA));
+    await wallet.save();
+    expect(wallet.initialBalance).toBe(wallet.balance);
   });
 });
