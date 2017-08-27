@@ -10,7 +10,7 @@ const onError = ({ message }) => {
 };
 
 if (!process.env.DOTENV_LOADED) {
-  const dotenvSample = '.env.sample';
+  const dotenvSample = '.env.example';
   if (fs.existsSync(dotenvSample)) {
     console.error(`WARNING! Missing .env file, falling back to ${dotenvSample}`); // eslint-disable-line no-console
     dotenv.config({

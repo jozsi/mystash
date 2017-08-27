@@ -3,5 +3,7 @@ node_js:
   - "8"
 services:
   - mongodb
+before_script:
+  - ln -s .env.example .env
 after_success:
   - codecov
