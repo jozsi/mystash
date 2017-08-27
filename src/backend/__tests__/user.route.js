@@ -12,7 +12,7 @@ describe('user', () => {
   let user;
 
   beforeAll(async () => {
-    await db.connect(process.env.DB_URI);
+    await db.connect(process.env.TEST_DB_URI, { useMongoClient: true });
     await User.remove({});
     server = app.listen();
     request = supertest(server);
