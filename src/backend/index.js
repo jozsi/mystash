@@ -30,7 +30,7 @@ const onInit = () => {
 Promise
   .all([
     new Promise((resolve, reject) => app.listen(API_PORT, resolve).on('error', reject)),
-    db.connect(DB_URI),
+    db.connect(DB_URI, { useMongoClient: true }),
   ])
   .then(onInit)
   .catch(onError);
