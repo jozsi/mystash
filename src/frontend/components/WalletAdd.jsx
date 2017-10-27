@@ -60,14 +60,16 @@ class WalletAdd extends Component {
     const filteredCurrencies = !search
       ? currencyList
       : currencyList.filter(currency => currency.label.search(re) !== -1);
-    this.setState({
-      filteredCurrencies,
-      search,
-    });
+    this.setState({ filteredCurrencies });
   }
 
   render() {
-    const { balance, currency, filteredCurrencies, name } = this.state;
+    const {
+      balance,
+      currency,
+      filteredCurrencies,
+      name,
+    } = this.state;
 
     return (
       <Form onSubmit={this.onSubmit}>

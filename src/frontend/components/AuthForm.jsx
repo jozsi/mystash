@@ -29,7 +29,12 @@ class AuthForm extends Component {
   onLastNameChange = event => this.onFieldChange(event, 'lastName');
   onSubmit = (event) => {
     event.preventDefault();
-    let { firstName, lastName, password, username } = this.state;
+    let {
+      firstName,
+      lastName,
+      password,
+      username,
+    } = this.state;
 
     username = username.trim();
     password = password.trim();
@@ -51,7 +56,16 @@ class AuthForm extends Component {
   }
 
   render() {
-    const { align, errors, logo, title, usernameType, label, link, extraFields } = this.props;
+    const {
+      align,
+      errors,
+      logo,
+      title,
+      usernameType,
+      label,
+      link,
+      extraFields,
+    } = this.props;
 
     const classes = CSSClassnames.LOGIN_FORM;
 
@@ -85,20 +99,24 @@ class AuthForm extends Component {
               onChange={this.onUsernameChange}
             />
           </FormField>
-          {extraFields && <FormField htmlFor="firstName" label="First Name">
-            <input
-              type="text"
-              value={this.state.firstName}
-              onChange={this.onFirstNameChange}
-            />
-          </FormField>}
-          {extraFields && <FormField htmlFor="lastName" label="Last Name">
-            <input
-              type="text"
-              value={this.state.lastName}
-              onChange={this.onLastNameChange}
-            />
-          </FormField>}
+          {extraFields && (
+            <FormField htmlFor="firstName" label="First Name">
+              <input
+                type="text"
+                value={this.state.firstName}
+                onChange={this.onFirstNameChange}
+              />
+            </FormField>
+          )}
+          {extraFields && (
+            <FormField htmlFor="lastName" label="Last Name">
+              <input
+                type="text"
+                value={this.state.lastName}
+                onChange={this.onLastNameChange}
+              />
+            </FormField>
+          )}
           <FormField htmlFor="password" label="Password">
             <input
               type="password"

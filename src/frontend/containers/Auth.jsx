@@ -24,8 +24,8 @@ class Auth extends Component {
 
   render() {
     const { user } = this.props;
-    const signupLink = <Link to="/signup">Need an account?</Link>;
-    const loginLink = <Link to="/login">Have an account?</Link>;
+    const signupLink = <Link to="/signup" href="/signup">Need an account?</Link>;
+    const loginLink = <Link to="/login" href="/login">Have an account?</Link>;
     const signupForm = this.isSignup();
     const link = signupForm ? loginLink : signupLink;
     const label = signupForm ? 'Sign Up' : 'Log In';

@@ -42,7 +42,12 @@ class TransactionAdd extends Component {
   toggleType = () => this.setState({ expense: !this.state.expense });
 
   render() {
-    const { amount, date, details, expense } = this.state;
+    const {
+      amount,
+      date,
+      details,
+      expense,
+    } = this.state;
 
     return (
       <Form onSubmit={this.onSubmit}>

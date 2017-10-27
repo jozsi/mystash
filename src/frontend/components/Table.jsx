@@ -5,7 +5,13 @@ import TableHeader from 'grommet/components/TableHeader';
 import TableRow from 'grommet/components/TableRow';
 import SpinningIcon from 'grommet/components/icons/Spinning';
 
-const Table = ({ columns, emptyMessage, isLoading, rows, onSelect }) => {
+const Table = ({
+  columns,
+  emptyMessage,
+  isLoading,
+  rows,
+  onSelect,
+}) => {
   const formatters = [...columns.values()];
   const hasData = !!rows.length;
   let content;

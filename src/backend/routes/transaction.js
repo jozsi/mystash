@@ -4,7 +4,7 @@ const Transaction = require('../models/transaction');
 const router = new Router();
 
 router.post('/', async (ctx) => {
-  const body = ctx.request.body;
+  const { body } = ctx.request;
   body.user = ctx.state.user.id;
   const transaction = await new Transaction(body).save();
   ctx.body = transaction;
