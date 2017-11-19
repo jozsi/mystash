@@ -3,6 +3,9 @@ import {
   WALLET_READ_REQUEST,
   WALLET_READ_SUCCESS,
   WALLET_READ_FAILURE,
+  WALLET_READ_ONE_REQUEST,
+  WALLET_READ_ONE_SUCCESS,
+  WALLET_READ_ONE_FAILURE,
   WALLET_CREATE_REQUEST,
   WALLET_CREATE_SUCCESS,
   WALLET_CREATE_FAILURE,
@@ -17,6 +20,18 @@ export const read = () => ({
       Authorization: `Bearer ${state.user.token}`,
     }),
     types: [WALLET_READ_REQUEST, WALLET_READ_SUCCESS, WALLET_READ_FAILURE],
+  },
+});
+
+export const readOne = id => ({
+  [RSAA]: {
+    endpoint: `/wallet/${id}`,
+    method: 'GET',
+    headers: state => ({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${state.user.token}`,
+    }),
+    types: [WALLET_READ_ONE_REQUEST, WALLET_READ_ONE_SUCCESS, WALLET_READ_ONE_FAILURE],
   },
 });
 

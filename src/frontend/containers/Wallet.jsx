@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { read as readTransaction, create } from '../actions/transaction';
-import { read as readWallet } from '../actions/wallet';
+import { readOne as readWallet } from '../actions/wallet';
 import Table from '../components/Table';
 import TransactionAdd from '../components/TransactionAdd';
 import { byId } from '../reducers/wallet';
@@ -42,11 +42,16 @@ class Wallet extends Component {
   };
 
   componentDidMount() {
-    const { match: { params }, wallet } = this.props;
-    if (!wallet.id) {
-      this.props.readWallet();
-    }
-    this.props.readTransaction(params.id);
+    const {
+      match: {
+        params: {
+          id,
+        },
+      },
+    } = this.props;
+    
+    this.props.readWallet(id);
+    this.props.readTransaction(id);
   }
 
   TRANSACTION_TABLE = new Map([
