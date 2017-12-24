@@ -1,4 +1,4 @@
-import { REHYDRATE } from 'redux-persist/constants';
+import { REHYDRATE } from 'redux-persist';
 import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
@@ -14,7 +14,7 @@ const initialState = {};
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case REHYDRATE: {
-      if (payload.user) {
+      if (payload && payload.user) {
         const { error, isLoading, ...rest } = payload.user;
         return { ...state, ...rest };
       }
