@@ -31,4 +31,12 @@ router.put('/:id', async (ctx) => {
   ctx.body = wallet;
 });
 
+router.delete('/:id', async (ctx) => {
+  const wallet = await Wallet.findOne({
+    user: ctx.state.user.id,
+    _id: ctx.params.id,
+  });
+  ctx.body = wallet;
+});
+
 module.exports = router;

@@ -38,22 +38,48 @@ const transactionSchema = new db.Schema({
   toObject: transformer,
 });
 
-transactionSchema.post('save', async (doc, next) => {
+const preUpdateMiddleware = async function(next) {
   try {
-    const wallet = await Wallet.findOneAndUpdate({
-      _id: doc.wallet,
-      user: doc.user,
-    }, {
-      $inc: { balance: doc.amount },
-    }, { new: true });
-    if (!wallet) {
-      throw new Error('Wallet not found.');
-    }
+    this.preUpdateDocument = await Transaction.findOne(this.getQuery());
     next();
   } catch (err) {
     next(err);
   }
-});
+}
+
+const updateBalanceMiddleware = async function(doc, next) {
+  try {
+    let amount = doc.amount;
+    if (this.preUpdateDocument) {
+      amount -= this.preUpdateDocument.amount;
+    } else if (this.op === 'findOneAndRemove') {
+      amount *= -1;
+    }
+
+    if (amount) {
+      const wallet = await Wallet.findOneAndUpdate({
+        _id: doc.wallet,
+        user: doc.user,
+      }, {
+        $inc: {
+          balance: amount,
+        },
+      });
+      if (!wallet) {
+        throw new Error('Wallet not found.');
+      }
+    }
+
+    next();
+  } catch (err) {
+    next(err);
+  }
+};
+
+transactionSchema.pre('findOneAndUpdate', preUpdateMiddleware);
+transactionSchema.post('findOneAndUpdate', updateBalanceMiddleware);
+transactionSchema.post('findOneAndRemove', updateBalanceMiddleware);
+transactionSchema.post('save', updateBalanceMiddleware);
 
 const Transaction = db.model('Transaction', transactionSchema);
 

@@ -5,13 +5,14 @@ import Heading from 'grommet/components/Heading';
 import Quote from 'grommet/components/Quote';
 import Add from 'grommet/components/icons/base/Add';
 import Down from 'grommet/components/icons/base/Down';
+import Trash from 'grommet/components/icons/base/Trash';
 import Up from 'grommet/components/icons/base/Up';
 import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { read as readTransaction, create } from '../actions/transaction';
+import { read as readTransaction, create, deleteTransaction } from '../actions/transaction';
 import { readOne as readWallet } from '../actions/wallet';
 import Table from '../components/Table';
 import TransactionAdd from '../components/TransactionAdd';
@@ -49,7 +50,7 @@ class Wallet extends Component {
         },
       },
     } = this.props;
-    
+
     this.props.readWallet(id);
     this.props.readTransaction(id);
   }
@@ -59,6 +60,7 @@ class Wallet extends Component {
     ['Date', row => moment(row.date).format('L')],
     ['Details', row => row.details],
     ['Amount', row => currencyValue(row.amount, this.props.wallet.currency)],
+    [' ', row => <Button icon={<Trash />} onClick={() => this.props.deleteTransaction(row.id)} hoverIndicator={{ background: 'critical' }}/>],
   ]);
 
   toggleAdd = () => this.setState({ addVisible: !this.state.addVisible });
@@ -143,6 +145,7 @@ const mapDispatchToProps = {
   readTransaction,
   readWallet,
   create,
+  deleteTransaction,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);

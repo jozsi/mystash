@@ -3,6 +3,7 @@ import {
   TRANSACTION_READ_SUCCESS,
   TRANSACTION_READ_FAILURE,
   TRANSACTION_CREATE_SUCCESS,
+  TRANSACTION_DELETE_SUCCESS,
 } from '../actions';
 
 const initialState = { list: [] };
@@ -31,6 +32,11 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         list: [...state.list, payload],
+      };
+    case TRANSACTION_DELETE_SUCCESS:
+      return {
+        ...state,
+        list: state.list.filter(({ id }) => id !== payload.id),
       };
     default:
       return state;
