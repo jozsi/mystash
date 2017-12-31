@@ -42,7 +42,7 @@ class Wallet extends Component {
     addVisible: false,
   };
 
-  componentDidMount() {
+  updateWallet(includeTransactions) {
     const {
       match: {
         params: {
@@ -52,7 +52,14 @@ class Wallet extends Component {
     } = this.props;
 
     this.props.readWallet(id);
-    this.props.readTransaction(id);
+
+    if (includeTransactions) {
+      this.props.readTransaction(id);
+    }
+  }
+
+  componentDidMount() {
+    this.updateWallet(true);
   }
 
   TRANSACTION_TABLE = new Map([
@@ -60,12 +67,16 @@ class Wallet extends Component {
     ['Date', row => moment(row.date).format('L')],
     ['Details', row => row.details],
     ['Amount', row => currencyValue(row.amount, this.props.wallet.currency)],
-    [' ', row => <Button icon={<Trash />} onClick={() => this.props.deleteTransaction(row.id)} hoverIndicator={{ background: 'critical' }}/>],
+    [' ', row => <Button icon={<Trash />} onClick={() => {
+      this.props.deleteTransaction(row.id)
+        .then(() => this.updateWallet());
+    }} hoverIndicator={{ background: 'critical' }}/>],
   ]);
 
   toggleAdd = () => this.setState({ addVisible: !this.state.addVisible });
   transactionAdded = (transaction) => {
-    this.props.create({ ...transaction, wallet: this.props.match.params.id });
+    this.props.create({ ...transaction, wallet: this.props.match.params.id })
+      .then(() => this.updateWallet());
     this.toggleAdd();
   }
 
@@ -84,7 +95,7 @@ class Wallet extends Component {
           justify="between"
           align="center"
         >
-          <Heading>{wallet.name}</Heading>
+          <Heading>{`${wallet.name} / ${wallet.formattedBalance}`}</Heading>
           <Button
             icon={<Add />}
             label="Add"
