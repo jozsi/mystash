@@ -38,6 +38,23 @@ const transactionSchema = new db.Schema({
   toObject: transformer,
 });
 
+const preSaveMiddleware = async function(next) {
+  try {
+    const count = await Wallet.count({
+      _id: this.wallet,
+      user: this.user,
+    });
+
+    if (!count) {
+      throw new Error('Wallet not found.');
+    }
+
+    next();
+  } catch (err) {
+    next(err);
+  }
+};
+
 const preUpdateMiddleware = async function(next) {
   try {
     this.preUpdateDocument = await Transaction.findOne(this.getQuery());
@@ -45,7 +62,7 @@ const preUpdateMiddleware = async function(next) {
   } catch (err) {
     next(err);
   }
-}
+};
 
 const updateBalanceMiddleware = async function(doc, next) {
   try {
@@ -76,6 +93,7 @@ const updateBalanceMiddleware = async function(doc, next) {
   }
 };
 
+transactionSchema.pre('save', preSaveMiddleware);
 transactionSchema.pre('findOneAndUpdate', preUpdateMiddleware);
 transactionSchema.post('findOneAndUpdate', updateBalanceMiddleware);
 transactionSchema.post('findOneAndRemove', updateBalanceMiddleware);

@@ -12,11 +12,23 @@ const Wallet = require('../models/wallet');
 const ROUTE = '/transaction';
 
 describe('transaction', () => {
+  const transactions = [];
+  const sumTransactions = () => transactions.reduce((a, b) => a.amount + b.amount, { amount: 0 });
   let server;
   let request;
-  let transaction;
   let user;
   let wallet;
+
+  function createTransaction(data) {
+    return request
+      .post(ROUTE)
+      .set('Authorization', `Bearer ${user.token}`)
+      .send({
+        ...data,
+        user: user.id,
+        wallet: wallet.id,
+      });
+  }
 
   beforeAll(async () => {
     await db.connect(process.env.TEST_DB_URI, { useMongoClient: true });
@@ -33,17 +45,11 @@ describe('transaction', () => {
   });
 
   it('should create a transaction', async () => {
-    const response = await request
-      .post(ROUTE)
-      .set('Authorization', `Bearer ${user.token}`)
-      .send({
-        ...DATA,
-        user: user.id,
-        wallet: wallet.id,
-      })
+    const response = await createTransaction(DATA)
       .expect(200);
-    transaction = response.body;
+    const transaction = response.body;
     expect(transaction.id).toHaveLength(24);
+    transactions.push(transaction);
   });
 
   it('should should error if wallet does not exist', async () => {
@@ -54,20 +60,18 @@ describe('transaction', () => {
       .expect(500);
   });
 
-  it('should update wallet balance on create', async () => {
-    const actualWallet = await Wallet.findById(wallet.id);
-    expect(actualWallet.balance).toBe(wallet.balance + transaction.amount);
+  it('should not create a transaction if wallet does not exist', async () => {
+    const transactionCount = await Transaction.count();
+    expect(transactionCount).toBe(transactions.length);
   });
 
-  it('should read transactions', async () => {
-    await request
-      .get(`${ROUTE}/in/${transaction.wallet}`)
-      .set('Authorization', `Bearer ${user.token}`)
-      .expect(200)
-      .expect([transaction]);
+  it('should update wallet balance on create', async () => {
+    const actualWallet = await Wallet.findById(wallet.id);
+    expect(actualWallet.balance).toBe(wallet.balance + sumTransactions());
   });
 
   it('should read transaction', async () => {
+    const transaction = transactions[0];
     await request
       .get(`${ROUTE}/${transaction.id}`)
       .set('Authorization', `Bearer ${user.token}`)
@@ -76,6 +80,7 @@ describe('transaction', () => {
   });
 
   it('should update transaction name', async () => {
+    const transaction = transactions[0];
     const updatedTransaction = {
       ...transaction,
       details: 'Renamed transaction',
@@ -86,9 +91,11 @@ describe('transaction', () => {
       .send(updatedTransaction)
       .expect(200)
       .expect(updatedTransaction);
+    transactions[0] = updatedTransaction;
   });
 
   it('should update transaction amount', async () => {
+    const transaction = transactions[0];
     const updatedTransaction = {
       ...transaction,
       amount: transaction.amount * 2,
@@ -99,25 +106,46 @@ describe('transaction', () => {
       .send(updatedTransaction)
       .expect(200)
       .expect(updatedTransaction);
-    transaction = updatedTransaction;
+    transactions[0] = updatedTransaction;
   });
 
   it('should update wallet balance on update', async () => {
     const actualWallet = await Wallet.findById(wallet.id);
-    expect(actualWallet.balance).toBe(wallet.balance + transaction.amount);
+    expect(actualWallet.balance).toBe(wallet.balance + sumTransactions());
   });
 
-  it('should delete transaction', async () => {
+  it('should create a second transaction', async () => {
+    const response = await createTransaction({
+      ...DATA,
+      amount: 5,
+      details: 'Second transaction',
+    }).expect(200);
+    const transaction = response.body;
+    expect(transaction.id).toHaveLength(24);
+    transactions.push(transaction);
+  });
+
+  it('should read transactions by descending date', async () => {
+    await request
+      .get(`${ROUTE}/in/${wallet.id}`)
+      .set('Authorization', `Bearer ${user.token}`)
+      .expect(200)
+      .expect([...transactions].reverse());
+  });
+
+  it('should delete second transaction', async () => {
+    const transaction = transactions[1];
     await request
       .delete(`${ROUTE}/${transaction.id}`)
       .set('Authorization', `Bearer ${user.token}`)
       .expect(200)
       .expect(transaction);
+    transactions.pop();
   });
 
   it('should update wallet balance on delete', async () => {
     const actualWallet = await Wallet.findById(wallet.id);
-    expect(actualWallet.balance).toBe(wallet.balance);
+    expect(actualWallet.balance).toBe(wallet.balance + sumTransactions());
   });
 
   afterAll(async () => {

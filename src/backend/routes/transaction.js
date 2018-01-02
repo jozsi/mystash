@@ -14,7 +14,7 @@ router.get('/in/:wallet', async (ctx) => {
   const transactions = await Transaction.find({
     user: ctx.state.user.id,
     wallet: ctx.params.wallet,
-  });
+  }).sort('-date');
   ctx.body = transactions;
 });
 
