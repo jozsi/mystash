@@ -31,7 +31,7 @@ const reducer = (state = initialState, { type, payload }) => {
     case TRANSACTION_CREATE_SUCCESS:
       return {
         ...state,
-        list: [...state.list, payload],
+        list: [...state.list, payload].sort((a, b) => new Date(b.date) - new Date(a.date)),
       };
     case TRANSACTION_DELETE_SUCCESS:
       return {
