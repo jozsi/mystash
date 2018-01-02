@@ -6,6 +6,9 @@ import {
   TRANSACTION_CREATE_REQUEST,
   TRANSACTION_CREATE_SUCCESS,
   TRANSACTION_CREATE_FAILURE,
+  TRANSACTION_UPDATE_REQUEST,
+  TRANSACTION_UPDATE_SUCCESS,
+  TRANSACTION_UPDATE_FAILURE,
   TRANSACTION_DELETE_REQUEST,
   TRANSACTION_DELETE_SUCCESS,
   TRANSACTION_DELETE_FAILURE,
@@ -36,6 +39,19 @@ export const create = transaction => ({
     }),
     body: JSON.stringify(transaction),
     types: [TRANSACTION_CREATE_REQUEST, TRANSACTION_CREATE_SUCCESS, TRANSACTION_CREATE_FAILURE],
+  },
+});
+
+export const update = transaction => ({
+  [RSAA]: {
+    endpoint: `/transaction/${transaction.id}`,
+    method: 'PUT',
+    headers: state => ({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${state.user.token}`,
+    }),
+    body: JSON.stringify(transaction),
+    types: [TRANSACTION_UPDATE_REQUEST, TRANSACTION_UPDATE_SUCCESS, TRANSACTION_UPDATE_FAILURE],
   },
 });
 

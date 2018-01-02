@@ -11,14 +11,17 @@ import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
 import RadioButton from 'grommet/components/RadioButton';
 import TextInput from 'grommet/components/TextInput';
+import Trash from 'grommet/components/icons/base/Trash';
 
-class TransactionAdd extends Component {
+class Transaction extends Component {
   static propTypes = {
-    onAdd: PropTypes.func,
+    onSubmit: PropTypes.func,
+    onDelete: PropTypes.func,
   }
 
   static defaultProps = {
-    onAdd: () => {},
+    onSubmit: () => {},
+    onDelete: () => {},
   }
 
   state = {
@@ -26,7 +29,31 @@ class TransactionAdd extends Component {
     date: undefined,
     details: '',
     expense: true,
+    id: undefined,
   };
+
+  updateStateFromProps(props) {
+    const { amount, date, details, id } = props.selectedTransaction;
+    if (!id) {
+      return;
+    }
+    const expense = amount < 0;
+    this.setState({
+      amount: Math.abs(amount),
+      date: new Date(date),
+      details,
+      expense,
+      id,
+    });
+  }
+
+  componentDidMount() {
+    this.updateStateFromProps(this.props);
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.updateStateFromProps(newProps);
+  }
 
   onSubmit = (event) => {
     event.preventDefault();
@@ -34,8 +61,10 @@ class TransactionAdd extends Component {
     if (expense) {
       transaction.amount *= -1;
     }
-    this.props.onAdd(transaction);
+    this.props.onSubmit(transaction);
   };
+
+  onDelete = () => this.props.onDelete(this.state.id);
 
   fieldChanged = (event, field) => this.setState({ [field]: event.target.value });
   dateChanged = date => this.setState({ date });
@@ -47,13 +76,14 @@ class TransactionAdd extends Component {
       date,
       details,
       expense,
+      id,
     } = this.state;
 
     return (
       <Form onSubmit={this.onSubmit}>
         <Header>
           <Heading>
-            Add Transaction
+            {id ? 'Edit' : 'Add'} Transaction
           </Heading>
         </Header>
         <FormFields>
@@ -92,17 +122,24 @@ class TransactionAdd extends Component {
             />
           </FormField>
         </FormFields>
-        <Footer pad={{ vertical: 'small' }}>
-          <Button
-            label="Submit"
-            type="submit"
-            primary
-            onClick={this.onSubmit}
-          />
+        <Footer justify="between" pad={{ vertical: 'small' }}>
+            <Button
+              label="Submit"
+              type="submit"
+              primary
+              onClick={this.onSubmit}
+            />
+            {id && (
+              <Button
+                icon={<Trash />}
+                onClick={this.onDelete}
+                hoverIndicator={{ background: 'critical' }}
+              />
+            )}
         </Footer>
       </Form>
     );
   }
 }
 
-export default TransactionAdd;
+export default Transaction;

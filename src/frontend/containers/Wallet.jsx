@@ -4,18 +4,18 @@ import Button from 'grommet/components/Button';
 import Heading from 'grommet/components/Heading';
 import Quote from 'grommet/components/Quote';
 import Add from 'grommet/components/icons/base/Add';
+import Close from 'grommet/components/icons/base/Close';
 import Down from 'grommet/components/icons/base/Down';
-import Trash from 'grommet/components/icons/base/Trash';
 import Up from 'grommet/components/icons/base/Up';
 import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { read as readTransaction, create, deleteTransaction } from '../actions/transaction';
+import { read as readTransaction, create, update, deleteTransaction } from '../actions/transaction';
 import { readOne as readWallet } from '../actions/wallet';
 import Table from '../components/Table';
-import TransactionAdd from '../components/TransactionAdd';
+import Transaction from '../components/Transaction';
 import { byId } from '../reducers/wallet';
 import currencyValue from '../../isomorphic/currencyValue';
 
@@ -40,6 +40,7 @@ const getTypeDistribution = (list) => {
 class Wallet extends Component {
   state = {
     addVisible: false,
+    selectedTransaction: {},
   };
 
   updateWallet(includeTransactions) {
@@ -67,22 +68,37 @@ class Wallet extends Component {
     ['Date', row => moment(row.date).format('L')],
     ['Details', row => row.details],
     ['Amount', row => currencyValue(row.amount, this.props.wallet.currency)],
-    [' ', row => <Button icon={<Trash />} onClick={() => {
-      this.props.deleteTransaction(row.id)
-        .then(() => this.updateWallet());
-    }} hoverIndicator={{ background: 'critical' }}/>],
   ]);
 
-  toggleAdd = () => this.setState({ addVisible: !this.state.addVisible });
-  transactionAdded = (transaction) => {
-    this.props.create({ ...transaction, wallet: this.props.match.params.id })
+  toggleAdd = () => {
+    const addVisible = !this.state.addVisible;
+    this.setState({ addVisible, selectedTransaction: {} });
+  };
+  transactionSubmitted = (transaction) => {
+    const method = transaction.id ? 'update' : 'create';
+    this.props[method]({ ...transaction, wallet: this.props.match.params.id })
       .then(() => this.updateWallet());
     this.toggleAdd();
   }
+  transactionDeleted = (id) => {
+    this.props.deleteTransaction(id)
+      .then(() => this.updateWallet());
+    this.toggleAdd();
+  }
+  rowSelected = (i) => {
+    const selectedTransaction = this.props.transactionList[i];
+    this.setState({
+      addVisible: true,
+      selectedTransaction,
+    });
+    if (this.transactionBox) {
+      this.transactionBox.scrollIntoView(false);
+    }
+  };
 
   render() {
     const { transactionList, wallet } = this.props;
-    const { addVisible } = this.state;
+    const { addVisible, selectedTransaction } = this.state;
 
     if (!wallet.id) {
       return null;
@@ -96,25 +112,39 @@ class Wallet extends Component {
           align="center"
         >
           <Heading>{`${wallet.name} / ${wallet.formattedBalance}`}</Heading>
-          <Button
-            icon={<Add />}
-            label="Add"
-            secondary
-            onClick={this.toggleAdd}
-          />
+          {addVisible ? (
+            <Button
+              icon={<Close />}
+              onClick={this.toggleAdd}
+            />
+          ) : (
+            <Button
+              icon={<Add />}
+              label="Add"
+              secondary
+              onClick={this.toggleAdd}
+            />
+          )}
         </Box>
-        <Animate
-          enter={{ animation: 'slide-down', duration: 300 }}
-          visible={addVisible}
-        >
-          <Quote borderColorIndex="neutral-4" size="full" align="center">
-            <TransactionAdd onAdd={this.transactionAdded} />
-          </Quote>
-        </Animate>
+        <div ref={node => this.transactionBox = node}>
+          <Animate
+            enter={{ animation: 'slide-down', duration: 300 }}
+            visible={addVisible}
+          >
+            <Quote borderColorIndex="neutral-4" size="full" align="center">
+              <Transaction
+                onSubmit={this.transactionSubmitted}
+                onDelete={this.transactionDeleted}
+                selectedTransaction={selectedTransaction}
+              />
+            </Quote>
+          </Animate>
+        </div>
         <Table
           rows={transactionList}
           columns={this.TRANSACTION_TABLE}
           emptyMessage="Let's add a transaction, shall we?"
+          onSelect={this.rowSelected}
         />
         <AnnotatedMeter
           type="circle"
@@ -156,6 +186,7 @@ const mapDispatchToProps = {
   readTransaction,
   readWallet,
   create,
+  update,
   deleteTransaction,
 };
 
