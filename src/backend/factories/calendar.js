@@ -16,16 +16,34 @@ calendar.getCurrentDate = function(date) {
   return moment().format(DATE_FORMAT);
 }
 
+calendar.dayOfMonth = function(date) {
+  return parseInt(moment(date).format('D'), 10); 
+}
+
 calendar.daysLeftInMonth = function() {
   return moment().endOf('month').diff(moment(), 'days');
 }
 
-calendar.getFirstDayOfPreviousMonth = function() {
-  return moment().startOf('month').subtract(1, 'month').format(DATE_FORMAT);
+calendar.daysInMonth = function(date) {
+  return moment(date).endOf('month').diff(moment(date).startOf('month'), 'days') + 1; 
 }
 
-calendar.getLastDayOfPreviousMonth = function() {
-  return moment().subtract(1, 'month').endOf('month').format(DATE_FORMAT);
+calendar.getFirstDayOfPreviousMonth = function(asText) {
+  let date = moment().startOf('month').subtract(1, 'month');
+  if (asText) {
+    return date.format(DATE_FORMAT);
+  }
+
+  return date;
+}
+
+calendar.getLastDayOfPreviousMonth = function(asText) {
+  let date = moment().subtract(1, 'month').endOf('month');
+  if (asText) {
+    return date.format(DATE_FORMAT);
+  }
+
+  return date;
 }
 
 module.exports = calendar;

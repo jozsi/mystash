@@ -8,7 +8,8 @@ prediction.predict = function(trainingX, trainingY, stepsAhead, startPoint) {
   let data = [];
   try {
     for (let i = 0; i < trainingX.length; i++) {
-      data.push([trainingX[i], trainingY[i]]);
+      // Todo: Check all paramaters are numerical (if text, regression will not work correctly)
+      data.push([parseInt(trainingX[i], 10), trainingY[i]]);
     }
   }
   catch (err) {

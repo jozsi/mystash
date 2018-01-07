@@ -25,27 +25,31 @@ router.get('/:id', async (ctx) => {
     user: ctx.state.user.id,
     _id: ctx.params.id,
   });
-  // This month
+  // Current month
   const expenses = await Transaction.getCurrentMonthAggregatedByDay(wallet);
   const prepared_data = DataPrep.addNumericalIndexes(expenses);
   const daysLeft = Calendar.daysLeftInMonth();
-  const today = moment().format('D');
+  const runningExpenses = DataPrep.createRunningTotal(prepared_data, Calendar.dayOfMonth());
+
+  // Current month forecast
+  const today = parseInt(moment().format('D'), 10);
   const forecast = Prediction.predict(
-    prepared_data['indexes'], prepared_data['values'], daysLeft,
-    parseInt(today, 10) + 1
+    runningExpenses.day, runningExpenses.runningTotal, daysLeft, today + 1
   );
+  const normalizedForecast = DataPrep.normalizeTimeseries(forecast, Calendar.daysInMonth());
 
   // Previous month
-  const previousExpenses = await Transaction.getDataAggregatedByDay(
-    wallet, Calendar.getFirstDayOfPreviousMonth(), Calendar.getLastDayOfPreviousMonth());
+  const previousMonthExpenses = await Transaction.getDataAggregatedByDay(
+    wallet, Calendar.getFirstDayOfPreviousMonth(true), Calendar.getLastDayOfPreviousMonth(true));
+  const previousMonthExpensesIndexed = DataPrep.addNumericalIndexes(previousMonthExpenses);
+  const daysInPreviousMonth = Calendar.daysInMonth(Calendar.getFirstDayOfPreviousMonth());
+  const previousMonthRunningExpenses = DataPrep.createRunningTotal(previousMonthExpensesIndexed, daysInPreviousMonth);
+  
 
   ctx.body = wallet;
-  ctx.actual = prepared_data['values'];
-  // Jozsi, the forecast is currently in the following format
-  // [[1, 2], [2, 2], [3, 5], ..., [x(i), y(i)]] 
-  // How would you prefer me to arrange them in order to display them on a graph
-  ctx.forecast = forecast;
-  ctx.previous = previousExpenses;
+  ctx.actual = runningExpenses;
+  ctx.forecast = normalizedForecast;
+  ctx.previous = previousMonthRunningExpenses;
 });
 
 router.put('/:id', async (ctx) => {
