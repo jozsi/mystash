@@ -44,7 +44,7 @@ router.get('/:id', async (ctx) => {
   const previousMonthExpensesIndexed = DataPrep.addNumericalIndexes(previousMonthExpenses);
   const daysInPreviousMonth = Calendar.daysInMonth(Calendar.getFirstDayOfPreviousMonth());
   const previousMonthRunningExpenses = DataPrep.createRunningTotal(previousMonthExpensesIndexed, daysInPreviousMonth);
-  
+
   // Todo: Move this to an external file
   // Get end of month values
   let currentMonthTotal = 0;
@@ -84,11 +84,17 @@ router.get('/:id', async (ctx) => {
   const re = new RegExp("\\{0\\}", "g");
   userMessage = userMessage.replace(re, (currentMonthTotal - previousMonthTotal))
 
-  ctx.body = wallet;
-  ctx.actual = runningExpenses;
-  ctx.forecast = normalizedForecast;
-  ctx.previous = previousMonthRunningExpenses;
-  ctx.forecastMessage = userMessage;
+  ctx.body = {
+    ...wallet.toObject(),
+    charts: {
+      previous: previousMonthRunningExpenses,
+      actual: runningExpenses,
+      forecast: {
+        ...normalizedForecast,
+        forecastMessage: userMessage,
+      },
+    },
+  };
 });
 
 router.put('/:id', async (ctx) => {
