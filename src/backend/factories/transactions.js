@@ -5,13 +5,13 @@ const transaction = {};
 
 transaction.getForDates = async function(wallet, startDate, endDate) {
   const transactions = await Transaction.find(
-    { 
-      wallet: wallet.id, 
+    {
+      wallet: wallet.id,
       $and: [
         {date: {$gte: startDate}},
         {date: {$lte: endDate}}
       ]
-    })  
+    })
     .sort({date: 1});
 
   return transactions;
@@ -26,11 +26,14 @@ transaction.getCurrentMonthAggregatedByDay = async function(wallet) {
 
 transaction.getDataAggregatedByDay = async function(wallet, startDate, endDate) {
   let out = {};
-  out.map = function() { emit(this.date, this.amount) };
+  out.map = function() {
+    /* global emit */
+    emit(this.date, this.amount);
+  };
   out.reduce = function(k, vals) { return vals.reduce((a, b) => a + b, 0) };
   out.out = { inline: 1 };
-  out.query = { 
-    wallet: wallet.id, 
+  out.query = {
+    wallet: wallet.id,
     $and: [
       {date: {$gte: startDate}},
       {date: {$lte: endDate}}
@@ -42,6 +45,6 @@ transaction.getDataAggregatedByDay = async function(wallet, startDate, endDate) 
 
   return expenses;
 };
-  
-  
+
+
 module.exports = transaction;
