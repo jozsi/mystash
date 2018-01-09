@@ -127,9 +127,16 @@ class Wallet extends Component {
             />
           )}
         </Box>
-        <Timeseries
-          data={wallet.charts.actual}
-        />
+        {wallet.charts && (
+          <div>
+            <Timeseries
+              actual={wallet.charts.actual}
+              forecast={wallet.charts.forecast}
+              previous={wallet.charts.previous}
+            />
+            <h3>{wallet.charts.forecast.forecastMessage}</h3>
+          </div>
+        )}
         <div ref={node => this.transactionBox = node}>
           <Animate
             enter={{ animation: 'slide-down', duration: 300 }}

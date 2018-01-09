@@ -1,62 +1,30 @@
 import React from 'react';
-import Chart, {Axis, Base, Grid, Area, Bar, Layers, Line, Marker, MarkerLabel, HotSpots} from 'grommet/components/chart/Chart';
-import Value from 'grommet/components/Value';
+import { Area, ComposedChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 function Timeseries(props) {
   console.log('Props are', props);
-  const { data } = props;
+  const { actual, forecast, previous } = props;
 
-  if (!data.day || !data.day.length) {
-    return null;
-  }
-
-  const values = data.runningTotal;
-  const minValue = Math.min(...values);
-  const maxValue = Math.max(...values);
-  console.log('Hey', minValue, typeof minValue);
-
-  const xAxisLabels = data.day.map((x, i) => ({
-    index: i,
-    label: '' + x,
+  const values = forecast.day.map((x, i) => ({
+    name: '' + x,
+    forecast: forecast.runningTotal[i],
   }));
 
-  const yAxisLabels = [{
-    index: 0,
-    label: '' + minValue,
-  }, {
-    index: 1,
-    label: '' + maxValue,
-  }];
+  actual.runningTotal.forEach((x, i) => values[i].actual = x);
+  previous.runningTotal.forEach((x, i) => values[i].previous = x);
 
   return (
-    <Chart>
-      <Axis
-        vertical={true}
-        count={2}
-        labels={yAxisLabels}
-        ticks={true}
-      />
-      <Base />
-      <Layers>
-        <Line
-          values={values}
-          min={minValue}
-          max={maxValue}
-          points
-        />
-        <Marker
-          colorIndex='graph-2'
-          count={values.length}
-          index={2}
-          vertical={true}
-        />
-      </Layers>
-      <Axis
-        count={xAxisLabels.length}
-        labels={xAxisLabels}
-        ticks
-      />
-    </Chart>
+    <ComposedChart width={730} height={250} data={values}
+      margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+      <CartesianGrid stroke="#f5f5f5" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Area type="monotone" dataKey="previous" stroke="#ffc658" fill="#ffc658" />
+      <Line type="monotone" dataKey="actual" stroke="#8884d8" />
+      <Line type="monotone" dataKey="forecast" stroke="#82ca9d" strokeDasharray="3 3" dot={{ strokeDasharray: 'none' }} />
+    </ComposedChart>
   );
 }
 
