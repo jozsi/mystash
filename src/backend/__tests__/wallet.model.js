@@ -44,8 +44,8 @@ describe('Wallet', () => {
 
   it('should be valid', async () => {
     const wallet = new Wallet(DATA);
-    const errors = await wallet.validate();
-    expect(errors).toBeUndefined();
+    const result = await wallet.validate();
+    expect(result).toBe(wallet);
   });
 
   it('should default currency to USD', async () => {

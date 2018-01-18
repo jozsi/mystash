@@ -90,7 +90,7 @@ describe('User', () => {
 
   it('should be valid', async () => {
     const user = new User(DATA);
-    const errors = await user.validate();
-    expect(errors).toBeUndefined();
+    const result = await user.validate();
+    expect(result).toBe(user);
   });
 });
