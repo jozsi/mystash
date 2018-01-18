@@ -52,7 +52,6 @@
     "escape-string-regexp": "^1.0.5",
     "eslint-plugin-jest": "^21.7.0",
     "grommet": "^1.10.0",
-    "grommet-addons": "^0.6.0",
     "moment": "^2.20.1",
     "nodemon": "^1.14.11",
     "object.omit": "^3.0.0",
