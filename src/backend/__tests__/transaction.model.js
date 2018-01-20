@@ -44,8 +44,8 @@ describe('Transaction', () => {
 
   it('should be valid', async () => {
     const transaction = new Transaction(DATA);
-    const result = await transaction.validate();
-    expect(result).toBe(transaction);
+    const errors = await transaction.validate();
+    expect(errors).toBeUndefined();
   });
 
   it('should default details to empty string', async () => {
