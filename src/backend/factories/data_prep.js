@@ -28,7 +28,7 @@ data_prep.normalizeTimeseries = function(timeseries, length) {
   
   for (let i = 0, arrayLength = timeseries.length; i < arrayLength; i++) {
     let item = timeseries[i];
-    normalized[item[0]] = item[1];
+    normalized[item[0] - 1] = item[1];
   }
 
   return {

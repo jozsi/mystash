@@ -71,7 +71,6 @@ router.get('/:id', async (ctx) => {
   let previousMonthTotal = previousMonthRunningExpenses.runningTotal.slice(-1)[0];
 
   let userMessage;
-  console.log(previousMonthTotal, currentMonthTotal);
   // Todo: Make this an aproximation instead of strict comparison (i.e. $0.01 is not really saving)
   if (currentMonthTotal < previousMonthTotal) {
     userMessage = message.save;
