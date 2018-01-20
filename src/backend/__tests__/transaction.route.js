@@ -31,7 +31,7 @@ describe('transaction', () => {
   }
 
   beforeAll(async () => {
-    await db.connect(process.env.TEST_DB_URI, { useMongoClient: true });
+    await db.connect(process.env.TEST_DB_URI);
     await Transaction.remove({});
     await User.remove({});
     await Wallet.remove({});

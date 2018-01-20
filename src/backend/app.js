@@ -19,7 +19,6 @@ app.use(async (ctx, next) => {
     }
   } catch (err) {
     ctx.status = err.statusCode || err.status || 500;
-    console.error(err);
     ctx.body = {
       error: err.message,
     };

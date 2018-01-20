@@ -1,3 +1,4 @@
+const omit = require('object.omit');
 const supertest = require('supertest');
 const DATA = require('./wallet.json');
 const app = require('../app');
@@ -12,7 +13,7 @@ describe('wallet', () => {
   let wallet;
 
   beforeAll(async () => {
-    await db.connect(process.env.TEST_DB_URI, { useMongoClient: true });
+    await db.connect(process.env.TEST_DB_URI);
     await Wallet.remove({});
     server = app.listen();
     request = supertest(server);
@@ -37,12 +38,12 @@ describe('wallet', () => {
   });
 
   // Update this test with forecasting/charts support
-  it.skip('should read wallet', async () => {
-    await request
+  it('should read wallet', async () => {
+    const response = await request
       .get(`${ROUTE}/${wallet.id}`)
       .set('Authorization', `Bearer ${DATA.$token}`)
-      .expect(200)
-      .expect(wallet);
+      .expect(200);
+    expect(omit(response.body, 'charts')).toEqual(wallet);
   });
 
   it('should update wallet', async () => {

@@ -7,7 +7,6 @@ import Add from 'grommet/components/icons/base/Add';
 import Close from 'grommet/components/icons/base/Close';
 import Down from 'grommet/components/icons/base/Down';
 import Up from 'grommet/components/icons/base/Up';
-import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
@@ -19,24 +18,6 @@ import Timeseries from '../components/Timeseries';
 import Transaction from '../components/Transaction';
 import { byId } from '../reducers/wallet';
 import currencyValue from '../../isomorphic/currencyValue';
-
-const getTotal = list => list.reduce((sum, x) => sum + x.amount, 0);
-const totalExpenses = list => getTotal(list.filter(x => x.amount < 0));
-const totalIncomes = list => getTotal(list.filter(x => x.amount > 0));
-const getTypeDistribution = (list) => {
-  const expenses = totalExpenses(list);
-  const incomes = totalIncomes(list);
-
-  return [{
-    label: 'Expenses',
-    value: expenses * -1,
-    colorIndex: 'graph-2',
-  }, {
-    label: 'Incomes',
-    value: incomes,
-    colorIndex: 'graph-1',
-  }];
-};
 
 class Wallet extends Component {
   state = {
@@ -156,10 +137,6 @@ class Wallet extends Component {
           columns={this.TRANSACTION_TABLE}
           emptyMessage="Let's add a transaction, shall we?"
           onSelect={this.rowSelected}
-        />
-        <AnnotatedMeter
-          type="circle"
-          series={getTypeDistribution(transactionList)}
         />
       </Box>
     );
