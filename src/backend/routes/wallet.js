@@ -1,5 +1,6 @@
 const Router = require('koa-router');
 const Wallet = require('../models/wallet');
+const Comparison = require('../content/comparison_to_previous');
 
 const router = new Router();
 
@@ -20,7 +21,20 @@ router.get('/:id', async (ctx) => {
     user: ctx.state.user.id,
     _id: ctx.params.id,
   });
-  ctx.body = wallet;
+  
+  const comparisons = await Comparison.comparison_to_previous_month(wallet);
+
+  ctx.body = {
+    ...wallet.toObject(),
+    charts: {
+      previous: comparisons.previousMonthRunningExpenses,
+      actual: comparisons.runningExpenses,
+      forecast: {
+        ...comparisons.normalizedForecast,
+        forecastMessage: comparisons.userMessage,
+      },
+    },
+  };
 });
 
 router.put('/:id', async (ctx) => {

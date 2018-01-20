@@ -1,3 +1,4 @@
+const omit = require('object.omit');
 const supertest = require('supertest');
 const DATA = require('./wallet.json');
 const app = require('../app');
@@ -36,12 +37,13 @@ describe('wallet', () => {
       .expect([wallet]);
   });
 
+  // Update this test with forecasting/charts support
   it('should read wallet', async () => {
-    await request
+    const response = await request
       .get(`${ROUTE}/${wallet.id}`)
       .set('Authorization', `Bearer ${DATA.$token}`)
-      .expect(200)
-      .expect(wallet);
+      .expect(200);
+    expect(omit(response.body, 'charts')).toEqual(wallet);
   });
 
   it('should update wallet', async () => {

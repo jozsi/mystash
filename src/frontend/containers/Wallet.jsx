@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
 import { read as readTransaction, create, update, deleteTransaction } from '../actions/transaction';
 import { readOne as readWallet } from '../actions/wallet';
 import Table from '../components/Table';
+import Timeseries from '../components/Timeseries';
 import Transaction from '../components/Transaction';
 import { byId } from '../reducers/wallet';
 import currencyValue from '../../isomorphic/currencyValue';
@@ -107,6 +108,16 @@ class Wallet extends Component {
             />
           )}
         </Box>
+        {wallet.charts && (
+          <div>
+            <Timeseries
+              actual={wallet.charts.actual}
+              forecast={wallet.charts.forecast}
+              previous={wallet.charts.previous}
+            />
+            <h3>{wallet.charts.forecast.forecastMessage}</h3>
+          </div>
+        )}
         <div ref={node => this.transactionBox = node}>
           <Animate
             enter={{ animation: 'slide-down', duration: 300 }}
