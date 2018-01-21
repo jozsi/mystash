@@ -1,9 +1,11 @@
 const supertest = require('supertest');
+const CATEGORY = require('./category');
 const DATA = require('./transaction.json');
 const USER = require('./user.json');
 const WALLET = require('./wallet.json');
 const app = require('../app');
 const db = require('../db');
+const Category = require('../models/category');
 const Transaction = require('../models/transaction');
 const User = require('../models/user');
 const Wallet = require('../models/wallet');
@@ -18,6 +20,7 @@ describe('transaction', () => {
   let request;
   let user;
   let wallet;
+  let category;
 
   function createTransaction(data) {
     return request
@@ -38,6 +41,10 @@ describe('transaction', () => {
     user = await User.create(USER);
     wallet = await Wallet.create({
       ...WALLET,
+      user: user.id,
+    });
+    category = await Category.create({
+      ...CATEGORY,
       user: user.id,
     });
     server = app.listen();
@@ -146,6 +153,18 @@ describe('transaction', () => {
   it('should update wallet balance on delete', async () => {
     const actualWallet = await Wallet.findById(wallet.id);
     expect(actualWallet.balance).toBe(wallet.balance + sumTransactions());
+  });
+
+  it('should create a transaction with a category', async () => {
+    const response = await createTransaction({
+      ...DATA,
+      details: 'Categorized transaction',
+      categories: [category._id],
+    }).expect(200);
+    const transaction = response.body;
+    expect(transaction.id).toHaveLength(24);
+    expect(transaction.categories).toEqual([category._id.toString()]);
+    transactions.push(transaction);
   });
 
   afterAll(async () => {

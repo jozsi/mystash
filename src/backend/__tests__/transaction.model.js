@@ -53,6 +53,11 @@ describe('Transaction', () => {
     expect(transaction.details).toBe('');
   });
 
+  it('should default categories to empty array', async () => {
+    const transaction = new Transaction(DATA);
+    expect(transaction.categories).toHaveLength(0);
+  });
+
   it('should default date to now', async () => {
     const now = Date.now();
     const transaction = new Transaction(omit(DATA, 'date'));

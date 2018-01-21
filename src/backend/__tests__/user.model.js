@@ -1,5 +1,6 @@
 const omit = require('object.omit');
 const DATA = require('./user.json');
+const Category = require('../models/category');
 const User = require('../models/user');
 
 describe('User', () => {
@@ -18,6 +19,7 @@ describe('User', () => {
   };
 
   beforeAll(() => {
+    Category.prototype.collection.insertMany = (docs, options, callback) => callback(null, docs);
     User.prototype.collection.insert = (docs, options, callback) => callback(null, docs);
   });
 

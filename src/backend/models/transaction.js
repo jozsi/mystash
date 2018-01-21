@@ -23,6 +23,11 @@ const transactionSchema = new db.Schema({
     type: Date,
     default: Date.now,
   },
+  categories: [{
+    type: db.Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true,
+  }],
   user: {
     type: db.Schema.Types.ObjectId,
     ref: 'User',

@@ -1,0 +1,45 @@
+const CATEGORIES = [
+  'Cash',
+  'Fun',
+  'Movies',
+  'Food',
+  'Coffee',
+  'Household',
+  'Drinks',
+  'Clothes',
+  'Car',
+  'Travel',
+  'Medical',
+  'Card',
+  'Online',
+  'Subscription',
+  'Kids',
+  'Pets',
+  'Education',
+  'Gifts',
+  'Groceries',
+  'Gym',
+  'Phone',
+  'Beauty',
+  'Bets',
+  'Charity',
+  'Dating',
+];
+
+const COLORS = [
+  '#2ad2c9',
+  '#614767',
+  '#ff8d6d',
+  '#425563',
+  '#5f7a76',
+  '#80746e',
+  '#767676',
+  '#f04953',
+  '#ffd144',
+  '#01a982',
+];
+
+module.exports = CATEGORIES.map((name, i) => ({
+  name,
+  color: COLORS[i % COLORS.length],
+}));
