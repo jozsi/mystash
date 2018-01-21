@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header:Header 1`] = `
+<div
+  className="grommetux-header__container grommetux-header__container--fixed"
+>
+  <div
+    className="grommetux-header__mirror"
+  />
+  <div
+    className="grommetux-header__wrapper"
+  >
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <header
+        className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-small grommetux-background-color-index-brand grommetux-background-color-index--pending grommetux-header"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}
+      >
+        <div
+          className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive grommetux-title--truncate"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <svg
+            aria-label="money"
+            className="grommetux-control-icon grommetux-control-icon-money grommetux-control-icon--responsive"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M16,16 C16,14.8954305 12.8659932,14 9,14 C5.13400675,14 2,14.8954305 2,16 C2,17.1045695 5.13400675,18 9,18 C12.8659932,18 16,17.1045695 16,16 Z M2,16 L2,20.9367547 C2,22.0762536 5.13400675,23 9,23 C12.8659932,23 16,22.0762537 16,20.9367548 L16,16 M9,5 C4.581722,5 1,5.8954305 1,7 C1,8.1045695 4.581722,9 9,9 M1,7 L1,12.0000002 C1,13.0128881 4.581722,14 9,14 M23,4 C23,2.8954305 19.9004329,2 16.0769231,2 C12.2534133,2 9.15384615,2.8954305 9.15384615,4 C9.15384615,5.1045695 12.2534133,6 16.0769231,6 C19.9004329,6 23,5.1045695 23,4 Z M16,16 C19.8235098,16 23.0000002,15.0128879 23.0000002,14 L23,4 M9.15384615,3.99999999 L9.15384615,14.1660042 M8.99999999,9.00000001 C8.99999999,10.0128879 12.2534135,11 16.0769233,11 C19.9004331,11 23.0000004,10.0128879 23.0000004,9.00000001"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <a
+            aria-label={undefined}
+            className="grommetux-anchor grommetux-anchor--active"
+            href="/"
+            onClick={[Function]}
+          >
+            Hello, Cosmos!
+          </a>
+        </div>
+        <div
+          className="grommetux-box grommetux-box--direction-row grommetux-box--justify-end grommetux-box--flex grommetux-box--pad-horizontal-small"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <a
+            aria-label={undefined}
+            className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--icon-label grommetux-anchor--primary grommetux-anchor--reverse"
+            href={undefined}
+            onClick={[Function]}
+          >
+            Sign out
+            <svg
+              aria-label="logout"
+              className="grommetux-control-icon grommetux-control-icon-logout grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <path
+                d="M13,9 L13,2 L1,2 L1,22 L13,22 L13,15 M22,12 L5,12 M17,7 L22,12 L17,17"
+                fill="none"
+                stroke="#231F1F"
+                strokeWidth="2"
+              />
+            </svg>
+          </a>
+        </div>
+      </header>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Money:Logo 1`] = `
+<svg
+  aria-label="money"
+  className="grommetux-control-icon grommetux-control-icon-money grommetux-control-icon--responsive"
+  height="24px"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+  width="24px"
+>
+  <path
+    d="M16,16 C16,14.8954305 12.8659932,14 9,14 C5.13400675,14 2,14.8954305 2,16 C2,17.1045695 5.13400675,18 9,18 C12.8659932,18 16,17.1045695 16,16 Z M2,16 L2,20.9367547 C2,22.0762536 5.13400675,23 9,23 C12.8659932,23 16,22.0762537 16,20.9367548 L16,16 M9,5 C4.581722,5 1,5.8954305 1,7 C1,8.1045695 4.581722,9 9,9 M1,7 L1,12.0000002 C1,13.0128881 4.581722,14 9,14 M23,4 C23,2.8954305 19.9004329,2 16.0769231,2 C12.2534133,2 9.15384615,2.8954305 9.15384615,4 C9.15384615,5.1045695 12.2534133,6 16.0769231,6 C19.9004329,6 23,5.1045695 23,4 Z M16,16 C19.8235098,16 23.0000002,15.0128879 23.0000002,14 L23,4 M9.15384615,3.99999999 L9.15384615,14.1660042 M8.99999999,9.00000001 C8.99999999,10.0128879 12.2534135,11 16.0769233,11 C19.9004331,11 23.0000004,10.0128879 23.0000004,9.00000001"
+    fill="none"
+    stroke="#000"
+    strokeWidth="2"
+  />
+</svg>
+`;
+
+exports[`Table:Table 1`] = `
+<div
+  className="grommetux-table"
+>
+  <table
+    className="grommetux-table__table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Hello
+        </th>
+        <th>
+          World
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="grommetux-table-row"
+        onClick={undefined}
+      >
+        <td
+          colSpan={2}
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          No data
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

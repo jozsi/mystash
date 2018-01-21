@@ -49,7 +49,7 @@ const Table = ({
 };
 
 Table.propTypes = {
-  columns: PropTypes.shape({}),
+  columns: PropTypes.shape({}).isRequired,
   emptyMessage: PropTypes.string,
   isLoading: PropTypes.bool,
   onSelect: PropTypes.func,

@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-import 'grommet/grommet.min.css';
+import 'grommet/grommet-hpe.min.css';
 import configureStore from './store';
 import Auth from './containers/Auth';
 import DevTools from './containers/DevTools';
