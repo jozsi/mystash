@@ -37,7 +37,6 @@ const Table = ({
 
   return (
     <GrommetTable
-      selectable={hasData}
       onSelect={onSelect}
     >
       <TableHeader labels={[...columns.keys()]} />

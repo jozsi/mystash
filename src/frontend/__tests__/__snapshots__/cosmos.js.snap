@@ -154,3 +154,37 @@ exports[`Table:Table 1`] = `
   </table>
 </div>
 `;
+
+exports[`Table:TableWithData 1`] = `
+<div
+  className="grommetux-table"
+>
+  <table
+    className="grommetux-table__table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Hello
+        </th>
+        <th>
+          World
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="grommetux-table-row"
+        onClick={undefined}
+      >
+        <td>
+          hi
+        </td>
+        <td>
+          Earth
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
