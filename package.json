@@ -14,10 +14,11 @@
     "lint": "eslint --ignore-path=.gitignore --ext .js,.jsx .",
     "rs:build": "react-scripts build",
     "rs:start": "PORT=3001 FORCE_COLOR=1 react-scripts start",
-    "rs:test": "react-scripts test --coverage --runInBand",
+    "rs:test": "react-scripts test --runInBand",
     "start": "node index.js",
-    "test": "npm-run-all env lint \"rs:test -- {@}\" --",
-    "watch:api": "nodemon index.js"
+    "test": "npm-run-all env lint \"rs:test -- --coverage {@}\" --",
+    "watch:api": "nodemon index.js",
+    "watch:test": "npm run rs:test"
   },
   "repository": {
     "type": "git",

@@ -22,6 +22,10 @@ app.use(async (ctx, next) => {
     ctx.body = {
       error: err.message,
     };
+
+    if (process.env.NODE_ENV === 'development') {
+      console.error(err);
+    }
   }
 });
 app.use(bodyParser());
