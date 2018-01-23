@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Area, ComposedChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 function Timeseries(props) {
@@ -21,11 +22,25 @@ function Timeseries(props) {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Area type="monotone" dataKey="previous" stroke="#ffc658" fill="#ffc658" />
-      <Line type="monotone" dataKey="actual" stroke="#8884d8" />
-      <Line type="monotone" dataKey="forecast" stroke="#82ca9d" strokeDasharray="3 3" dot={{ strokeDasharray: 'none' }} />
+      <Area type="monotone" dataKey="previous" stroke="#2ad2c9" fill="#2ad2c9" />
+      <Line type="monotone" dataKey="actual" stroke="#614767" />
+      <Line type="monotone" dataKey="forecast" stroke="#ff8d6d" strokeDasharray="3 3" dot={{ strokeDasharray: 'none' }} />
     </ComposedChart>
   );
 }
+
+const shape = {
+  day: PropTypes.arrayOf(PropTypes.number),
+  runningTotal: PropTypes.arrayOf(PropTypes.number),
+};
+
+Timeseries.propTypes = {
+  previous: PropTypes.shape(shape).isRequired,
+  actual: PropTypes.shape(shape).isRequired,
+  forecast: PropTypes.shape({
+    ...shape,
+    forecastMessage: PropTypes.string,
+  }).isRequired,
+};
 
 export default Timeseries;

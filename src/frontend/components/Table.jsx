@@ -18,7 +18,7 @@ const Table = ({
 
   if (hasData) {
     content = rows.map((row, i) => (
-      <TableRow key={i}>
+      <TableRow key={i} onClick={() => onSelect(i)} style={{ cursor: 'pointer' }}>
         {formatters.map((formatter, j) => <td key={j}>{formatter(row)}</td>)}
       </TableRow>
     ));

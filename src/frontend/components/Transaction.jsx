@@ -15,11 +15,18 @@ import Trash from 'grommet/components/icons/base/Trash';
 
 class Transaction extends Component {
   static propTypes = {
+    selectedTransaction: PropTypes.shape({
+      id: PropTypes.string,
+      amount: PropTypes.number,
+      details: PropTypes.string,
+      date: PropTypes.string,
+    }),
     onSubmit: PropTypes.func,
     onDelete: PropTypes.func,
   }
 
   static defaultProps = {
+    selectedTransaction: {},
     onSubmit: () => {},
     onDelete: () => {},
   }
