@@ -18,7 +18,7 @@ const Table = ({
 
   if (hasData) {
     content = rows.map((row, i) => (
-      <TableRow key={i} onClick={() => onSelect(i)} style={{ cursor: 'pointer' }}>
+      <TableRow key={i}>
         {formatters.map((formatter, j) => <td key={j}>{formatter(row)}</td>)}
       </TableRow>
     ));
@@ -37,6 +37,7 @@ const Table = ({
 
   return (
     <GrommetTable
+      selectable={hasData}
       onSelect={onSelect}
     >
       <TableHeader labels={[...columns.keys()]} />
