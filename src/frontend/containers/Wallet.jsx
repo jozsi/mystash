@@ -11,6 +11,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { read as readCategory } from '../actions/category';
 import { read as readTransaction, create, update, deleteTransaction } from '../actions/transaction';
 import { readOne as readWallet } from '../actions/wallet';
 import Table from '../components/Table';
@@ -38,6 +39,7 @@ class Wallet extends Component {
 
     if (includeTransactions) {
       this.props.readTransaction(id);
+      this.props.readCategory();
     }
   }
 
@@ -79,7 +81,7 @@ class Wallet extends Component {
   };
 
   render() {
-    const { transactionList, wallet } = this.props;
+    const { transactionList, wallet, categoryList } = this.props;
     const { addVisible, selectedTransaction } = this.state;
 
     if (!wallet.id) {
@@ -128,6 +130,7 @@ class Wallet extends Component {
                 onSubmit={this.transactionSubmitted}
                 onDelete={this.transactionDeleted}
                 selectedTransaction={selectedTransaction}
+                categoryList={categoryList}
               />
             </Quote>
           </Animate>
@@ -163,11 +166,13 @@ Wallet.propTypes = {
 Wallet.defaultProps = {
   transactionList: [],
   wallet: {},
+  categoryList: [],
 };
 
-const mapStateToProps = ({ transaction, wallet }, { match: { params } }) => ({
+const mapStateToProps = ({ transaction, wallet, category }, { match: { params } }) => ({
   transactionList: transaction.wallet === params.id ? transaction.list : [],
   wallet: byId(wallet, params.id),
+  categoryList: category.list,
 });
 
 const mapDispatchToProps = {
@@ -176,6 +181,7 @@ const mapDispatchToProps = {
   create,
   update,
   deleteTransaction,
+  readCategory,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);

@@ -10,6 +10,7 @@ import Header from 'grommet/components/Header';
 import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
 import RadioButton from 'grommet/components/RadioButton';
+import Select from 'grommet/components/Select';
 import TextInput from 'grommet/components/TextInput';
 import Trash from 'grommet/components/icons/base/Trash';
 
@@ -23,12 +24,18 @@ class Transaction extends Component {
     }),
     onSubmit: PropTypes.func,
     onDelete: PropTypes.func,
+    categoryList: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      color: PropTypes.string,
+    })),
   }
 
   static defaultProps = {
     selectedTransaction: {},
     onSubmit: () => {},
     onDelete: () => {},
+    categoryList: [],
   }
 
   state = {
@@ -37,16 +44,18 @@ class Transaction extends Component {
     details: '',
     expense: true,
     id: undefined,
+    categories: [],
   };
 
   updateStateFromProps(props) {
-    const { amount, date, details, id } = props.selectedTransaction;
+    const { amount, categories, date, details, id } = props.selectedTransaction;
     if (!id) {
       return;
     }
     const expense = amount < 0;
     this.setState({
       amount: Math.abs(amount),
+      categories: categories,
       date: new Date(date),
       details,
       expense,
@@ -64,10 +73,11 @@ class Transaction extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    const { expense, ...transaction } = this.state;
+    const { expense, categories, ...transaction } = this.state;
     if (expense) {
       transaction.amount *= -1;
     }
+    transaction.categories = categories.map(x => x.value);
     this.props.onSubmit(transaction);
   };
 
@@ -80,11 +90,13 @@ class Transaction extends Component {
   render() {
     const {
       amount,
+      categories,
       date,
       details,
       expense,
       id,
     } = this.state;
+    const { categoryList } = this.props;
 
     return (
       <Form onSubmit={this.onSubmit}>
@@ -119,6 +131,17 @@ class Transaction extends Component {
             <TextInput
               onDOMChange={ev => this.fieldChanged(ev, 'details')}
               value={details}
+            />
+          </FormField>
+          <FormField label="Categories">
+            <Select
+              multiple
+              value={categories}
+              onChange={({ value }) => this.setState({ categories: value })}
+              options={categoryList.map(({ id, name, color}) => ({
+                value: id,
+                label: <div style={{ backgroundColor: color, padding: 4, margin: 4 }}>{name}</div>,
+              }))}
             />
           </FormField>
           <FormField label="Date">
