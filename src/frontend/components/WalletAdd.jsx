@@ -20,7 +20,11 @@ const currencyList = currencies.map(currency => ({
 
 class WalletAdd extends Component {
   static propTypes = {
-    onAdd: PropTypes.func.isRequired,
+    onAdd: PropTypes.func,
+  }
+
+  static defaultProps = {
+    onAdd: () => {},
   }
 
   constructor(props) {

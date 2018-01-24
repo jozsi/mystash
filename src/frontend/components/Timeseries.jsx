@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Area, ComposedChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 function Timeseries(props) {
-  console.log('Props are', props);
   const { actual, forecast, previous } = props;
 
   const values = forecast.day.map((x, i) => ({

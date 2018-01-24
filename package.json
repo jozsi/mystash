@@ -69,6 +69,7 @@
     "react-cosmos-router-proxy": "^3.1.1",
     "react-cosmos-telescope": "^3.2.1",
     "react-cosmos-test": "^3.2.1",
+    "react-cosmos-wrapper-proxy": "^1.1.1",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",

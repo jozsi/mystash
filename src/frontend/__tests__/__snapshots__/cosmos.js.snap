@@ -1,257 +1,253 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AuthForm:AuthForm 1`] = `
-<form
-  className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
-  onSubmit={[Function]}
->
-  <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
-  />
-  <fieldset>
-    <div
-      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor="username"
-      >
-        Email
-      </label>
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <input
-          onChange={[Function]}
-          type="email"
-          value=""
-        />
-      </span>
-    </div>
-    <div
-      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor="password"
-      >
-        Password
-      </label>
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <input
-          onChange={[Function]}
-          type="password"
-          value=""
-        />
-      </span>
-    </div>
-  </fieldset>
-  <footer
-    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-none grommetux-footer grommetux-footer--small"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
-  >
-    <button
-      aria-label={undefined}
-      className="grommetux-button grommetux-button--primary"
-      disabled={false}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      type="submit"
-    >
-      <span
-        className="grommetux-button__label"
-      >
-        Submit
-      </span>
-    </button>
-  </footer>
-</form>
-`;
-
-exports[`AuthForm:AuthFormError 1`] = `
-<form
-  className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
-  onSubmit={[Function]}
->
-  <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
-  />
-  <fieldset>
-    <div
-      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor="username"
-      >
-        Email
-      </label>
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <input
-          onChange={[Function]}
-          type="email"
-          value=""
-        />
-      </span>
-    </div>
-    <div
-      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor="password"
-      >
-        Password
-      </label>
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <input
-          onChange={[Function]}
-          type="password"
-          value=""
-        />
-      </span>
-    </div>
-    <div
-      className="error"
-    >
-      I am an error
-    </div>
-  </fieldset>
-  <footer
-    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-none grommetux-footer grommetux-footer--small"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
-  >
-    <button
-      aria-label={undefined}
-      className="grommetux-button grommetux-button--primary"
-      disabled={false}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      type="submit"
-    >
-      <span
-        className="grommetux-button__label"
-      >
-        Submit
-      </span>
-    </button>
-  </footer>
-</form>
-`;
-
-exports[`Header:Header 1`] = `
 <div
-  className="grommetux-header__container grommetux-header__container--fixed"
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
 >
-  <div
-    className="grommetux-header__mirror"
-  />
-  <div
-    className="grommetux-header__wrapper"
+  <form
+    className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
+    onSubmit={[Function]}
   >
     <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    />
+    <fieldset>
+      <div
+        className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+        onClick={[Function]}
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor="username"
+        >
+          Email
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <input
+            onChange={[Function]}
+            type="email"
+            value=""
+          />
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+        onClick={[Function]}
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <input
+            onChange={[Function]}
+            type="password"
+            value=""
+          />
+        </span>
+      </div>
+    </fieldset>
+    <footer
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-none grommetux-footer grommetux-footer--small"
       id={undefined}
       onClick={undefined}
       role={undefined}
       style={Object {}}
       tabIndex={undefined}
     >
-      <header
-        className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-small grommetux-background-color-index-brand grommetux-background-color-index--pending grommetux-header"
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--primary"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="submit"
+      >
+        <span
+          className="grommetux-button__label"
+        >
+          Submit
+        </span>
+      </button>
+    </footer>
+  </form>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
+</div>
+`;
+
+exports[`AuthForm:AuthFormError 1`] = `
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
+>
+  <form
+    className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    />
+    <fieldset>
+      <div
+        className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+        onClick={[Function]}
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor="username"
+        >
+          Email
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <input
+            onChange={[Function]}
+            type="email"
+            value=""
+          />
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+        onClick={[Function]}
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <input
+            onChange={[Function]}
+            type="password"
+            value=""
+          />
+        </span>
+      </div>
+      <div
+        className="error"
+      >
+        I am an error
+      </div>
+    </fieldset>
+    <footer
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-none grommetux-footer grommetux-footer--small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--primary"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="submit"
+      >
+        <span
+          className="grommetux-button__label"
+        >
+          Submit
+        </span>
+      </button>
+    </footer>
+  </form>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
+</div>
+`;
+
+exports[`Header:Header 1`] = `
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
+>
+  <div
+    className="grommetux-header__container grommetux-header__container--fixed"
+  >
+    <div
+      className="grommetux-header__mirror"
+    />
+    <div
+      className="grommetux-header__wrapper"
+    >
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
         id={undefined}
         onClick={undefined}
         role={undefined}
         style={Object {}}
         tabIndex={undefined}
       >
-        <div
-          className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive grommetux-title--truncate"
+        <header
+          className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-small grommetux-background-color-index-brand grommetux-background-color-index--pending grommetux-header"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
           tabIndex={undefined}
         >
-          <svg
-            aria-label="money"
-            className="grommetux-control-icon grommetux-control-icon-money grommetux-control-icon--responsive"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
+          <div
+            className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive grommetux-title--truncate"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
           >
-            <path
-              d="M16,16 C16,14.8954305 12.8659932,14 9,14 C5.13400675,14 2,14.8954305 2,16 C2,17.1045695 5.13400675,18 9,18 C12.8659932,18 16,17.1045695 16,16 Z M2,16 L2,20.9367547 C2,22.0762536 5.13400675,23 9,23 C12.8659932,23 16,22.0762537 16,20.9367548 L16,16 M9,5 C4.581722,5 1,5.8954305 1,7 C1,8.1045695 4.581722,9 9,9 M1,7 L1,12.0000002 C1,13.0128881 4.581722,14 9,14 M23,4 C23,2.8954305 19.9004329,2 16.0769231,2 C12.2534133,2 9.15384615,2.8954305 9.15384615,4 C9.15384615,5.1045695 12.2534133,6 16.0769231,6 C19.9004329,6 23,5.1045695 23,4 Z M16,16 C19.8235098,16 23.0000002,15.0128879 23.0000002,14 L23,4 M9.15384615,3.99999999 L9.15384615,14.1660042 M8.99999999,9.00000001 C8.99999999,10.0128879 12.2534135,11 16.0769233,11 C19.9004331,11 23.0000004,10.0128879 23.0000004,9.00000001"
-              fill="none"
-              stroke="#000"
-              strokeWidth="2"
-            />
-          </svg>
-          <a
-            aria-label={undefined}
-            className="grommetux-anchor grommetux-anchor--active"
-            href="/"
-            onClick={[Function]}
-          >
-            Hello, Cosmos!
-          </a>
-        </div>
-        <div
-          className="grommetux-box grommetux-box--direction-row grommetux-box--justify-end grommetux-box--flex grommetux-box--pad-horizontal-small"
-          id={undefined}
-          onClick={undefined}
-          role={undefined}
-          style={Object {}}
-          tabIndex={undefined}
-        >
-          <a
-            aria-label={undefined}
-            className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--icon-label grommetux-anchor--primary grommetux-anchor--reverse"
-            href={undefined}
-            onClick={[Function]}
-          >
-            Sign out
             <svg
-              aria-label="logout"
-              className="grommetux-control-icon grommetux-control-icon-logout grommetux-control-icon--responsive"
+              aria-label="money"
+              className="grommetux-control-icon grommetux-control-icon-money grommetux-control-icon--responsive"
               height="24px"
               role="img"
               version="1.1"
@@ -259,17 +255,69 @@ exports[`Header:Header 1`] = `
               width="24px"
             >
               <path
-                d="M13,9 L13,2 L1,2 L1,22 L13,22 L13,15 M22,12 L5,12 M17,7 L22,12 L17,17"
+                d="M16,16 C16,14.8954305 12.8659932,14 9,14 C5.13400675,14 2,14.8954305 2,16 C2,17.1045695 5.13400675,18 9,18 C12.8659932,18 16,17.1045695 16,16 Z M2,16 L2,20.9367547 C2,22.0762536 5.13400675,23 9,23 C12.8659932,23 16,22.0762537 16,20.9367548 L16,16 M9,5 C4.581722,5 1,5.8954305 1,7 C1,8.1045695 4.581722,9 9,9 M1,7 L1,12.0000002 C1,13.0128881 4.581722,14 9,14 M23,4 C23,2.8954305 19.9004329,2 16.0769231,2 C12.2534133,2 9.15384615,2.8954305 9.15384615,4 C9.15384615,5.1045695 12.2534133,6 16.0769231,6 C19.9004329,6 23,5.1045695 23,4 Z M16,16 C19.8235098,16 23.0000002,15.0128879 23.0000002,14 L23,4 M9.15384615,3.99999999 L9.15384615,14.1660042 M8.99999999,9.00000001 C8.99999999,10.0128879 12.2534135,11 16.0769233,11 C19.9004331,11 23.0000004,10.0128879 23.0000004,9.00000001"
                 fill="none"
-                stroke="#231F1F"
+                stroke="#000"
                 strokeWidth="2"
               />
             </svg>
-          </a>
-        </div>
-      </header>
+            <a
+              aria-label={undefined}
+              className="grommetux-anchor grommetux-anchor--active"
+              href="/"
+              onClick={[Function]}
+            >
+              Hello, Cosmos!
+            </a>
+          </div>
+          <div
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-end grommetux-box--flex grommetux-box--pad-horizontal-small"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
+          >
+            <a
+              aria-label={undefined}
+              className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--icon-label grommetux-anchor--primary grommetux-anchor--reverse"
+              href={undefined}
+              onClick={[Function]}
+            >
+              Sign out
+              <svg
+                aria-label="logout"
+                className="grommetux-control-icon grommetux-control-icon-logout grommetux-control-icon--responsive"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M13,9 L13,2 L1,2 L1,22 L13,22 L13,15 M22,12 L5,12 M17,7 L22,12 L17,17"
+                  fill="none"
+                  stroke="#231F1F"
+                  strokeWidth="2"
+                />
+              </svg>
+            </a>
+          </div>
+        </header>
+      </div>
     </div>
   </div>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
 </div>
 `;
 
@@ -294,131 +342,179 @@ exports[`Money:Logo 1`] = `
 
 exports[`Table:Table 1`] = `
 <div
-  className="grommetux-table"
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
 >
-  <table
-    className="grommetux-table__table"
+  <div
+    className="grommetux-table"
   >
-    <thead>
-      <tr>
-        <th>
-          Hello
-        </th>
-        <th>
-          World
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        className="grommetux-table-row"
-        onClick={undefined}
-      >
-        <td
-          colSpan={2}
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
+    <table
+      className="grommetux-table__table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Hello
+          </th>
+          <th>
+            World
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="grommetux-table-row"
+          onClick={undefined}
         >
-          No data
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <td
+            colSpan={2}
+            style={
+              Object {
+                "textAlign": "center",
+              }
+            }
+          >
+            No data
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
 </div>
 `;
 
 exports[`Table:TableLoading 1`] = `
 <div
-  className="grommetux-table"
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
 >
-  <table
-    className="grommetux-table__table"
+  <div
+    className="grommetux-table"
   >
-    <thead>
-      <tr>
-        <th>
-          Hello
-        </th>
-        <th>
-          World
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        className="grommetux-table-row"
-        onClick={undefined}
-      >
-        <td
-          colSpan={2}
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
+    <table
+      className="grommetux-table__table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Hello
+          </th>
+          <th>
+            World
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="grommetux-table-row"
+          onClick={undefined}
         >
-          <svg
-            aria-label="Spinning"
-            className="grommetux-icon-spinning grommetux-icon-spinning--responsive"
-            role="img"
-            version="1.1"
-            viewBox="0 0 48 48"
+          <td
+            colSpan={2}
+            style={
+              Object {
+                "textAlign": "center",
+              }
+            }
           >
-            <circle
-              cx="24"
-              cy="24"
-              fill="none"
-              r="21"
-              stroke="#979797"
-              strokeWidth="6"
-            />
-          </svg>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            <svg
+              aria-label="Spinning"
+              className="grommetux-icon-spinning grommetux-icon-spinning--responsive"
+              role="img"
+              version="1.1"
+              viewBox="0 0 48 48"
+            >
+              <circle
+                cx="24"
+                cy="24"
+                fill="none"
+                r="21"
+                stroke="#979797"
+                strokeWidth="6"
+              />
+            </svg>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
 </div>
 `;
 
 exports[`Table:TableWithData 1`] = `
 <div
-  className="grommetux-table"
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
 >
-  <table
-    className="grommetux-table__table"
+  <div
+    className="grommetux-table"
   >
-    <thead>
-      <tr>
-        <th>
-          Hello
-        </th>
-        <th>
-          World
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        className="grommetux-table-row grommetux-table-row--selectable"
-        onClick={[Function]}
-        style={
-          Object {
-            "cursor": "pointer",
+    <table
+      className="grommetux-table__table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Hello
+          </th>
+          <th>
+            World
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="grommetux-table-row grommetux-table-row--selectable"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
           }
-        }
-      >
-        <td>
-          hi
-        </td>
-        <td>
-          Earth
-        </td>
-      </tr>
-    </tbody>
-  </table>
+        >
+          <td>
+            hi
+          </td>
+          <td>
+            Earth
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
 </div>
 `;
 
@@ -2447,856 +2543,904 @@ exports[`Timeseries:Timeseries 1`] = `
 `;
 
 exports[`Transaction:Transaction 1`] = `
-<form
-  className="grommetux-form grommetux-form--pad-none"
-  onSubmit={[Function]}
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
 >
-  <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
+  <form
+    className="grommetux-form grommetux-form--pad-none"
+    onSubmit={[Function]}
   >
-    <header
-      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
       id={undefined}
       onClick={undefined}
       role={undefined}
       style={Object {}}
       tabIndex={undefined}
     >
-      <h1
-        className="grommetux-heading"
+      <header
+        className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}
       >
-        Add
-         Transaction
-      </h1>
-    </header>
-  </div>
-  <div
-    className="grommetux-form-fields"
-  >
-    <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <label
-          className="grommetux-radio-button"
-          htmlFor="expense-true"
+        <h1
+          className="grommetux-heading"
         >
-          <input
-            checked={true}
-            className="grommetux-radio-button__input"
-            id="expense-true"
-            onChange={[Function]}
-            type="radio"
-          />
-          <span
-            className="grommetux-radio-button__control"
-          />
-          <span
-            className="grommetux-radio-button__label"
-          >
-            Expense
-          </span>
-        </label>
-        <label
-          className="grommetux-radio-button"
-          htmlFor="expense-false"
-        >
-          <input
-            checked={false}
-            className="grommetux-radio-button__input"
-            id="expense-false"
-            onChange={[Function]}
-            type="radio"
-          />
-          <span
-            className="grommetux-radio-button__control"
-          />
-          <span
-            className="grommetux-radio-button__label"
-          >
-            Income
-          </span>
-        </label>
-      </span>
+          Add
+           Transaction
+        </h1>
+      </header>
     </div>
     <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
+      className="grommetux-form-fields"
     >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
-      >
-        Amount
-      </label>
-      <span
-        className="grommetux-form-field__contents"
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
         <span
-          className="grommetux-number-input"
+          className="grommetux-form-field__contents"
         >
-          <input
-            className="grommetux-input grommetux-number-input__input"
-            disabled={undefined}
-            min={0}
-            onChange={[Function]}
-            tabIndex="0"
-            type="number"
-            value={0}
-          />
-          <button
-            aria-label={undefined}
-            className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
+          <label
+            className="grommetux-radio-button"
+            htmlFor="expense-true"
           >
+            <input
+              checked={true}
+              className="grommetux-radio-button__input"
+              id="expense-true"
+              onChange={[Function]}
+              type="radio"
+            />
             <span
-              className="grommetux-button__icon"
+              className="grommetux-radio-button__control"
+            />
+            <span
+              className="grommetux-radio-button__label"
             >
-              <svg
-                aria-label="subtract"
-                className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
+              Expense
             </span>
-          </button>
-          <button
-            aria-label={undefined}
-            className="grommetux-button grommetux-button--plain grommetux-number-input__add"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
+          </label>
+          <label
+            className="grommetux-radio-button"
+            htmlFor="expense-false"
           >
+            <input
+              checked={false}
+              className="grommetux-radio-button__input"
+              id="expense-false"
+              onChange={[Function]}
+              type="radio"
+            />
             <span
-              className="grommetux-button__icon"
+              className="grommetux-radio-button__control"
+            />
+            <span
+              className="grommetux-radio-button__label"
             >
-              <svg
-                aria-label="add"
-                className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,22 L12,2 M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
+              Income
             </span>
-          </button>
+          </label>
         </span>
-      </span>
-    </div>
-    <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
-        Details
-      </label>
-      <span
-        className="grommetux-form-field__contents"
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Amount
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <span
+            className="grommetux-number-input"
+          >
+            <input
+              className="grommetux-input grommetux-number-input__input"
+              disabled={undefined}
+              min={0}
+              onChange={[Function]}
+              tabIndex="0"
+              type="number"
+              value={0}
+            />
+            <button
+              aria-label={undefined}
+              className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="subtract"
+                  className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label={undefined}
+              className="grommetux-button grommetux-button--plain grommetux-number-input__add"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="add"
+                  className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M12,22 L12,2 M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
-        <input
-          autoComplete="off"
-          className="grommetux-text-input grommetux-input"
-          defaultValue={undefined}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          placeholder={undefined}
-          type="text"
-          value=""
-        />
-      </span>
-    </div>
-    <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
-      >
-        Date
-      </label>
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <div
-          className="grommetux-date-time"
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Details
+        </label>
+        <span
+          className="grommetux-form-field__contents"
         >
           <input
-            className="grommetux-input grommetux-date-time__input"
+            autoComplete="off"
+            className="grommetux-text-input grommetux-input"
+            defaultValue={undefined}
             onChange={[Function]}
-            placeholder="YYYY-MM-DD"
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder={undefined}
+            type="text"
             value=""
           />
-          <button
-            aria-label="Date Time Icon"
-            className="grommetux-button grommetux-button--plain grommetux-date-time__control"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
-          >
-            <span
-              className="grommetux-button__icon"
-            >
-              <svg
-                aria-label="calendar"
-                className="grommetux-control-icon grommetux-control-icon-calendar grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-      </span>
-    </div>
-  </div>
-  <footer
-    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
-  >
-    <button
-      aria-label={undefined}
-      className="grommetux-button grommetux-button--primary"
-      disabled={false}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      type="submit"
-    >
-      <span
-        className="grommetux-button__label"
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
-        Submit
-      </span>
-    </button>
-  </footer>
-</form>
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Date
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <div
+            className="grommetux-date-time"
+          >
+            <input
+              className="grommetux-input grommetux-date-time__input"
+              onChange={[Function]}
+              placeholder="YYYY-MM-DD"
+              value=""
+            />
+            <button
+              aria-label="Date Time Icon"
+              className="grommetux-button grommetux-button--plain grommetux-date-time__control"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="calendar"
+                  className="grommetux-control-icon grommetux-control-icon-calendar grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </span>
+      </div>
+    </div>
+    <footer
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--primary"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="submit"
+      >
+        <span
+          className="grommetux-button__label"
+        >
+          Submit
+        </span>
+      </button>
+    </footer>
+  </form>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
+</div>
 `;
 
 exports[`Transaction:TransactionWithData 1`] = `
-<form
-  className="grommetux-form grommetux-form--pad-none"
-  onSubmit={[Function]}
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
 >
-  <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
+  <form
+    className="grommetux-form grommetux-form--pad-none"
+    onSubmit={[Function]}
   >
-    <header
-      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
       id={undefined}
       onClick={undefined}
       role={undefined}
       style={Object {}}
       tabIndex={undefined}
     >
-      <h1
-        className="grommetux-heading"
+      <header
+        className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}
       >
-        Edit
-         Transaction
-      </h1>
-    </header>
-  </div>
-  <div
-    className="grommetux-form-fields"
-  >
-    <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <label
-          className="grommetux-radio-button"
-          htmlFor="expense-true"
+        <h1
+          className="grommetux-heading"
         >
-          <input
-            checked={true}
-            className="grommetux-radio-button__input"
-            id="expense-true"
-            onChange={[Function]}
-            type="radio"
-          />
-          <span
-            className="grommetux-radio-button__control"
-          />
-          <span
-            className="grommetux-radio-button__label"
-          >
-            Expense
-          </span>
-        </label>
-        <label
-          className="grommetux-radio-button"
-          htmlFor="expense-false"
-        >
-          <input
-            checked={false}
-            className="grommetux-radio-button__input"
-            id="expense-false"
-            onChange={[Function]}
-            type="radio"
-          />
-          <span
-            className="grommetux-radio-button__control"
-          />
-          <span
-            className="grommetux-radio-button__label"
-          >
-            Income
-          </span>
-        </label>
-      </span>
+          Edit
+           Transaction
+        </h1>
+      </header>
     </div>
     <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
+      className="grommetux-form-fields"
     >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
-      >
-        Amount
-      </label>
-      <span
-        className="grommetux-form-field__contents"
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
         <span
-          className="grommetux-number-input"
+          className="grommetux-form-field__contents"
         >
-          <input
-            className="grommetux-input grommetux-number-input__input"
-            disabled={undefined}
-            min={0}
-            onChange={[Function]}
-            tabIndex="0"
-            type="number"
-            value={100}
-          />
-          <button
-            aria-label={undefined}
-            className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
+          <label
+            className="grommetux-radio-button"
+            htmlFor="expense-true"
           >
+            <input
+              checked={true}
+              className="grommetux-radio-button__input"
+              id="expense-true"
+              onChange={[Function]}
+              type="radio"
+            />
             <span
-              className="grommetux-button__icon"
+              className="grommetux-radio-button__control"
+            />
+            <span
+              className="grommetux-radio-button__label"
             >
-              <svg
-                aria-label="subtract"
-                className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
+              Expense
             </span>
-          </button>
-          <button
-            aria-label={undefined}
-            className="grommetux-button grommetux-button--plain grommetux-number-input__add"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
+          </label>
+          <label
+            className="grommetux-radio-button"
+            htmlFor="expense-false"
           >
+            <input
+              checked={false}
+              className="grommetux-radio-button__input"
+              id="expense-false"
+              onChange={[Function]}
+              type="radio"
+            />
             <span
-              className="grommetux-button__icon"
+              className="grommetux-radio-button__control"
+            />
+            <span
+              className="grommetux-radio-button__label"
             >
-              <svg
-                aria-label="add"
-                className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,22 L12,2 M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
+              Income
             </span>
-          </button>
+          </label>
         </span>
-      </span>
-    </div>
-    <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
-        Details
-      </label>
-      <span
-        className="grommetux-form-field__contents"
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Amount
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <span
+            className="grommetux-number-input"
+          >
+            <input
+              className="grommetux-input grommetux-number-input__input"
+              disabled={undefined}
+              min={0}
+              onChange={[Function]}
+              tabIndex="0"
+              type="number"
+              value={100}
+            />
+            <button
+              aria-label={undefined}
+              className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="subtract"
+                  className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label={undefined}
+              className="grommetux-button grommetux-button--plain grommetux-number-input__add"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="add"
+                  className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M12,22 L12,2 M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
-        <input
-          autoComplete="off"
-          className="grommetux-text-input grommetux-input"
-          defaultValue={undefined}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          placeholder={undefined}
-          type="text"
-          value="Hello Transaction"
-        />
-      </span>
-    </div>
-    <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
-      >
-        Date
-      </label>
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <div
-          className="grommetux-date-time"
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Details
+        </label>
+        <span
+          className="grommetux-form-field__contents"
         >
           <input
-            className="grommetux-input grommetux-date-time__input"
+            autoComplete="off"
+            className="grommetux-text-input grommetux-input"
+            defaultValue={undefined}
             onChange={[Function]}
-            placeholder="YYYY-MM-DD"
-            value="2018-01-23"
-          />
-          <button
-            aria-label="Date Time Icon"
-            className="grommetux-button grommetux-button--plain grommetux-date-time__control"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
-          >
-            <span
-              className="grommetux-button__icon"
-            >
-              <svg
-                aria-label="calendar"
-                className="grommetux-control-icon grommetux-control-icon-calendar grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-      </span>
-    </div>
-  </div>
-  <footer
-    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
-  >
-    <button
-      aria-label={undefined}
-      className="grommetux-button grommetux-button--primary"
-      disabled={false}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      type="submit"
-    >
-      <span
-        className="grommetux-button__label"
-      >
-        Submit
-      </span>
-    </button>
-    <button
-      aria-label={undefined}
-      className="grommetux-button grommetux-button--plain grommetux-background-hover-color-index-critical"
-      disabled={false}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      type="button"
-    >
-      <span
-        className="grommetux-button__icon"
-      >
-        <svg
-          aria-label="trash"
-          className="grommetux-control-icon grommetux-control-icon-trash grommetux-control-icon--responsive"
-          height="24px"
-          role="img"
-          version="1.1"
-          viewBox="0 0 24 24"
-          width="24px"
-        >
-          <path
-            d="M4,5 L20,5 L20,23 L4,23 L4,5 Z M1,5 L23,5 M9,1 L15,1 L15,5 L9,5 L9,1 Z M9,1 L15,1 L15,5 L9,5 L9,1 Z M15,9 L15,19 M9,9 L9,19"
-            fill="none"
-            stroke="#000"
-            strokeWidth="2"
+            onKeyDown={[Function]}
+            placeholder={undefined}
+            type="text"
+            value="Hello Transaction"
           />
-        </svg>
-      </span>
-    </button>
-  </footer>
-</form>
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Date
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <div
+            className="grommetux-date-time"
+          >
+            <input
+              className="grommetux-input grommetux-date-time__input"
+              onChange={[Function]}
+              placeholder="YYYY-MM-DD"
+              value="2018-01-23"
+            />
+            <button
+              aria-label="Date Time Icon"
+              className="grommetux-button grommetux-button--plain grommetux-date-time__control"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="calendar"
+                  className="grommetux-control-icon grommetux-control-icon-calendar grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </span>
+      </div>
+    </div>
+    <footer
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--primary"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="submit"
+      >
+        <span
+          className="grommetux-button__label"
+        >
+          Submit
+        </span>
+      </button>
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--plain grommetux-background-hover-color-index-critical"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <span
+          className="grommetux-button__icon"
+        >
+          <svg
+            aria-label="trash"
+            className="grommetux-control-icon grommetux-control-icon-trash grommetux-control-icon--responsive"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M4,5 L20,5 L20,23 L4,23 L4,5 Z M1,5 L23,5 M9,1 L15,1 L15,5 L9,5 L9,1 Z M9,1 L15,1 L15,5 L9,5 L9,1 Z M15,9 L15,19 M9,9 L9,19"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </span>
+      </button>
+    </footer>
+  </form>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
+</div>
 `;
 
 exports[`WalletAdd:WalletAdd 1`] = `
-<form
-  className="grommetux-form grommetux-form--pad-none"
-  onSubmit={[Function]}
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US"
 >
-  <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
+  <form
+    className="grommetux-form grommetux-form--pad-none"
+    onSubmit={[Function]}
   >
-    <header
-      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
       id={undefined}
       onClick={undefined}
       role={undefined}
       style={Object {}}
       tabIndex={undefined}
     >
-      <h1
-        className="grommetux-heading"
+      <header
+        className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}
       >
-        Add Wallet
-      </h1>
-    </header>
-  </div>
-  <div
-    className="grommetux-form-fields"
-  >
-    <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
-      >
-        Name
-      </label>
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <input
-          autoComplete="off"
-          className="grommetux-text-input grommetux-input"
-          defaultValue={undefined}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          placeholder={undefined}
-          type="text"
-          value=""
-        />
-      </span>
+        <h1
+          className="grommetux-heading"
+        >
+          Add Wallet
+        </h1>
+      </header>
     </div>
     <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
+      className="grommetux-form-fields"
     >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
-        Balance
-      </label>
-      <span
-        className="grommetux-form-field__contents"
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Name
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <input
+            autoComplete="off"
+            className="grommetux-text-input grommetux-input"
+            defaultValue={undefined}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder={undefined}
+            type="text"
+            value=""
+          />
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Balance
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <span
+            className="grommetux-number-input"
+          >
+            <input
+              className="grommetux-input grommetux-number-input__input"
+              disabled={undefined}
+              min={0}
+              onChange={[Function]}
+              tabIndex="0"
+              type="number"
+              value={0}
+            />
+            <button
+              aria-label={undefined}
+              className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="subtract"
+                  className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label={undefined}
+              className="grommetux-button grommetux-button--plain grommetux-number-input__add"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="add"
+                  className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M12,22 L12,2 M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Currency
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <div
+            className="grommetux-select"
+            onClick={[Function]}
+          >
+            <input
+              className="grommetux-input grommetux-select__input"
+              placeholder={undefined}
+              readOnly={true}
+              type="text"
+              value="USD ($)"
+            />
+            <button
+              aria-label="Select Icon"
+              className="grommetux-button grommetux-button--plain grommetux-select__control"
+              disabled={false}
+              href={undefined}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              type="button"
+            >
+              <span
+                className="grommetux-button__icon"
+              >
+                <svg
+                  aria-label="caret-down"
+                  className="grommetux-control-icon grommetux-control-icon-caret-down grommetux-control-icon--responsive"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <polygon
+                    fill="none"
+                    points="22 8 12 20 2 8"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </span>
+      </div>
+    </div>
+    <footer
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--primary"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="submit"
       >
         <span
-          className="grommetux-number-input"
+          className="grommetux-button__label"
         >
-          <input
-            className="grommetux-input grommetux-number-input__input"
-            disabled={undefined}
-            min={0}
-            onChange={[Function]}
-            tabIndex="0"
-            type="number"
-            value={0}
-          />
-          <button
-            aria-label={undefined}
-            className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
-          >
-            <span
-              className="grommetux-button__icon"
-            >
-              <svg
-                aria-label="subtract"
-                className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </span>
-          </button>
-          <button
-            aria-label={undefined}
-            className="grommetux-button grommetux-button--plain grommetux-number-input__add"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
-          >
-            <span
-              className="grommetux-button__icon"
-            >
-              <svg
-                aria-label="add"
-                className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,22 L12,2 M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </span>
-          </button>
+          Submit
         </span>
-      </span>
-    </div>
-    <div
-      className="grommetux-form-field grommetux-form-field--size-medium"
-      onClick={[Function]}
-    >
-      <label
-        className="grommetux-form-field__label"
-        htmlFor={undefined}
-      >
-        Currency
-      </label>
-      <span
-        className="grommetux-form-field__contents"
-      >
-        <div
-          className="grommetux-select"
-          onClick={[Function]}
-        >
-          <input
-            className="grommetux-input grommetux-select__input"
-            placeholder={undefined}
-            readOnly={true}
-            type="text"
-            value="USD ($)"
-          />
-          <button
-            aria-label="Select Icon"
-            className="grommetux-button grommetux-button--plain grommetux-select__control"
-            disabled={false}
-            href={undefined}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            type="button"
-          >
-            <span
-              className="grommetux-button__icon"
-            >
-              <svg
-                aria-label="caret-down"
-                className="grommetux-control-icon grommetux-control-icon-caret-down grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <polygon
-                  fill="none"
-                  points="22 8 12 20 2 8"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-      </span>
-    </div>
-  </div>
-  <footer
-    className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}
-  >
-    <button
-      aria-label={undefined}
-      className="grommetux-button grommetux-button--primary"
-      disabled={false}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      type="submit"
-    >
-      <span
-        className="grommetux-button__label"
-      >
-        Submit
-      </span>
-    </button>
-  </footer>
-</form>
+      </button>
+    </footer>
+  </form>
+  <span
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer"
+  />
+</div>
 `;
