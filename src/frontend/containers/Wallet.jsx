@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
 import { read as readCategory } from '../actions/category';
 import { read as readTransaction, create, update, deleteTransaction } from '../actions/transaction';
 import { readOne as readWallet } from '../actions/wallet';
+import Category from '../components/Category';
 import Table from '../components/Table';
 import Timeseries from '../components/Timeseries';
 import Transaction from '../components/Transaction';
@@ -51,6 +52,7 @@ class Wallet extends Component {
     ['', row => (row.amount < 0 ? <Down colorIndex="critical" /> : <Up colorIndex="ok" />)],
     ['Date', row => moment(row.date).format('L')],
     ['Details', row => row.details],
+    ['Category', row => <Category categories={row.categories} categoryList={this.props.categoryList} disabled placeholder="" />],
     ['Amount', row => currencyValue(row.amount, this.props.wallet.currency)],
   ]);
 

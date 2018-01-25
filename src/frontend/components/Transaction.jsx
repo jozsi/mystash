@@ -10,9 +10,9 @@ import Header from 'grommet/components/Header';
 import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
 import RadioButton from 'grommet/components/RadioButton';
-import Select from 'grommet/components/Select';
 import TextInput from 'grommet/components/TextInput';
 import Trash from 'grommet/components/icons/base/Trash';
+import Category from './Category';
 
 class Transaction extends Component {
   static propTypes = {
@@ -133,15 +133,11 @@ class Transaction extends Component {
               value={details}
             />
           </FormField>
-          <FormField label="Categories">
-            <Select
-              multiple
-              value={categories}
-              onChange={({ value }) => this.setState({ categories: value })}
-              options={categoryList.map(({ id, name, color}) => ({
-                value: id,
-                label: <div style={{ backgroundColor: color, padding: 4, margin: 4 }}>{name}</div>,
-              }))}
+          <FormField label="Categories" style={{ overflow: 'inherit' }}>
+            <Category
+              categories={categories}
+              categoryList={categoryList}
+              onChange={categories => this.setState({ categories })}
             />
           </FormField>
           <FormField label="Date">

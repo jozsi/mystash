@@ -2752,6 +2752,108 @@ exports[`Transaction:Transaction 1`] = `
       <div
         className="grommetux-form-field grommetux-form-field--size-medium"
         onClick={[Function]}
+        style={
+          Object {
+            "overflow": "inherit",
+          }
+        }
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Categories
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <div
+            className="Select is-clearable is-searchable Select--multi"
+            style={undefined}
+          >
+            <div
+              className="Select-control"
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              style={undefined}
+            >
+              <span
+                className="Select-multi-value-wrapper"
+                id="react-select-2--value"
+              >
+                <div
+                  className="Select-placeholder"
+                >
+                  Select...
+                </div>
+                <div
+                  className="Select-input"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                    }
+                  }
+                >
+                  <input
+                    aria-activedescendant="react-select-2--value"
+                    aria-describedby={undefined}
+                    aria-expanded="false"
+                    aria-haspopup="false"
+                    aria-label={undefined}
+                    aria-labelledby={undefined}
+                    aria-owns=""
+                    className={undefined}
+                    id={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={false}
+                    role="combobox"
+                    style={
+                      Object {
+                        "boxSizing": "content-box",
+                        "width": "5px",
+                      }
+                    }
+                    tabIndex={undefined}
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
+                </div>
+              </span>
+              <span
+                className="Select-arrow-zone"
+                onMouseDown={[Function]}
+              >
+                <span
+                  className="Select-arrow"
+                  onMouseDown={[Function]}
+                />
+              </span>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
       >
         <label
           className="grommetux-form-field__label"
@@ -3053,6 +3155,189 @@ exports[`Transaction:TransactionWithData 1`] = `
             type="text"
             value="Hello Transaction"
           />
+        </span>
+      </div>
+      <div
+        className="grommetux-form-field grommetux-form-field--size-medium"
+        onClick={[Function]}
+        style={
+          Object {
+            "overflow": "inherit",
+          }
+        }
+      >
+        <label
+          className="grommetux-form-field__label"
+          htmlFor={undefined}
+        >
+          Categories
+        </label>
+        <span
+          className="grommetux-form-field__contents"
+        >
+          <div
+            className="Select has-value is-clearable is-searchable Select--multi"
+            style={undefined}
+          >
+            <div
+              className="Select-control"
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              style={undefined}
+            >
+              <span
+                className="Select-multi-value-wrapper"
+                id="react-select-3--value"
+              >
+                <div
+                  className="Select-value"
+                  style={
+                    Object {
+                      "backgroundColor": "#2ad2c9",
+                      "color": "#000000",
+                    }
+                  }
+                  title={undefined}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="Select-value-icon"
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    ×
+                  </span>
+                  <span
+                    aria-selected="true"
+                    className="Select-value-label"
+                    id="react-select-3--value-0"
+                    role="option"
+                  >
+                    First category
+                    <span
+                      className="Select-aria-only"
+                    >
+                       
+                    </span>
+                  </span>
+                </div>
+                <div
+                  className="Select-value"
+                  style={
+                    Object {
+                      "backgroundColor": "#ff8d6d",
+                      "color": "#000000",
+                    }
+                  }
+                  title={undefined}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="Select-value-icon"
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    ×
+                  </span>
+                  <span
+                    aria-selected="true"
+                    className="Select-value-label"
+                    id="react-select-3--value-1"
+                    role="option"
+                  >
+                    Third category
+                    <span
+                      className="Select-aria-only"
+                    >
+                       
+                    </span>
+                  </span>
+                </div>
+                <div
+                  className="Select-input"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                    }
+                  }
+                >
+                  <input
+                    aria-activedescendant="react-select-3--value"
+                    aria-describedby={undefined}
+                    aria-expanded="false"
+                    aria-haspopup="false"
+                    aria-label={undefined}
+                    aria-labelledby={undefined}
+                    aria-owns=""
+                    className={undefined}
+                    id={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={false}
+                    role="combobox"
+                    style={
+                      Object {
+                        "boxSizing": "content-box",
+                        "width": "5px",
+                      }
+                    }
+                    tabIndex={undefined}
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
+                </div>
+              </span>
+              <span
+                aria-label="Clear all"
+                className="Select-clear-zone"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                title="Clear all"
+              >
+                <span
+                  className="Select-clear"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "&times;",
+                    }
+                  }
+                />
+              </span>
+              <span
+                className="Select-arrow-zone"
+                onMouseDown={[Function]}
+              >
+                <span
+                  className="Select-arrow"
+                  onMouseDown={[Function]}
+                />
+              </span>
+            </div>
+          </div>
         </span>
       </div>
       <div
