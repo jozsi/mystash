@@ -52,7 +52,19 @@ class Wallet extends Component {
     ['', row => (row.amount < 0 ? <Down colorIndex="critical" /> : <Up colorIndex="ok" />)],
     ['Date', row => moment(row.date).format('L')],
     ['Details', row => row.details],
-    ['Category', row => <Category categories={row.categories} categoryList={this.props.categoryList} disabled placeholder="" />],
+    ['Category', row => (
+      <Category
+        categories={row.categories}
+        categoryList={this.props.categoryList}
+        disabled
+        placeholder="None"
+        style={{
+          border: 'none',
+          backgroundColor: 'inherit',
+        }}
+        arrowRenderer={null}
+      />
+    )],
     ['Amount', row => currencyValue(row.amount, this.props.wallet.currency)],
   ]);
 

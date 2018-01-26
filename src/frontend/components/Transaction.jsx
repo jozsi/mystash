@@ -138,6 +138,10 @@ class Transaction extends Component {
               categories={categories}
               categoryList={categoryList}
               onChange={categories => this.setState({ categories })}
+              style={{
+                border: 'none',
+                boxShadow: 'none',
+              }}
             />
           </FormField>
           <FormField label="Date">

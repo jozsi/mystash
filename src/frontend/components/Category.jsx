@@ -21,6 +21,10 @@ function Category(props) {
           color: '#000000',
         },
       }))}
+      inputProps={{
+        className: 'grommetux-input',
+      }}
+      autosize={false}
       {...rest}
     />
   );
