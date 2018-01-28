@@ -10,6 +10,7 @@ import Home from './containers/Home';
 import Layout from './containers/Layout';
 import PrivateRoute from './containers/PrivateRoute';
 import Wallet from './containers/Wallet';
+import Category from './containers/Category';
 
 const { persistor, store } = configureStore();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Switch>
             <PrivateRoute exact path="/" component={Home} />
             <PrivateRoute path="/wallet/:id" component={Wallet} />
+            <PrivateRoute path="/category" component={Category} />
             <Route path="/login" component={Auth} />
             <Route path="/signup" component={Auth} />
             <Redirect to="/" />

@@ -15,4 +15,12 @@ router.get('/', async (ctx) => {
   ctx.body = categories;
 });
 
+router.put('/:id', async (ctx) => {
+  const category = await Category.findOneAndUpdate({
+    user: ctx.state.user.id,
+    _id: ctx.params.id,
+  }, ctx.request.body, { new: true });
+  ctx.body = category;
+});
+
 module.exports = router;

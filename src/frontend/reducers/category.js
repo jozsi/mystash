@@ -3,6 +3,7 @@ import {
   CATEGORY_READ_SUCCESS,
   CATEGORY_READ_FAILURE,
   CATEGORY_CREATE_SUCCESS,
+  CATEGORY_UPDATE_SUCCESS,
 } from '../actions';
 
 const initialState = { list: [] };
@@ -30,6 +31,20 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         list: [...state.list, payload],
+      };
+    case CATEGORY_UPDATE_SUCCESS:
+      return {
+        ...state,
+        list: state.list.map(item => {
+          if (item.id !== payload.id) {
+            return item;
+          }
+
+          return {
+            ...item,
+            ...payload,
+          };
+        }),
       };
     default:
       return state;

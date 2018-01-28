@@ -6,6 +6,9 @@ import {
   CATEGORY_CREATE_REQUEST,
   CATEGORY_CREATE_SUCCESS,
   CATEGORY_CREATE_FAILURE,
+  CATEGORY_UPDATE_REQUEST,
+  CATEGORY_UPDATE_SUCCESS,
+  CATEGORY_UPDATE_FAILURE,
 } from '../actions';
 
 export const read = () => ({
@@ -30,5 +33,18 @@ export const create = category => ({
     }),
     body: JSON.stringify(category),
     types: [CATEGORY_CREATE_REQUEST, CATEGORY_CREATE_SUCCESS, CATEGORY_CREATE_FAILURE],
+  },
+});
+
+export const update = category => ({
+  [RSAA]: {
+    endpoint: `/category/${category.id}`,
+    method: 'PUT',
+    headers: state => ({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${state.user.token}`,
+    }),
+    body: JSON.stringify(category),
+    types: [CATEGORY_UPDATE_REQUEST, CATEGORY_UPDATE_SUCCESS, CATEGORY_UPDATE_FAILURE],
   },
 });
