@@ -6,9 +6,9 @@ import Heading from 'grommet/components/Heading';
 import Label from 'grommet/components/Label';
 import Tiles from 'grommet/components/Tiles';
 import Tile from 'grommet/components/Tile';
-import { ChromePicker } from 'react-color';
 import Popover from 'react-popover';
 import { read, create, update } from '../actions/category';
+import CategoryEdit from '../components/CategoryEdit';
 
 class Category extends Component {
   state = {
@@ -20,18 +20,12 @@ class Category extends Component {
   }
 
   setPopover(id, visible) {
+    console.log('Setting popover!', id, visible);
     this.setState({
       open: {
         ...this.state.open,
         [id]: visible,
       },
-    });
-  }
-
-  updateColor(x, color) {
-    this.props.update({
-      ...x,
-      color,
     });
   }
 
@@ -60,13 +54,18 @@ class Category extends Component {
                 isOpen={this.state.open[x.id]}
                 children={<div>{x.name}</div>}
                 body={(
-                  <ChromePicker
+                  <CategoryEdit
+                    name={x.name}
                     color={x.color}
-                    onChangeComplete={({ hex }) => this.updateColor(x, hex)}
+                    onSubmit={y => {
+                      this.setPopover(x.id);
+                      this.props.update({ ...y, id: x.id });
+                    }}
                   />
                 )}
                 onOuterAction={() => this.setPopover(x.id)}
                 place="below"
+                appendTarget={document.querySelector('.grommetux-app')}
               />
             </Tile>
           ))}
