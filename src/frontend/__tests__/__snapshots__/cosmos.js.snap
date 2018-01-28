@@ -267,41 +267,64 @@ exports[`Header:Header 1`] = `
               href="/"
               onClick={[Function]}
             >
-              Hello, Cosmos!
+              myStash
             </a>
           </div>
           <div
-            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-end grommetux-box--flex grommetux-box--pad-horizontal-small"
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-end grommetux-box--flex grommetux-box--pad-none"
             id={undefined}
             onClick={undefined}
             role={undefined}
             style={Object {}}
             tabIndex={undefined}
           >
-            <a
-              aria-label={undefined}
-              className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--icon-label grommetux-anchor--primary grommetux-anchor--reverse"
-              href={undefined}
-              onClick={[Function]}
+            <div
+              className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-menu grommetux-menu--column grommetux-menu--controlled grommetux-menu__control grommetux-menu--labelled"
+              id={undefined}
+              onClick={undefined}
+              role={undefined}
+              style={Object {}}
+              tabIndex={undefined}
             >
-              Sign out
-              <svg
-                aria-label="logout"
-                className="grommetux-control-icon grommetux-control-icon-logout grommetux-control-icon--responsive"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
+              <button
+                aria-label="Open Cosmos Menu"
+                className="grommetux-button grommetux-button--plain"
+                disabled={false}
+                href={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                type="button"
               >
-                <path
-                  d="M13,9 L13,2 L1,2 L1,22 L13,22 L13,15 M22,12 L5,12 M17,7 L22,12 L17,17"
-                  fill="none"
-                  stroke="#231F1F"
-                  strokeWidth="2"
-                />
-              </svg>
-            </a>
+                <span
+                  className="grommetux-button__label"
+                >
+                  Cosmos
+                </span>
+                <span
+                  className="grommetux-button__icon"
+                >
+                  <svg
+                    aria-label="menu"
+                    className="grommetux-control-icon grommetux-control-icon-menu grommetux-control-icon--responsive"
+                    height="24px"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    width="24px"
+                  >
+                    <path
+                      d="M2,19 L22,19 M2,5 L22,5 M2,12 L22,12"
+                      fill="none"
+                      stroke="#000"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
           </div>
         </header>
       </div>
