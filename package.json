@@ -45,7 +45,7 @@
     "koa-jwt": "^3.3.0",
     "koa-router": "^7.3.0",
     "koa-static": "^4.0.2",
-    "mongoose": "^5.0.1",
+    "mongoose": "^5.0.2",
     "npm-run-all": "^4.1.2",
     "regression": "^2.0.1"
   },
