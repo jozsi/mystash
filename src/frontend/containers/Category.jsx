@@ -20,7 +20,6 @@ class Category extends Component {
   }
 
   setPopover(id, visible) {
-    console.log('Setting popover!', id, visible);
     this.setState({
       open: {
         ...this.state.open,
@@ -47,12 +46,12 @@ class Category extends Component {
                 borderRadius: 2,
                 padding: '2px 5px',
               }}
-              key={x.id}
               onClick={() => this.setPopover(x.id, true)}
+              key={x.id}
             >
               <Popover
-                isOpen={this.state.open[x.id]}
-                children={<div>{x.name}</div>}
+                isOpen={!!this.state.open[x.id]}
+                children={<div key={x.id}>{x.name}</div>}
                 body={(
                   <CategoryEdit
                     name={x.name}

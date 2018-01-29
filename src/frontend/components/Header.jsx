@@ -33,6 +33,10 @@ const Header = ({ onLogout, user }) => (
       <Menu
         icon={<MenuIcon />}
         label={user.firstName}
+        dropAlign={{
+          top: 'top',
+          right: 'right',
+        }}
       >
         <Anchor
           path="/"

@@ -3,7 +3,6 @@ import { ChromePicker } from 'react-color';
 import Button from 'grommet/components/Button';
 import Form from 'grommet/components/Form';
 import FormField from 'grommet/components/FormField';
-import FormFields from 'grommet/components/FormFields';
 import TextInput from 'grommet/components/TextInput';
 
 class CategoryEdit extends Component {
@@ -42,29 +41,26 @@ class CategoryEdit extends Component {
       <Form
         plain
         onSubmit={this.onSubmit}
+        onClick={ev => ev.stopPropagation()}
       >
-        <FormFields>
-          <FormField label="Name">
-            <TextInput
-              value={name}
-              onDOMChange={ev => this.fieldChanged(ev, 'name')}
-            />
-          </FormField>
-          <FormField>
-            <ChromePicker
-              color={color}
-              onChangeComplete={({ hex }) => this.setState({ color: hex })}
-            />
-          </FormField>
-          <FormField>
-            <Button
-              label="Submit"
-              type="submit"
-              primary
-              onClick={this.onSubmit}
-            />
-          </FormField>
-        </FormFields>
+        <FormField label="Name">
+          <TextInput
+            value={name}
+            onDOMChange={ev => this.fieldChanged(ev, 'name')}
+          />
+        </FormField>
+        <ChromePicker
+          color={color}
+          onChangeComplete={({ hex }) => this.setState({ color: hex })}
+          className="mystash-color-picker"
+        />
+        <Button
+          fill
+          label="Submit"
+          type="submit"
+          primary
+          onClick={this.onSubmit}
+        />
       </Form>
     );
   }
