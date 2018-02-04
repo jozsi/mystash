@@ -34,13 +34,17 @@ Personal finance app
   ```
 
 ### Development
-1. Run the project in development environment
+1. Run the development environment
   ```
   npm run dev
   ```
 
 2. The app will be served at http://localhost:3001/
-3. Any changes you make to the code will be reflected
+  ```
+  open http://localhost:3001/
+  ```
+
+3. Any changes made to the code will be reflected
 
 ### Build
 1. Build a production version of the frontend
@@ -53,7 +57,7 @@ Personal finance app
   npm start
   ```
 
-3. Go to http://localhost:3000/
+3. Open the app at http://localhost:3000/
   ```
   open http://localhost:3000/
   ```
