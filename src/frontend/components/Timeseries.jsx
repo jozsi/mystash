@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import { Area, ComposedChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 function Timeseries(props) {
-  const { actual, forecast, previous } = props;
+  const {
+    actual,
+    forecast,
+    previous,
+  } = props;
 
   const values = forecast.day.map((x, i) => ({
     name: '' + x,
     forecast: forecast.runningTotal[i],
+    actual: actual.runningTotal[i],
+    previous: previous.runningTotal[i],
   }));
-
-  actual.runningTotal.forEach((x, i) => values[i].actual = x);
-  previous.runningTotal.forEach((x, i) => values[i].previous = x);
 
   return (
     <ComposedChart width={730} height={250} data={values}
