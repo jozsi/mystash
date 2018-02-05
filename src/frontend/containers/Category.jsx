@@ -1,74 +1,104 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
-import Label from 'grommet/components/Label';
 import Tiles from 'grommet/components/Tiles';
 import Tile from 'grommet/components/Tile';
-import Popover from 'react-popover';
 import { read, create, update } from '../actions/category';
 import CategoryEdit from '../components/CategoryEdit';
 
-class Category extends Component {
+function CategoryTile({ category, ...props }) {
+  return (
+    <Tile
+      style={{
+        backgroundColor: category.color,
+        border: '1px solid rgba(0, 126, 255, 0.24)',
+        borderRadius: 2,
+        padding: '2px 5px',
+      }}
+      {...props}
+    >
+      {category.name}
+    </Tile>
+  );
+}
+
+const defaultCategory = {
+  id: null,
+  name: '',
+  color: '#2ad2c9',
+};
+
+const newCategoryTile = {
+  ...defaultCategory,
+  name: 'New...',
+  color: '#f5f5f5',
+}
+
+class Category extends PureComponent {
   state = {
-    open: {},
+    ...defaultCategory,
   }
 
   componentDidMount() {
     this.props.read();
   }
 
-  setPopover(id, visible) {
-    this.setState({
-      open: {
-        ...this.state.open,
-        [id]: visible,
-      },
-    });
+  selectedCategory = ({ id, name, color }) => this.setState({
+    id,
+    name,
+    color,
+  });
+
+  upsert = ({ name, color }) => {
+    const method = this.state.id ? this.props.update : this.props.create;
+    return method({
+      name,
+      color,
+      id: this.state.id,
+    }).then(({ payload: { id, name, color } }) => this.setState({
+      id,
+      name,
+      color,
+    }));
   }
 
   render() {
     const { categoryList } = this.props;
+    const {
+      name,
+      color,
+    } = this.state;
 
     return (
       <Box>
         <Heading>Categories</Heading>
-        <Label>Click on a category tag to edit it</Label>
-        <Tiles
-          flush={false}
+        <Box
+          direction="row"
+          align="start"
         >
-          {categoryList.map(x => (
-            <Tile
-              style={{
-                backgroundColor: x.color,
-                border: '1px solid rgba(0, 126, 255, 0.24)',
-                borderRadius: 2,
-                padding: '2px 5px',
-              }}
-              onClick={() => this.setPopover(x.id, true)}
-              key={x.id}
-            >
-              <Popover
-                isOpen={!!this.state.open[x.id]}
-                children={<div key={x.id}>{x.name}</div>}
-                body={(
-                  <CategoryEdit
-                    name={x.name}
-                    color={x.color}
-                    onSubmit={y => {
-                      this.setPopover(x.id);
-                      this.props.update({ ...y, id: x.id });
-                    }}
-                  />
-                )}
-                onOuterAction={() => this.setPopover(x.id)}
-                place="below"
-                appendTarget={document.querySelector('.grommetux-app')}
+          <CategoryEdit
+            name={name}
+            color={color}
+            onSubmit={this.upsert}
+          />
+          <Tiles
+            flush={false}
+          >
+            {categoryList.map(x => (
+              <CategoryTile
+                category={x}
+                onClick={() => this.selectedCategory(x)}
+                key={x.id}
               />
-            </Tile>
-          ))}
-        </Tiles>
+            ))}
+            <CategoryTile
+              category={newCategoryTile}
+              onClick={() => this.selectedCategory(defaultCategory)}
+            />
+          </Tiles>
+        </Box>
       </Box>
     );
   }

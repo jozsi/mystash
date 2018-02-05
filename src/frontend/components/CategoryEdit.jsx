@@ -22,6 +22,10 @@ class CategoryEdit extends Component {
     this.updateStateFromProps(this.props);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.updateStateFromProps(newProps);
+  }
+
   fieldChanged = (event, field) => this.setState({ [field]: event.target.value });
 
   onSubmit = (event) => {

@@ -71,7 +71,6 @@
     "react-cosmos-test": "^3.4.0",
     "react-cosmos-wrapper-proxy": "^1.1.1",
     "react-dom": "^16.2.0",
-    "react-popover": "^0.5.4",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
