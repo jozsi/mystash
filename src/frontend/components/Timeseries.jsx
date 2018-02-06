@@ -9,7 +9,8 @@ function Timeseries(props) {
     previous,
   } = props;
 
-  const values = forecast.day.map((x, i) => ({
+  const days = forecast.day.length > previous.day.length ? forecast.day : previous.day;
+  const values = days.map((x, i) => ({
     name: '' + x,
     forecast: forecast.runningTotal[i],
     actual: actual.runningTotal[i],
