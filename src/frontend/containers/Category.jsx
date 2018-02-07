@@ -64,10 +64,14 @@ class Category extends Component {
     }));
   }
 
+  onDelete = (id) => {
+    return this.props.deleteCategory(id)
+      .then(() => this.selectedCategory(defaultCategory));
+  }
+
   render() {
     const {
       categoryList,
-      deleteCategory,
     } = this.props;
     const {
       id,
@@ -87,7 +91,7 @@ class Category extends Component {
             name={name}
             color={color}
             onSubmit={this.upsert}
-            onDelete={deleteCategory}
+            onDelete={this.onDelete}
           />
           <Tiles
             flush={false}
