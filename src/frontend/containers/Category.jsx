@@ -1,25 +1,25 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 import Tiles from 'grommet/components/Tiles';
 import Tile from 'grommet/components/Tile';
-import { read, create, update } from '../actions/category';
+import { read, create, update, deleteCategory } from '../actions/category';
 import CategoryEdit from '../components/CategoryEdit';
 
-function CategoryTile({ category, ...props }) {
+function CategoryTile({ name, color, ...props }) {
   return (
     <Tile
       style={{
-        backgroundColor: category.color,
+        backgroundColor: color,
         border: '1px solid rgba(0, 126, 255, 0.24)',
         borderRadius: 2,
         padding: '2px 5px',
       }}
       {...props}
     >
-      {category.name}
+      {name}
     </Tile>
   );
 }
@@ -36,7 +36,7 @@ const newCategoryTile = {
   color: '#f5f5f5',
 }
 
-class Category extends PureComponent {
+class Category extends Component {
   state = {
     ...defaultCategory,
   }
@@ -65,8 +65,12 @@ class Category extends PureComponent {
   }
 
   render() {
-    const { categoryList } = this.props;
     const {
+      categoryList,
+      deleteCategory,
+    } = this.props;
+    const {
+      id,
       name,
       color,
     } = this.state;
@@ -79,22 +83,26 @@ class Category extends PureComponent {
           align="start"
         >
           <CategoryEdit
+            id={id}
             name={name}
             color={color}
             onSubmit={this.upsert}
+            onDelete={deleteCategory}
           />
           <Tiles
             flush={false}
           >
             {categoryList.map(x => (
               <CategoryTile
-                category={x}
+                name={x.name}
+                color={x.color}
                 onClick={() => this.selectedCategory(x)}
                 key={x.id}
               />
             ))}
             <CategoryTile
-              category={newCategoryTile}
+              name={newCategoryTile.name}
+              color={newCategoryTile.color}
               onClick={() => this.selectedCategory(defaultCategory)}
             />
           </Tiles>
@@ -123,6 +131,7 @@ const mapDispatchToProps = {
   read,
   create,
   update,
+  deleteCategory,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);

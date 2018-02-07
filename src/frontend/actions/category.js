@@ -9,6 +9,9 @@ import {
   CATEGORY_UPDATE_REQUEST,
   CATEGORY_UPDATE_SUCCESS,
   CATEGORY_UPDATE_FAILURE,
+  CATEGORY_DELETE_REQUEST,
+  CATEGORY_DELETE_SUCCESS,
+  CATEGORY_DELETE_FAILURE,
 } from '../actions';
 
 export const read = () => ({
@@ -46,5 +49,20 @@ export const update = category => ({
     }),
     body: JSON.stringify(category),
     types: [CATEGORY_UPDATE_REQUEST, CATEGORY_UPDATE_SUCCESS, CATEGORY_UPDATE_FAILURE],
+  },
+});
+
+export const deleteCategory = id => ({
+  [RSAA]: {
+    endpoint: `/category/${id}`,
+    method: 'DELETE',
+    headers: state => ({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${state.user.token}`,
+    }),
+    types: [{
+      type: CATEGORY_DELETE_REQUEST,
+      payload: id,
+    }, CATEGORY_DELETE_SUCCESS, CATEGORY_DELETE_FAILURE],
   },
 });

@@ -4,6 +4,7 @@ import {
   CATEGORY_READ_FAILURE,
   CATEGORY_CREATE_SUCCESS,
   CATEGORY_UPDATE_SUCCESS,
+  CATEGORY_DELETE_SUCCESS,
 } from '../actions';
 
 const initialState = { list: [] };
@@ -45,6 +46,11 @@ const reducer = (state = initialState, { type, payload }) => {
             ...payload,
           };
         }),
+      };
+    case CATEGORY_DELETE_SUCCESS:
+      return {
+        ...state,
+        list: state.list.filter(({ id }) => id !== payload.id),
       };
     default:
       return state;

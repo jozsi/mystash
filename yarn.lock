@@ -3324,9 +3324,9 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-"grommet@https://github.com/grommet/grommet/tarball/stable":
+grommet@^1.10.1:
   version "1.10.1"
-  resolved "https://github.com/grommet/grommet/tarball/stable#742b3d480bd322de2305bcb48e87edbdef26a1c3"
+  resolved "https://registry.yarnpkg.com/grommet/-/grommet-1.10.1.tgz#5b24f6391ba2749996b3cfb96af71f810d3b4c78"
   dependencies:
     classnames "^2.2.3"
     deep-assign "^2.0.0"

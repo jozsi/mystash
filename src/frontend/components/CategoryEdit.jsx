@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { ChromePicker } from 'react-color';
 import Button from 'grommet/components/Button';
 import Form from 'grommet/components/Form';
 import FormField from 'grommet/components/FormField';
 import TextInput from 'grommet/components/TextInput';
 
-class CategoryEdit extends Component {
+class CategoryEdit extends PureComponent {
   state = {
     name: '',
     color: '',
@@ -30,9 +30,12 @@ class CategoryEdit extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    if (this.props.onSubmit) {
-      this.props.onSubmit(this.state);
-    }
+    this.props.onSubmit(this.state);
+  }
+
+  onDelete = (event) => {
+    event.preventDefault();
+    this.props.onDelete(this.props.id);
   }
 
   render() {
@@ -40,6 +43,9 @@ class CategoryEdit extends Component {
       name,
       color,
     } = this.state;
+    const {
+      id,
+    } = this.props;
 
     return (
       <Form
@@ -65,9 +71,22 @@ class CategoryEdit extends Component {
           primary
           onClick={this.onSubmit}
         />
+        {id && (
+          <Button
+            fill
+            label="Delete"
+            critical
+            onClick={this.onDelete}
+          />
+        )}
       </Form>
     );
   }
 }
+
+CategoryEdit.defaultProps = {
+  onSubmit: () => {},
+  onDelete: () => {},
+};
 
 export default CategoryEdit;

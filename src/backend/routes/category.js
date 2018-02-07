@@ -23,4 +23,12 @@ router.put('/:id', async (ctx) => {
   ctx.body = category;
 });
 
+router.delete('/:id', async (ctx) => {
+  const category = await Category.findOneAndRemove({
+    user: ctx.state.user.id,
+    _id: ctx.params.id,
+  });
+  ctx.body = category;
+});
+
 module.exports = router;
