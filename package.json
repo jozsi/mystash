@@ -47,7 +47,8 @@
     "koa-static": "^4.0.2",
     "mongoose": "^5.0.3",
     "npm-run-all": "^4.1.2",
-    "regression": "^2.0.1"
+    "regression": "^2.0.1",
+    "k.n.n": "^1.0.3"
   },
   "devDependencies": {
     "codecov": "^3.0.0",

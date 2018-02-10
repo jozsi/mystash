@@ -16,8 +16,11 @@ calendar.getCurrentDate = function(date) {
   return moment().format(DATE_FORMAT);
 }
 
-calendar.dayOfMonth = function(date) {
-  return parseInt(moment(date).format('D'), 10); 
+calendar.dayOfMonth = function(date, asInt=true) {
+  if (asInt) {
+    return parseInt(moment(date).format('D'), 10); 
+  }
+  return moment(date).format('D');
 }
 
 calendar.daysLeftInMonth = function() {
@@ -44,6 +47,10 @@ calendar.getLastDayOfPreviousMonth = function(asText) {
   }
 
   return date;
+}
+
+calendar.formatted = function(date) {
+  return date.format(DATE_FORMAT);
 }
 
 module.exports = calendar;
