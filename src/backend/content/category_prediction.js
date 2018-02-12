@@ -9,12 +9,17 @@ const category = {};
 const MOTNHS_FOR_TRAINING = 6;
 
 category.category_prediction = async function(wallet) {
-    const startDate = Calendar.formatted(moment().startOf('month').subtract(MOTNHS_FOR_TRAINING, 'month'));
-    const today = Calendar.getCurrentDate();
-    const transactions = Transaction.getForDates(startDate, today);
+  const startDate = Calendar.formatted(moment().startOf('month').subtract(MOTNHS_FOR_TRAINING, 'month'));
+  const today = Calendar.getCurrentDate();
+  const transactions = await Transaction.getForDates(wallet, startDate, today);
 
-    const features = data_prep.fitTransactionsForKnn(transactions);
-    return KNN.predict(features, Calendar.dayOfMonth(moment(), false));
+  const features = data_prep.fitTransactionsForKnn(transactions);
+  const target = {
+    paramA: Calendar.dayOfMonth(moment()),
+    paramB: 0,
+    type: false
+  };
+  return KNN.predict(features, target);
 };
 
 module.exports = category;

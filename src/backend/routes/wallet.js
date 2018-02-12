@@ -1,6 +1,7 @@
 const Router = require('koa-router');
 const Wallet = require('../models/wallet');
 const Comparison = require('../content/comparison_to_previous');
+const CategoriesClassification = require('../content/category_prediction');
 
 const router = new Router();
 
@@ -23,9 +24,11 @@ router.get('/:id', async (ctx) => {
   });
   
   const comparisons = await Comparison.comparison_to_previous_month(wallet);
+  const category = await CategoriesClassification.category_prediction(wallet);
 
   ctx.body = {
     ...wallet.toObject(),
+    expense_category: category,
     charts: {
       previous: comparisons.previousMonthRunningExpenses,
       actual: comparisons.runningExpenses,
