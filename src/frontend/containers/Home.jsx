@@ -10,13 +10,9 @@ import Quote from 'grommet/components/Quote';
 import Add from 'grommet/components/icons/base/Add';
 import { logout } from '../actions/user';
 import { read, create } from '../actions/wallet';
+import { read as readRate } from '../actions/rate';
 import Table from '../components/Table';
 import WalletAdd from '../components/WalletAdd';
-
-const WALLET_TABLE = new Map([
-  ['Name', row => row.name],
-  ['Balance', row => row.formattedBalance],
-]);
 
 const getWalletDistribution = walletList => walletList.map(x => ({
   value: x.balance,
@@ -30,7 +26,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    this.props.readWallet();
+    this.props.readWallet().then(({ payload = [] }) => payload.forEach(({ currency }) => this.props.readRate(`USD_${currency}`)));
   }
 
   toggleAdd = () => this.setState({ addVisible: !this.state.addVisible });
@@ -39,6 +35,11 @@ class Home extends Component {
     this.props.createWallet(wallet);
     this.toggleAdd();
   }
+
+  WALLET_TABLE = new Map([
+    ['Name', row => row.name],
+    ['Balance', row => `${row.formattedBalance} ($${this.props.rate['USD_' + row.currency] * row.balance})`],
+  ]);
 
   render() {
     const { wallet, history } = this.props;
@@ -69,7 +70,7 @@ class Home extends Component {
         </Animate>
         <Table
           rows={wallet.list}
-          columns={WALLET_TABLE}
+          columns={this.WALLET_TABLE}
           onSelect={i => history.push(`/wallet/${wallet.list[i].id}`)}
           emptyMessage="Oh, I see we don't have any data yet. Don't worry, we'll be on the path to saving money in no time! Let's create a wallet..."
           isLoading={wallet.isLoading}
@@ -98,15 +99,17 @@ Home.defaultProps = {
   wallet: [],
 };
 
-const mapStateToProps = ({ user, wallet }) => ({
+const mapStateToProps = ({ user, wallet, rate }) => ({
   user,
   wallet,
+  rate,
 });
 
 const mapDispatchToProps = {
   logoutUser: logout,
   readWallet: read,
   createWallet: create,
+  readRate: readRate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
