@@ -14,7 +14,7 @@ describe('wallet', () => {
 
   beforeAll(async () => {
     await db.connect(process.env.TEST_DB_URI);
-    await Wallet.remove({});
+    await Wallet.deleteMany({});
     server = app.listen();
     request = supertest(server);
   });
@@ -56,8 +56,8 @@ describe('wallet', () => {
       .expect(updatedWallet);
   });
 
-  afterAll(async () => {
+  afterAll(() => {
     server.close();
-    await db.disconnect();
+    return db.disconnect();
   });
 });

@@ -10,42 +10,47 @@ const transformer = {
   },
 };
 
-const transactionSchema = new db.Schema({
-  amount: {
-    type: Number,
-    required: true,
+const transactionSchema = new db.Schema(
+  {
+    amount: {
+      type: Number,
+      required: true,
+    },
+    details: {
+      type: String,
+      default: '',
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
+    categories: [
+      {
+        type: db.Schema.Types.ObjectId,
+        ref: 'Category',
+        required: true,
+      },
+    ],
+    user: {
+      type: db.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+    wallet: {
+      type: db.Schema.Types.ObjectId,
+      ref: 'Wallet',
+      required: true,
+    },
   },
-  details: {
-    type: String,
-    default: '',
+  {
+    toJSON: transformer,
+    toObject: transformer,
   },
-  date: {
-    type: Date,
-    default: Date.now,
-  },
-  categories: [{
-    type: db.Schema.Types.ObjectId,
-    ref: 'Category',
-    required: true,
-  }],
-  user: {
-    type: db.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-  wallet: {
-    type: db.Schema.Types.ObjectId,
-    ref: 'Wallet',
-    required: true,
-  },
-}, {
-  toJSON: transformer,
-  toObject: transformer,
-});
+);
 
 const preSaveMiddleware = async function(next) {
   try {
-    const count = await Wallet.count({
+    const count = await Wallet.countDocuments({
       _id: this.wallet,
       user: this.user,
     });
@@ -79,14 +84,17 @@ const updateBalanceMiddleware = async function(doc, next) {
     }
 
     if (amount) {
-      const wallet = await Wallet.findOneAndUpdate({
-        _id: doc.wallet,
-        user: doc.user,
-      }, {
-        $inc: {
-          balance: amount,
+      const wallet = await Wallet.findOneAndUpdate(
+        {
+          _id: doc.wallet,
+          user: doc.user,
         },
-      });
+        {
+          $inc: {
+            balance: amount,
+          },
+        },
+      );
       if (!wallet) {
         throw new Error('Wallet not found.');
       }

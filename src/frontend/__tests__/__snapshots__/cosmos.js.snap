@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AuthForm:AuthForm 1`] = `
+exports[`Cosmos fixtures: AuthForm:AuthForm 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -11,11 +11,7 @@ exports[`AuthForm:AuthForm 1`] = `
   >
     <div
       className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     />
     <fieldset>
       <div
@@ -61,17 +57,11 @@ exports[`AuthForm:AuthForm 1`] = `
     </fieldset>
     <footer
       className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-none grommetux-footer grommetux-footer--small"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     >
       <button
-        aria-label={undefined}
         className="grommetux-button grommetux-button--primary"
         disabled={false}
-        href={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -101,7 +91,7 @@ exports[`AuthForm:AuthForm 1`] = `
 </div>
 `;
 
-exports[`AuthForm:AuthFormError 1`] = `
+exports[`Cosmos fixtures: AuthForm:AuthFormError 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -112,11 +102,7 @@ exports[`AuthForm:AuthFormError 1`] = `
   >
     <div
       className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     />
     <fieldset>
       <div
@@ -167,17 +153,11 @@ exports[`AuthForm:AuthFormError 1`] = `
     </fieldset>
     <footer
       className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-none grommetux-footer grommetux-footer--small"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     >
       <button
-        aria-label={undefined}
         className="grommetux-button grommetux-button--primary"
         disabled={false}
-        href={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -207,7 +187,7 @@ exports[`AuthForm:AuthFormError 1`] = `
 </div>
 `;
 
-exports[`Header:Header 1`] = `
+exports[`Cosmos fixtures: Header:Header 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -223,27 +203,15 @@ exports[`Header:Header 1`] = `
     >
       <div
         className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
-        id={undefined}
-        onClick={undefined}
-        role={undefined}
         style={Object {}}
-        tabIndex={undefined}
       >
         <header
           className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-small grommetux-background-color-index-brand grommetux-background-color-index--pending grommetux-header"
-          id={undefined}
-          onClick={undefined}
-          role={undefined}
           style={Object {}}
-          tabIndex={undefined}
         >
           <div
             className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive grommetux-title--truncate"
-            id={undefined}
-            onClick={undefined}
-            role={undefined}
             style={Object {}}
-            tabIndex={undefined}
           >
             <svg
               aria-label="money"
@@ -262,7 +230,6 @@ exports[`Header:Header 1`] = `
               />
             </svg>
             <a
-              aria-label={undefined}
               className="grommetux-anchor grommetux-anchor--active"
               href="/"
               onClick={[Function]}
@@ -272,25 +239,16 @@ exports[`Header:Header 1`] = `
           </div>
           <div
             className="grommetux-box grommetux-box--direction-row grommetux-box--justify-end grommetux-box--flex grommetux-box--pad-none"
-            id={undefined}
-            onClick={undefined}
-            role={undefined}
             style={Object {}}
-            tabIndex={undefined}
           >
             <div
               className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-menu grommetux-menu--column grommetux-menu--controlled grommetux-menu__control grommetux-menu--labelled"
-              id={undefined}
-              onClick={undefined}
-              role={undefined}
               style={Object {}}
-              tabIndex={undefined}
             >
               <button
                 aria-label="Open Cosmos Menu"
                 className="grommetux-button grommetux-button--plain"
                 disabled={false}
-                href={undefined}
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -344,7 +302,7 @@ exports[`Header:Header 1`] = `
 </div>
 `;
 
-exports[`Money:Logo 1`] = `
+exports[`Cosmos fixtures: Money:Logo 1`] = `
 <svg
   aria-label="money"
   className="grommetux-control-icon grommetux-control-icon-money grommetux-control-icon--responsive"
@@ -363,7 +321,7 @@ exports[`Money:Logo 1`] = `
 </svg>
 `;
 
-exports[`Table:Table 1`] = `
+exports[`Cosmos fixtures: Table:Table 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -387,7 +345,6 @@ exports[`Table:Table 1`] = `
       <tbody>
         <tr
           className="grommetux-table-row"
-          onClick={undefined}
         >
           <td
             colSpan={2}
@@ -417,7 +374,7 @@ exports[`Table:Table 1`] = `
 </div>
 `;
 
-exports[`Table:TableLoading 1`] = `
+exports[`Cosmos fixtures: Table:TableLoading 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -441,7 +398,6 @@ exports[`Table:TableLoading 1`] = `
       <tbody>
         <tr
           className="grommetux-table-row"
-          onClick={undefined}
         >
           <td
             colSpan={2}
@@ -486,7 +442,7 @@ exports[`Table:TableLoading 1`] = `
 </div>
 `;
 
-exports[`Table:TableWithData 1`] = `
+exports[`Cosmos fixtures: Table:TableWithData 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -517,7 +473,6 @@ exports[`Table:TableWithData 1`] = `
       <tbody>
         <tr
           className="grommetux-table-row"
-          onClick={undefined}
         >
           <td>
             hi
@@ -543,13 +498,15 @@ exports[`Table:TableWithData 1`] = `
 </div>
 `;
 
-exports[`Timeseries:Timeseries 1`] = `
+exports[`Cosmos fixtures: Timeseries:Timeseries 1`] = `
 <div
   className="recharts-wrapper"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
   onMouseMove={[Function]}
+  onTouchEnd={[Function]}
   onTouchMove={[Function]}
+  onTouchStart={[Function]}
   style={
     Object {
       "cursor": "default",
@@ -562,11 +519,20 @@ exports[`Timeseries:Timeseries 1`] = `
   <svg
     className="recharts-surface"
     height={250}
-    style={undefined}
     version="1.1"
     viewBox="0 0 730 250"
     width={730}
   >
+    <clipPath
+      id="recharts4-clip"
+    >
+      <rect
+        height={210}
+        width={620}
+        x={80}
+        y={5}
+      />
+    </clipPath>
     <g
       className="recharts-cartesian-grid"
     >
@@ -2428,9 +2394,9 @@ exports[`Timeseries:Timeseries 1`] = `
           <path
             className="recharts-legend-icon"
             d="M0,16h10.666666666666666
-                      A5.333333333333333,5.333333333333333,0,1,1,21.333333333333332,16
-                      H32M21.333333333333332,16
-                      A5.333333333333333,5.333333333333333,0,1,1,10.666666666666666,16"
+            A5.333333333333333,5.333333333333333,0,1,1,21.333333333333332,16
+            H32M21.333333333333332,16
+            A5.333333333333333,5.333333333333333,0,1,1,10.666666666666666,16"
             fill="none"
             stroke="#2ad2c9"
             strokeWidth={4}
@@ -2468,9 +2434,9 @@ exports[`Timeseries:Timeseries 1`] = `
           <path
             className="recharts-legend-icon"
             d="M0,16h10.666666666666666
-                      A5.333333333333333,5.333333333333333,0,1,1,21.333333333333332,16
-                      H32M21.333333333333332,16
-                      A5.333333333333333,5.333333333333333,0,1,1,10.666666666666666,16"
+            A5.333333333333333,5.333333333333333,0,1,1,21.333333333333332,16
+            H32M21.333333333333332,16
+            A5.333333333333333,5.333333333333333,0,1,1,10.666666666666666,16"
             fill="none"
             stroke="#614767"
             strokeWidth={4}
@@ -2508,9 +2474,9 @@ exports[`Timeseries:Timeseries 1`] = `
           <path
             className="recharts-legend-icon"
             d="M0,16h10.666666666666666
-                      A5.333333333333333,5.333333333333333,0,1,1,21.333333333333332,16
-                      H32M21.333333333333332,16
-                      A5.333333333333333,5.333333333333333,0,1,1,10.666666666666666,16"
+            A5.333333333333333,5.333333333333333,0,1,1,21.333333333333332,16
+            H32M21.333333333333332,16
+            A5.333333333333333,5.333333333333333,0,1,1,10.666666666666666,16"
             fill="none"
             stroke="#ff8d6d"
             strokeWidth={4}
@@ -2567,7 +2533,7 @@ exports[`Timeseries:Timeseries 1`] = `
 </div>
 `;
 
-exports[`Transaction:Transaction 1`] = `
+exports[`Cosmos fixtures: Transaction:Transaction 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -2578,19 +2544,11 @@ exports[`Transaction:Transaction 1`] = `
   >
     <div
       className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     >
       <header
         className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
-        id={undefined}
-        onClick={undefined}
-        role={undefined}
         style={Object {}}
-        tabIndex={undefined}
       >
         <h1
           className="grommetux-heading"
@@ -2658,7 +2616,6 @@ exports[`Transaction:Transaction 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Amount
         </label>
@@ -2670,7 +2627,6 @@ exports[`Transaction:Transaction 1`] = `
           >
             <input
               className="grommetux-input grommetux-number-input__input"
-              disabled={undefined}
               min={0}
               onChange={[Function]}
               tabIndex="0"
@@ -2678,10 +2634,8 @@ exports[`Transaction:Transaction 1`] = `
               value={0}
             />
             <button
-              aria-label={undefined}
               className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -2711,10 +2665,8 @@ exports[`Transaction:Transaction 1`] = `
               </span>
             </button>
             <button
-              aria-label={undefined}
               className="grommetux-button grommetux-button--plain grommetux-number-input__add"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -2752,7 +2704,6 @@ exports[`Transaction:Transaction 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Details
         </label>
@@ -2762,11 +2713,9 @@ exports[`Transaction:Transaction 1`] = `
           <input
             autoComplete="off"
             className="grommetux-text-input grommetux-input"
-            defaultValue={undefined}
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            placeholder={undefined}
             type="text"
             value=""
           />
@@ -2783,7 +2732,6 @@ exports[`Transaction:Transaction 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Categories
         </label>
@@ -2792,7 +2740,6 @@ exports[`Transaction:Transaction 1`] = `
         >
           <div
             className="Select is-clearable is-searchable Select--multi"
-            style={undefined}
           >
             <div
               className="Select-control"
@@ -2808,7 +2755,7 @@ exports[`Transaction:Transaction 1`] = `
                 }
               }
             >
-              <span
+              <div
                 className="Select-multi-value-wrapper"
                 id="react-select-2--value"
               >
@@ -2827,24 +2774,19 @@ exports[`Transaction:Transaction 1`] = `
                 >
                   <input
                     aria-activedescendant="react-select-2--value"
-                    aria-describedby={undefined}
                     aria-expanded="false"
                     aria-haspopup="false"
-                    aria-label={undefined}
-                    aria-labelledby={undefined}
                     aria-owns=""
-                    className="Select-input grommetux-input"
-                    id={undefined}
+                    className="grommetux-input"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
                     required={false}
                     role="combobox"
-                    tabIndex={undefined}
                     value=""
                   />
                 </div>
-              </span>
+              </div>
               <span
                 className="Select-arrow-zone"
                 onMouseDown={[Function]}
@@ -2864,7 +2806,6 @@ exports[`Transaction:Transaction 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Date
         </label>
@@ -2884,7 +2825,6 @@ exports[`Transaction:Transaction 1`] = `
               aria-label="Date Time Icon"
               className="grommetux-button grommetux-button--plain grommetux-date-time__control"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -2919,17 +2859,11 @@ exports[`Transaction:Transaction 1`] = `
     </div>
     <footer
       className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     >
       <button
-        aria-label={undefined}
         className="grommetux-button grommetux-button--primary"
         disabled={false}
-        href={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -2959,7 +2893,7 @@ exports[`Transaction:Transaction 1`] = `
 </div>
 `;
 
-exports[`Transaction:TransactionWithData 1`] = `
+exports[`Cosmos fixtures: Transaction:TransactionWithData 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -2970,19 +2904,11 @@ exports[`Transaction:TransactionWithData 1`] = `
   >
     <div
       className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     >
       <header
         className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
-        id={undefined}
-        onClick={undefined}
-        role={undefined}
         style={Object {}}
-        tabIndex={undefined}
       >
         <h1
           className="grommetux-heading"
@@ -3050,7 +2976,6 @@ exports[`Transaction:TransactionWithData 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Amount
         </label>
@@ -3062,7 +2987,6 @@ exports[`Transaction:TransactionWithData 1`] = `
           >
             <input
               className="grommetux-input grommetux-number-input__input"
-              disabled={undefined}
               min={0}
               onChange={[Function]}
               tabIndex="0"
@@ -3070,10 +2994,8 @@ exports[`Transaction:TransactionWithData 1`] = `
               value={100}
             />
             <button
-              aria-label={undefined}
               className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -3103,10 +3025,8 @@ exports[`Transaction:TransactionWithData 1`] = `
               </span>
             </button>
             <button
-              aria-label={undefined}
               className="grommetux-button grommetux-button--plain grommetux-number-input__add"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -3144,7 +3064,6 @@ exports[`Transaction:TransactionWithData 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Details
         </label>
@@ -3154,11 +3073,9 @@ exports[`Transaction:TransactionWithData 1`] = `
           <input
             autoComplete="off"
             className="grommetux-text-input grommetux-input"
-            defaultValue={undefined}
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            placeholder={undefined}
             type="text"
             value="Hello Transaction"
           />
@@ -3175,7 +3092,6 @@ exports[`Transaction:TransactionWithData 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Categories
         </label>
@@ -3184,7 +3100,6 @@ exports[`Transaction:TransactionWithData 1`] = `
         >
           <div
             className="Select has-value is-clearable is-searchable Select--multi"
-            style={undefined}
           >
             <div
               className="Select-control"
@@ -3200,7 +3115,7 @@ exports[`Transaction:TransactionWithData 1`] = `
                 }
               }
             >
-              <span
+              <div
                 className="Select-multi-value-wrapper"
                 id="react-select-3--value"
               >
@@ -3212,7 +3127,6 @@ exports[`Transaction:TransactionWithData 1`] = `
                       "color": "#000000",
                     }
                   }
-                  title={undefined}
                 >
                   <span
                     aria-hidden="true"
@@ -3246,7 +3160,6 @@ exports[`Transaction:TransactionWithData 1`] = `
                       "color": "#000000",
                     }
                   }
-                  title={undefined}
                 >
                   <span
                     aria-hidden="true"
@@ -3282,24 +3195,19 @@ exports[`Transaction:TransactionWithData 1`] = `
                 >
                   <input
                     aria-activedescendant="react-select-3--value"
-                    aria-describedby={undefined}
                     aria-expanded="false"
                     aria-haspopup="false"
-                    aria-label={undefined}
-                    aria-labelledby={undefined}
                     aria-owns=""
-                    className="Select-input grommetux-input"
-                    id={undefined}
+                    className="grommetux-input"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
                     required={false}
                     role="combobox"
-                    tabIndex={undefined}
                     value=""
                   />
                 </div>
-              </span>
+              </div>
               <span
                 aria-label="Clear all"
                 className="Select-clear-zone"
@@ -3337,7 +3245,6 @@ exports[`Transaction:TransactionWithData 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Date
         </label>
@@ -3357,7 +3264,6 @@ exports[`Transaction:TransactionWithData 1`] = `
               aria-label="Date Time Icon"
               className="grommetux-button grommetux-button--plain grommetux-date-time__control"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -3392,17 +3298,11 @@ exports[`Transaction:TransactionWithData 1`] = `
     </div>
     <footer
       className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     >
       <button
-        aria-label={undefined}
         className="grommetux-button grommetux-button--primary"
         disabled={false}
-        href={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -3417,10 +3317,8 @@ exports[`Transaction:TransactionWithData 1`] = `
         </span>
       </button>
       <button
-        aria-label={undefined}
         className="grommetux-button grommetux-button--plain grommetux-background-hover-color-index-critical"
         disabled={false}
-        href={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -3465,7 +3363,7 @@ exports[`Transaction:TransactionWithData 1`] = `
 </div>
 `;
 
-exports[`WalletAdd:WalletAdd 1`] = `
+exports[`Cosmos fixtures: WalletAdd:WalletAdd 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="en-US"
@@ -3476,19 +3374,11 @@ exports[`WalletAdd:WalletAdd 1`] = `
   >
     <div
       className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     >
       <header
         className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header"
-        id={undefined}
-        onClick={undefined}
-        role={undefined}
         style={Object {}}
-        tabIndex={undefined}
       >
         <h1
           className="grommetux-heading"
@@ -3506,7 +3396,6 @@ exports[`WalletAdd:WalletAdd 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Name
         </label>
@@ -3516,11 +3405,9 @@ exports[`WalletAdd:WalletAdd 1`] = `
           <input
             autoComplete="off"
             className="grommetux-text-input grommetux-input"
-            defaultValue={undefined}
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            placeholder={undefined}
             type="text"
             value=""
           />
@@ -3532,7 +3419,6 @@ exports[`WalletAdd:WalletAdd 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Balance
         </label>
@@ -3544,7 +3430,6 @@ exports[`WalletAdd:WalletAdd 1`] = `
           >
             <input
               className="grommetux-input grommetux-number-input__input"
-              disabled={undefined}
               min={0}
               onChange={[Function]}
               tabIndex="0"
@@ -3552,10 +3437,8 @@ exports[`WalletAdd:WalletAdd 1`] = `
               value={0}
             />
             <button
-              aria-label={undefined}
               className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -3585,10 +3468,8 @@ exports[`WalletAdd:WalletAdd 1`] = `
               </span>
             </button>
             <button
-              aria-label={undefined}
               className="grommetux-button grommetux-button--plain grommetux-number-input__add"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -3626,7 +3507,6 @@ exports[`WalletAdd:WalletAdd 1`] = `
       >
         <label
           className="grommetux-form-field__label"
-          htmlFor={undefined}
         >
           Currency
         </label>
@@ -3639,7 +3519,6 @@ exports[`WalletAdd:WalletAdd 1`] = `
           >
             <input
               className="grommetux-input grommetux-select__input"
-              placeholder={undefined}
               readOnly={true}
               type="text"
               value="USD ($)"
@@ -3648,7 +3527,6 @@ exports[`WalletAdd:WalletAdd 1`] = `
               aria-label="Select Icon"
               className="grommetux-button grommetux-button--plain grommetux-select__control"
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -3683,17 +3561,11 @@ exports[`WalletAdd:WalletAdd 1`] = `
     </div>
     <footer
       className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-vertical-small grommetux-footer"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
       style={Object {}}
-      tabIndex={undefined}
     >
       <button
-        aria-label={undefined}
         className="grommetux-button grommetux-button--primary"
         disabled={false}
-        href={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}

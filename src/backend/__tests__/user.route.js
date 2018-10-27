@@ -13,7 +13,7 @@ describe('user', () => {
 
   beforeAll(async () => {
     await db.connect(process.env.TEST_DB_URI);
-    await User.remove({});
+    await User.deleteMany({});
     server = app.listen();
     request = supertest(server);
   });
@@ -68,9 +68,7 @@ describe('user', () => {
   });
 
   it('should require authorization to read', async () => {
-    await request
-      .get(ROUTE)
-      .expect(401);
+    await request.get(ROUTE).expect(401);
   });
 
   it('should update user', async () => {
@@ -84,13 +82,11 @@ describe('user', () => {
   });
 
   it('should require authorization to update', async () => {
-    await request
-      .put(ROUTE)
-      .expect(401);
+    await request.put(ROUTE).expect(401);
   });
 
-  afterAll(async () => {
+  afterAll(() => {
     server.close();
-    await db.disconnect();
+    return db.disconnect();
   });
 });

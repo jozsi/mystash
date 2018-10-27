@@ -19,7 +19,8 @@ describe('Wallet', () => {
 
   // Mock database save/insert
   beforeAll(() => {
-    Wallet.prototype.collection.insert = (docs, options, callback) => callback(null, docs);
+    Wallet.prototype.collection.insertOne = (docs, options, callback) =>
+      callback(null, docs);
   });
 
   it('should expose _id as id', async () => {

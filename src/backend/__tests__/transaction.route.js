@@ -10,12 +10,12 @@ const Transaction = require('../models/transaction');
 const User = require('../models/user');
 const Wallet = require('../models/wallet');
 
-
 const ROUTE = '/transaction';
 
 describe('transaction', () => {
   const transactions = [];
-  const sumTransactions = () => transactions.reduce((a, b) => a.amount + b.amount, { amount: 0 });
+  const sumTransactions = () =>
+    transactions.reduce((a, b) => a.amount + b.amount, { amount: 0 });
   let server;
   let request;
   let user;
@@ -35,9 +35,9 @@ describe('transaction', () => {
 
   beforeAll(async () => {
     await db.connect(process.env.TEST_DB_URI);
-    await Transaction.remove({});
-    await User.remove({});
-    await Wallet.remove({});
+    await Transaction.deleteMany({});
+    await User.deleteMany({});
+    await Wallet.deleteMany({});
     user = await User.create(USER);
     wallet = await Wallet.create({
       ...WALLET,
@@ -52,8 +52,7 @@ describe('transaction', () => {
   });
 
   it('should create a transaction', async () => {
-    const response = await createTransaction(DATA)
-      .expect(200);
+    const response = await createTransaction(DATA).expect(200);
     const transaction = response.body;
     expect(transaction.id).toHaveLength(24);
     transactions.push(transaction);
@@ -68,7 +67,7 @@ describe('transaction', () => {
   });
 
   it('should not create a transaction if wallet does not exist', async () => {
-    const transactionCount = await Transaction.count();
+    const transactionCount = await Transaction.countDocuments();
     expect(transactionCount).toBe(transactions.length);
   });
 
@@ -167,8 +166,8 @@ describe('transaction', () => {
     transactions.push(transaction);
   });
 
-  afterAll(async () => {
+  afterAll(() => {
     server.close();
-    await db.disconnect();
+    return db.disconnect();
   });
 });

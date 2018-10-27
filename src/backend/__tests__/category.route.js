@@ -8,7 +8,6 @@ const defaultCategories = require('../factories/categories');
 const Category = require('../models/category');
 const User = require('../models/user');
 
-
 const ROUTE = '/category';
 
 describe('category', () => {
@@ -29,8 +28,8 @@ describe('category', () => {
 
   beforeAll(async () => {
     await db.connect(process.env.TEST_DB_URI);
-    await Category.remove({});
-    await User.remove({});
+    await Category.deleteMany({});
+    await User.deleteMany({});
     user = await User.create(USER);
     server = app.listen();
     request = supertest(server);
@@ -41,14 +40,14 @@ describe('category', () => {
       .get(`${ROUTE}`)
       .set('Authorization', `Bearer ${user.token}`)
       .expect(200);
-    expect(response.body.map(x => omit(x, 'id')))
-      .toEqual(defaultCategories.map(x => ({ ...x, user: user._id.toString() })));
+    expect(response.body.map(x => omit(x, 'id'))).toEqual(
+      defaultCategories.map(x => ({ ...x, user: user._id.toString() })),
+    );
     categories = response.body;
   });
 
   it('should create a category', async () => {
-    const response = await createCategory(DATA)
-      .expect(200);
+    const response = await createCategory(DATA).expect(200);
     const category = response.body;
     expect(category.id).toHaveLength(24);
     categories.push(category);

@@ -3,11 +3,7 @@ import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
 function Category(props) {
-  const {
-    categories,
-    categoryList,
-    ...rest,
-  } = props;
+  const { categories, categoryList, ...rest } = props;
 
   return (
     <Select

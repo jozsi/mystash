@@ -19,8 +19,10 @@ describe('User', () => {
   };
 
   beforeAll(() => {
-    Category.prototype.collection.insertMany = (docs, options, callback) => callback(null, docs);
-    User.prototype.collection.insert = (docs, options, callback) => callback(null, docs);
+    Category.prototype.collection.insertMany = (docs, options, callback) =>
+      callback(null, docs);
+    User.prototype.collection.insertOne = (docs, options, callback) =>
+      callback(null, docs);
   });
 
   it('should expose _id as id', async () => {
