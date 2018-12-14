@@ -58,7 +58,7 @@
     "eslint-plugin-jest": "^21.26.2",
     "grommet": "^1.11.0",
     "moment": "^2.22.2",
-    "nodemon": "^1.18.5",
+    "nodemon": "^1.18.9",
     "object.omit": "^3.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
