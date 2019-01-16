@@ -82,7 +82,7 @@
     "redux-devtools-log-monitor": "^1.4.0",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
-    "supertest": "^3.3.0"
+    "supertest": "^3.4.0"
   },
   "proxy": "http://localhost:3000",
   "browserslist": [
