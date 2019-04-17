@@ -54,7 +54,7 @@
     "dot-prop-immutable": "^1.5.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
-    "escape-string-regexp": "^1.0.5",
+    "escape-string-regexp": "^2.0.0",
     "eslint-plugin-jest": "^22.1.2",
     "grommet": "^1.11.0",
     "moment": "^2.22.2",
