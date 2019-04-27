@@ -62,7 +62,7 @@
     "object.omit": "^3.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
-    "react-color": "^2.14.1",
+    "react-color": "^2.17.2",
     "react-cosmos": "^4.6.4",
     "react-cosmos-redux-proxy": "^4.6.1",
     "react-cosmos-router-proxy": "^4.6.1",
