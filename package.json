@@ -36,7 +36,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "currency-formatter": "^1.5.3",
-    "dotenv-safe": "^6.1.0",
+    "dotenv-safe": "^8.2.0",
     "isemail": "^3.2.0",
     "jsonwebtoken": "^8.3.0",
     "koa": "^2.6.1",
