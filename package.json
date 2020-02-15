@@ -43,7 +43,7 @@
     "koa-bodyparser": "^4.2.1",
     "koa-connect-history-api-fallback": "^0.3.1",
     "koa-jwt": "^3.5.1",
-    "koa-router": "^7.4.0",
+    "koa-router": "^8.0.8",
     "koa-static": "^5.0.0",
     "mongoose": "^5.3.7",
     "npm-run-all": "^4.1.3",
